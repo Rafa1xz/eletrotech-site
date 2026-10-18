@@ -44,6 +44,41 @@ body {
   font: 16px/1.65 'Segoe UI', Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
 }
+/* Cross-document transitions progressively enhance navigation in supported browsers. */
+@view-transition {
+  navigation: auto;
+}
+.topbar {
+  view-transition-name: site-topbar;
+}
+.site-header {
+  view-transition-name: site-header;
+}
+main {
+  view-transition-name: page-content;
+}
+::view-transition-old(root),
+::view-transition-new(root),
+::view-transition-old(site-topbar),
+::view-transition-new(site-topbar),
+::view-transition-old(site-header),
+::view-transition-new(site-header) {
+  animation-duration: 140ms;
+  animation-timing-function: ease-out;
+}
+::view-transition-old(page-content) {
+  animation: page-content-out 120ms ease-out both;
+}
+::view-transition-new(page-content) {
+  animation: page-content-in 220ms cubic-bezier(.22,1,.36,1) both;
+}
+@keyframes page-content-out {
+  to { opacity: 0; transform: translateY(-2px); }
+}
+@keyframes page-content-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
 h1, h2, h3, p, figure {
   margin: 0;
 }
@@ -301,26 +336,29 @@ svg.fa-icon {
   font-size: .84rem;
   font-weight: 650;
   white-space: nowrap;
-  transition: color .2s;
+  color: var(--navy);
+  transition: color 180ms ease;
 }
 #main-nav>a:not(.mobile-menu-cta)::after {
   position: absolute;
   content: '';
-  bottom: 9px;
-  left: 0;
-  right: 0;
-  height: 3px;
-  border-radius: 3px;
+  bottom: 10px;
+  left: 50%;
+  width: 28px;
+  height: 2px;
+  border-radius: 999px;
   background: var(--orange);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .25s;
+  opacity: 0;
+  transform: translateX(-50%) scaleX(.35);
+  transform-origin: center;
+  transition: opacity 160ms ease,transform 200ms cubic-bezier(.22,1,.36,1);
 }
 #main-nav>a[aria-current] {
   color: var(--blue);
 }
 #main-nav>a[aria-current]::after, #main-nav>a:focus-visible::after {
-  transform: scaleX(1);
+  opacity: 1;
+  transform: translateX(-50%) scaleX(1);
 }
 .header-actions {
   display: flex;
@@ -1704,7 +1742,8 @@ form .form-note {
     color: var(--deep);
   }
   #main-nav>a:hover::after {
-    transform: scaleX(1);
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
   }
   .topbar a:hover, .site-footer a:hover, .floating-contact:hover {
     color: white;
@@ -1878,7 +1917,9 @@ form .form-note {
     right: 16px;
     color: #6d8396;
     background: none;
+    opacity: 1;
     transform: none;
+    transition: color 180ms ease,transform 180ms ease;
   }
   #main-nav>a[aria-current] {
     background: #eef3fa;
@@ -2456,6 +2497,16 @@ form .form-note {
   }
   .hero-video {
     display: none;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root),
+  ::view-transition-old(site-topbar),
+  ::view-transition-new(site-topbar),
+  ::view-transition-old(site-header),
+  ::view-transition-new(site-header),
+  ::view-transition-old(page-content),
+  ::view-transition-new(page-content) {
+    animation: none !important;
   }
 }
 @media (max-width:680px) and (prefers-reduced-motion:reduce) {
