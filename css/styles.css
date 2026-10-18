@@ -15,6 +15,9 @@
   --soft: #f3f6f8;
   --line: #dce4ec;
   --cyan: #53e0eb;
+  --whatsapp: #20bd5b;
+  --whatsapp-light: #2cdb70;
+  --whatsapp-dark: #128c45;
   --radius: 18px;
   --max: 1280px;
   --header-height: 88px;
@@ -434,23 +437,33 @@ svg.fa-icon {
   height: 21px;
 }
 .header-cta {
+  isolation: isolate;
   gap: 10px;
   min-height: 52px;
-  padding: 10px 14px;
-  border-radius: 12px;
-  color: var(--deep);
-  background-image: linear-gradient(135deg,#ffc093,var(--brand-orange),#ffc093);
+  padding: 7px 15px 7px 8px;
+  overflow: hidden;
+  border-color: rgba(255,255,255,.25);
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(135deg,var(--whatsapp-light) 0%,var(--whatsapp) 100%);
+  box-shadow: 0 10px 25px rgba(23,139,67,.25),inset 0 1px 0 rgba(255,255,255,.28);
+  transition: transform 240ms ease,box-shadow 240ms ease,filter 240ms ease;
 }
 .cta-icon {
   display: grid;
   place-items: center;
-  width: 30px;
-  height: 30px;
+  width: 38px;
+  height: 38px;
   flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 50%;
+  background: rgba(255,255,255,.14);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.18);
 }
 .cta-icon svg {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
+  transform-origin: 50% 55%;
 }
 .cta-content {
   display: flex;
@@ -459,6 +472,7 @@ svg.fa-icon {
   white-space: nowrap;
 }
 .cta-content small {
+  color: rgba(255,255,255,.78);
   font-size: .65rem;
   line-height: 1.2;
   font-weight: 500;
@@ -468,7 +482,17 @@ svg.fa-icon {
   line-height: 1.2;
 }
 .cta-arrow {
+  color: rgba(255,255,255,.86);
   transition: transform .25s;
+}
+.header-cta:focus-visible {
+  color: #fff;
+  outline-color: var(--whatsapp-dark);
+  box-shadow: 0 14px 32px rgba(23,139,67,.34),0 0 0 4px rgba(37,211,102,.14),inset 0 1px 0 rgba(255,255,255,.3);
+  transform: translateY(-2px);
+}
+.header-cta:active {
+  transform: translateY(0) scale(.985);
 }
 .menu-toggle, .nav-panel-label, #main-nav>.mobile-menu-cta {
   display: none;
@@ -1658,7 +1682,7 @@ form .form-note {
   .btn:hover {
     transform: translateY(-2px);
   }
-  .btn-primary:hover, .header-cta:hover {
+  .btn-primary:hover {
     background-position: 100% 50%;
     color: var(--deep);
     box-shadow: 0 12px 28px #ff8b3d30,inset 0 1px 0 #ffffff55;
@@ -1687,6 +1711,15 @@ form .form-note {
   }
   .header-cta:hover .cta-arrow, .text-link:hover>span:last-child {
     transform: translateX(4px);
+  }
+  .header-cta:hover {
+    color: #fff;
+    filter: saturate(1.06) brightness(1.03);
+    box-shadow: 0 15px 34px rgba(23,139,67,.34),0 0 0 4px rgba(37,211,102,.12),inset 0 1px 0 rgba(255,255,255,.3);
+    transform: translateY(-3px) scale(1.015);
+  }
+  .header-cta:hover .cta-icon svg {
+    animation: ww-whatsapp-icon-wiggle 620ms ease-in-out;
   }
   .text-link:hover {
     text-decoration: underline;
