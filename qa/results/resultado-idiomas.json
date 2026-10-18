@@ -1,0 +1,274 @@
+{
+    "status":  "PASS",
+    "jsErrors":  0,
+    "checks":  [
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html fechado 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html aberto 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html espanhol 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html fechado 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html aberto 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html espanhol 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html fechado 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html aberto 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html espanhol 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html fechado 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html aberto 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html espanhol 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html fechado 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html aberto 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html espanhol 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html fechado 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html aberto 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html espanhol 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html fechado 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html aberto 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html espanhol 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html fechado 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html aberto 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html espanhol 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html fechado 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html aberto 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html espanhol 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html fechado 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html aberto 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html espanhol 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html fechado 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html aberto 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html espanhol 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html fechado 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html aberto 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html espanhol 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html fechado 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html aberto 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html espanhol 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html fechado 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html aberto 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html espanhol 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html fechado 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html aberto 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html espanhol 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html fechado 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html aberto 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html espanhol 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html fechado 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html aberto 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html espanhol 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html fechado 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html aberto 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html espanhol 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Idioma mantido ao navegar"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Enter abre opções e foca idioma ativo"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Seta troca o foco sem aplicar idioma"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Enter escolhe idioma e restaura foco"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Espaço abre opções"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Escape fecha e restaura foco"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Clique fora fecha opções"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Sair pelo teclado fecha sem prender foco"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Primeiro Escape fecha apenas idiomas no menu mobile"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Segundo Escape fecha menu mobile"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Toque abre seletor"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Toque escolhe espanhol"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Movimento reduzido respeitado"
+                   }
+               ]
+}

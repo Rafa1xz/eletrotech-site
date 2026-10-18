@@ -1,0 +1,362 @@
+{
+    "screenshots":  [
+                        "inicio-desktop.png",
+                        "inicio-mobile.png",
+                        "oxilife-desktop.png",
+                        "contato-mobile.png",
+                        "catalogo-desktop.png",
+                        "catalogo-mobile.png",
+                        "rodape-desktop.png",
+                        "rodape-mobile.png",
+                        "menu-mobile.png",
+                        "busca-mobile.png",
+                        "menu-paisagem.png"
+                    ],
+    "status":  "PASS",
+    "jsErrors":  0,
+    "results":  [
+                    {
+                        "viewport":  1440,
+                        "page":  "index.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1440,
+                        "page":  "servicos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1440,
+                        "page":  "produtos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1440,
+                        "page":  "como-trabalhamos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1440,
+                        "page":  "oxilife-fish.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1440,
+                        "page":  "contato.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1280,
+                        "page":  "index.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1280,
+                        "page":  "servicos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1280,
+                        "page":  "produtos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1280,
+                        "page":  "como-trabalhamos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1280,
+                        "page":  "oxilife-fish.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1280,
+                        "page":  "contato.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1040,
+                        "page":  "index.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1040,
+                        "page":  "servicos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1040,
+                        "page":  "produtos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1040,
+                        "page":  "como-trabalhamos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1040,
+                        "page":  "oxilife-fish.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1040,
+                        "page":  "contato.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1024,
+                        "page":  "index.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1024,
+                        "page":  "servicos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1024,
+                        "page":  "produtos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1024,
+                        "page":  "como-trabalhamos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1024,
+                        "page":  "oxilife-fish.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1024,
+                        "page":  "contato.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  768,
+                        "page":  "index.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  768,
+                        "page":  "servicos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  768,
+                        "page":  "produtos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  768,
+                        "page":  "como-trabalhamos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  768,
+                        "page":  "oxilife-fish.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  768,
+                        "page":  "contato.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  390,
+                        "page":  "index.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  390,
+                        "page":  "servicos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  390,
+                        "page":  "produtos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  390,
+                        "page":  "como-trabalhamos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  390,
+                        "page":  "oxilife-fish.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  390,
+                        "page":  "contato.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  320,
+                        "page":  "index.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  320,
+                        "page":  "servicos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  320,
+                        "page":  "produtos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  320,
+                        "page":  "como-trabalhamos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  320,
+                        "page":  "oxilife-fish.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  320,
+                        "page":  "contato.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "result":  "PASS",
+                        "test":  "WhatsApp flutuante: expansÃ£o e digitaÃ§Ã£o no desktop e mobile"
+                    },
+                    {
+                        "result":  "PASS",
+                        "test":  "Filtros, busca sem acento, estado vazio, limpar filtros, espanhol, menu, Escape e formulÃ¡rio sem envio externo"
+                    },
+                    {
+                        "result":  "PASS",
+                        "test":  "Busca do cabeÃ§alho; consulta via URL; filtro entre idiomas; limpar filtros e foco; menu com isolamento, ciclo de foco, backdrop, rolagem em paisagem e retorno ao desktop; movimento reduzido"
+                    },
+                    {
+                        "viewport":  1440,
+                        "language":  "es",
+                        "page":  "index.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1440,
+                        "language":  "es",
+                        "page":  "servicos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1440,
+                        "language":  "es",
+                        "page":  "produtos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1440,
+                        "language":  "es",
+                        "page":  "como-trabalhamos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1440,
+                        "language":  "es",
+                        "page":  "oxilife-fish.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  1440,
+                        "language":  "es",
+                        "page":  "contato.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  390,
+                        "language":  "es",
+                        "page":  "index.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  390,
+                        "language":  "es",
+                        "page":  "servicos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  390,
+                        "language":  "es",
+                        "page":  "produtos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  390,
+                        "language":  "es",
+                        "page":  "como-trabalhamos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  390,
+                        "language":  "es",
+                        "page":  "oxilife-fish.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  390,
+                        "language":  "es",
+                        "page":  "contato.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  320,
+                        "language":  "es",
+                        "page":  "index.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  320,
+                        "language":  "es",
+                        "page":  "servicos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  320,
+                        "language":  "es",
+                        "page":  "produtos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  320,
+                        "language":  "es",
+                        "page":  "como-trabalhamos.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  320,
+                        "language":  "es",
+                        "page":  "oxilife-fish.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "viewport":  320,
+                        "language":  "es",
+                        "page":  "contato.html",
+                        "result":  "PASS"
+                    },
+                    {
+                        "result":  "PASS",
+                        "test":  "NavegaÃ§Ã£o e catÃ¡logo sem JavaScript; formulÃ¡rio sem submissÃ£o involuntÃ¡ria"
+                    },
+                    {
+                        "result":  "PASS",
+                        "test":  "Idioma e scripts com armazenamento local bloqueado"
+                    },
+                    {
+                        "result":  "PASS",
+                        "test":  "Redirecionamento de link antigo"
+                    }
+                ],
+    "externalMessagesSent":  false
+}

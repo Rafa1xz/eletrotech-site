@@ -1,0 +1,4 @@
+Font Awesome Free 6.7.2
+Source: https://github.com/FortAwesome/Font-Awesome/tree/6.7.2/svgs
+SVG icons: CC BY 4.0. See LICENSE-FONT-AWESOME.txt.
+Icon paths and viewBox are unchanged; decorative accessibility attributes and CSS classes are added to inline copies.

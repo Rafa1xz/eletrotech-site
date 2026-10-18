@@ -1,0 +1,328 @@
+{
+    "screenReaderAudit":  false,
+    "checks":  [
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html headings and labels 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html layout 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html accessible header shortcut 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html headings and labels 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html layout 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html accessible header shortcut 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html headings and labels 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html layout 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html accessible header shortcut 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html headings and labels 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html layout 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html accessible header shortcut 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html headings and labels 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html layout 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html accessible header shortcut 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html headings and labels 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html layout 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html accessible header shortcut 1440"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html headings and labels 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html layout 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html accessible header shortcut 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html mobile modal semantics"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html Escape restores focus"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html headings and labels 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html layout 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html accessible header shortcut 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html mobile modal semantics"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html Escape restores focus"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html headings and labels 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html layout 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html accessible header shortcut 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html mobile modal semantics"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html Escape restores focus"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html headings and labels 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html layout 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html accessible header shortcut 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html mobile modal semantics"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html Escape restores focus"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html headings and labels 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html layout 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html accessible header shortcut 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html mobile modal semantics"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html Escape restores focus"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html headings and labels 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html layout 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html accessible header shortcut 390"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html mobile modal semantics"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html Escape restores focus"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html headings and labels 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html layout 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "index.html accessible header shortcut 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html headings and labels 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html layout 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "servicos.html accessible header shortcut 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html headings and labels 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html layout 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "produtos.html accessible header shortcut 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html headings and labels 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html layout 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "como-trabalhamos.html accessible header shortcut 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html headings and labels 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html layout 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "oxilife-fish.html accessible header shortcut 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html headings and labels 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html layout 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "contato.html accessible header shortcut 320"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Outside click closes search and restores focus"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Empty form focuses name and identifies errors"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Whitespace does not bypass validation"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Errors and status translate"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Valid form prepares original WhatsApp flow"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Editing invalidates old message and updates count"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Changing subject invalidates old message"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "User text is encoded and never rendered as HTML"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Prepared fallback link follows language"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "FAQ works with Enter"
+                   },
+                   {
+                       "result":  "PASS",
+                       "test":  "Skip link transfers focus to main"
+                   },
+                   {
+                       "result":  "PASS",
+                       "ratios":  {
+                                      "bodyText":  14.067188194320922,
+                                      "secondaryText":  6.0238492801274655,
+                                      "blueText":  6.99130946910198,
+                                      "errorText":  7.458029005108288,
+                                      "fieldBoundary":  3.384733743421233
+                                  },
+                       "test":  "Contrast of base, secondary, action and error text plus field boundary"
+                   }
+               ],
+    "physicalDeviceTested":  false,
+    "jsErrors":  0,
+    "externalMessagesSent":  false,
+    "status":  "PASS"
+}
