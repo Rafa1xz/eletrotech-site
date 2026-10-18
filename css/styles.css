@@ -2306,8 +2306,8 @@ form .form-note {
     padding-bottom: 0;
   }
   body.enhanced .floating-contact {
-    right: 14px;
-    bottom: calc(14px + env(safe-area-inset-bottom,0px));
+    right: 20px;
+    bottom: calc(20px + env(safe-area-inset-bottom,0px));
     display: inline-flex;
     width: 54px;
     height: 54px;
