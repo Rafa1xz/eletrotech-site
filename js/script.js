@@ -144,7 +144,7 @@
         shell.removeAttribute('aria-modal');
         shell.removeAttribute('aria-label');
       }
-      document.querySelectorAll('main, .site-footer, .topbar, .mobile-dock, .floating-contact').forEach(element => { element.inert = open; });
+      document.querySelectorAll('main, .site-footer, .topbar, .floating-contact').forEach(element => { element.inert = open; });
       updateLabels();
       if (restoreFocus) toggle.focus();
     }

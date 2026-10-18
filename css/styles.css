@@ -1666,9 +1666,6 @@ form .form-note {
   0% { opacity: .58; transform: scale(.96); }
   100% { opacity: 0; transform: scale(1.32); }
 }
-.mobile-dock {
-  display: none;
-}
 .home-hero :focus-visible, .ox-hero :focus-visible, .ox-feature :focus-visible, .cta-section :focus-visible, .site-footer :focus-visible, .catalog-controls :focus-visible {
   outline-color: var(--cyan);
 }
@@ -1993,9 +1990,6 @@ form .form-note {
   .wrap {
     width: calc(100% - 40px);
   }
-  body.enhanced {
-    padding-bottom: calc(82px + env(safe-area-inset-bottom,0px));
-  }
   .section {
     padding: 58px 0;
   }
@@ -2313,7 +2307,7 @@ form .form-note {
   }
   body.enhanced .floating-contact {
     right: 14px;
-    bottom: calc(88px + env(safe-area-inset-bottom,0px));
+    bottom: calc(14px + env(safe-area-inset-bottom,0px));
     display: inline-flex;
     width: 54px;
     height: 54px;
@@ -2335,51 +2329,6 @@ form .form-note {
   .ww-float-whatsapp__label {
     padding-right: 16px;
     font-size: .78rem;
-  }
-  body.enhanced .mobile-dock {
-    position: fixed;
-    z-index: 30;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: grid;
-    grid-template-columns: 1fr 1.65fr;
-    gap: 10px;
-    padding: 12px 20px calc(12px + env(safe-area-inset-bottom,0px));
-    border-top: 1px solid var(--line);
-    background: #fffffff5;
-    box-shadow: 0 -6px 30px #071b3010;
-    backdrop-filter: blur(12px);
-  }
-  .mobile-dock>a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-xs);
-    min-height: 52px;
-    padding: 12px;
-    color: var(--navy);
-    font-size: .87rem;
-    font-weight: 700;
-    line-height: 1.3;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-  }
-  .mobile-dock>a:last-child {
-    color: var(--deep);
-    background: var(--orange-light);
-    border-color: var(--orange-light);
-    box-shadow: none;
-  }
-  .mobile-dock svg {
-    width: 21px;
-    height: 21px;
-  }
-  body.menu-open .mobile-dock {
-    visibility: hidden;
-  }
-  body.keyboard-open .mobile-dock {
-    display: none;
   }
 }
 @media (max-width:360px) {
@@ -2436,15 +2385,6 @@ form .form-note {
   .filter-btn {
     font-size: .83rem;
     padding-inline: 12px;
-  }
-  .mobile-dock {
-    padding-inline: 16px !important;
-    grid-template-columns: 1fr 1.5fr !important;
-  }
-  .mobile-dock>a {
-    gap: 6px;
-    font-size: .82rem;
-    padding: 10px;
   }
   .catalog-controls {
     padding: 20px;
