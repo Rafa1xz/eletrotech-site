@@ -2,7 +2,7 @@
 (() => {
   'use strict';
 
-  const PHONE = '554599241306'; // Contato original do projeto.
+  const PHONE = window.ELETROTECH_SITE?.whatsapp || '554599241306';
   const text = (pt, es) => document.documentElement.lang === 'es' ? es : pt;
   const whatsappUrl = message => `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`;
   const normalize = value => value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
@@ -202,7 +202,7 @@
     document.addEventListener('focusout', () => requestAnimationFrame(updateKeyboard));
   }
 
-  // Replica o ciclo do componente de referência: expande, digita, aguarda e recolhe.
+  // Uma apresentação breve; o botão também expande por foco e hover.
   function initAnimatedWhatsapp() {
     const button = document.querySelector('a.floating-contact[href*="wa.me"]');
     if (!button || button.dataset.contactEnhanced === 'true') return;
@@ -249,7 +249,6 @@
     function collapseAndRestart() {
       button.classList.remove('is-expanded', 'is-typing');
       later(() => { typedText.textContent = ''; }, 480);
-      later(startTypingCycle, 2700);
     }
     function typeCharacter(index) {
       const value = contactLabel();

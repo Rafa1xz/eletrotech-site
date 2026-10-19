@@ -70,7 +70,7 @@ try {
   Eval 'const canvas=document.createElement("canvas");canvas.width=20;canvas.height=20;new Promise(resolve=>canvas.toBlob(blob=>{const dt=new DataTransfer();dt.items.add(new File([blob],"teste.png",{type:"image/png"}));const picker=document.querySelector("#view input[type=file]");picker.files=dt.files;picker.dispatchEvent(new Event("change"));setTimeout(resolve,200)},"image/png"))'|Out-Null
   Assert 'document.querySelectorAll(".card").length===14 && document.querySelector("#feedback").textContent.includes("1 imagem")' 'Previa de PNG falhou'
   Eval 'window.draftPayload=null;const originalUrl=URL.createObjectURL;URL.createObjectURL=blob=>{if(blob.type==="application/json")blob.text().then(text=>window.draftPayload=JSON.parse(text));return originalUrl.call(URL,blob)};HTMLAnchorElement.prototype.click=function(){};document.querySelector("#export").click();new Promise(r=>setTimeout(r,100))'|Out-Null
-  Assert 'window.draftPayload.mode==="frontend-draft-not-published" && window.draftPayload.products.length===1 && window.draftPayload.products[0].salePrice==="80"' 'Exportacao do rascunho incorreta'
+  Assert 'window.draftPayload.mode==="frontend-draft-not-published" && window.draftPayload.products.length===1 && window.draftPayload.products[0].salePrice===80 && window.draftPayload.products[0].slug==="motores-hercules" && Array.isArray(window.draftPayload.products[0].specifications)' 'Exportacao do rascunho incorreta'
   Route 'access'
   Assert 'document.querySelectorAll("input[type=password]").length===0 && document.querySelector("#view button").disabled' 'Acesso deveria estar explicitamente desconectado'
   Assert 'document.querySelectorAll("button").length>0 && !document.querySelector("#export").disabled' 'Exportacao indisponivel'

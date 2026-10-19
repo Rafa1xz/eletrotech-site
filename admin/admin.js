@@ -5,7 +5,7 @@
   const pages = [
     ['index.html', 'Início'], ['servicos.html', 'Serviços'],
     ['produtos.html', 'Produtos'], ['como-trabalhamos.html', 'Como trabalhamos'],
-    ['oxilife-fish.html', 'OxiLife Fish'], ['contato.html', 'Contato']
+    ['oxilife-fish.html', 'OxiLife Fish'], ['contato.html', 'Contato'], ['portfolio.html', 'Projetos e equipamentos']
   ];
   const labels = {dashboard:'Visão geral',products:'Produtos',banners:'Banners',content:'Textos e conteúdos',pages:'Páginas e seções',media:'Biblioteca de mídias',settings:'Configurações',access:'Acesso e permissões'};
   const descriptions = {
@@ -76,11 +76,6 @@
           if(!item){ item={id:uid(),src,name:decodeURIComponent(new URL(src).pathname.split('/').pop()),alt:node.alt,pages:[],local:false};state.media.push(item); }
           if(!item.pages.includes(name)) item.pages.push(name);
         });
-        if(path==='produtos.html') doc.querySelectorAll('.product-card').forEach((card,index) => {
-          const title=card.querySelector('h3 [data-pt]');
-          const description=card.querySelector('.product-body > p [data-pt]');
-          state.products.push({id:`product-${index+1}`,name:clean(title?.dataset.pt || card.querySelector('h3')?.textContent),nameEs:title?.dataset.es || '',description:description?.dataset.pt || '',descriptionEs:description?.dataset.es || '',category:card.dataset.category,src:publicUrl(card.querySelector('img').getAttribute('src')),gallery:'',sku:'',price:'',salePrice:'',stock:'',lowStock:'',variations:'',seoTitle:'',seoDescription:'',active:true,featured:false,order:index+1,details:[...card.querySelectorAll('details p')].map(p=>clean(p.textContent)).join('\n')});
-        });
         if(path==='index.html') {
           const hero=doc.querySelector('.home-hero');
           const heroImage=hero?.querySelector('img');
@@ -88,6 +83,10 @@
           state.settings={id:'settings',name:'Eletrotech Marechal',phone:clean(doc.querySelector('a[href^="tel:"]')?.getAttribute('href')?.slice(4)),whatsapp:doc.querySelector('[data-whatsapp]')?.getAttribute('href')?.match(/wa\.me\/(\d+)/)?.[1] || '',message:'',email:doc.querySelector('a[href^="mailto:"]')?.getAttribute('href')?.slice(7) || '',address:'',hours:'',instagram:doc.querySelector('a[href*="instagram.com"]')?.href || '',facebook:'',tiktok:'',youtube:'',logo:publicUrl(doc.querySelector('.brand img').getAttribute('src')),favicon:publicUrl(doc.querySelector('link[rel=icon]').getAttribute('href')),description:clean(doc.querySelector('.footer-grid > div > p')?.textContent),seoTitle:clean(doc.title),seoDescription:doc.querySelector('meta[name=description]')?.content || ''};
         }
       });
+      const catalogResponse=await fetch(publicUrl('data/products.json'),{cache:'no-store'});
+      if(!catalogResponse.ok) throw new Error('Não foi possível ler os dados centralizados do catálogo.');
+      const catalog=await catalogResponse.json();
+      state.products=catalog.products.map(product=>({...product,published:true,src:publicUrl(product.src),gallery:product.gallery.map(publicUrl).join('\n'),variations:product.variations.join('\n'),specificationsText:product.specifications.map(s=>`${s.label} | ${s.value}`).join('\n'),price:product.price??'',salePrice:product.salePrice??'',stock:product.stock??'',lowStock:product.lowStock??''}));
       state.loaded=true; $('#export').disabled=false; view.setAttribute('aria-busy','false'); render();
     } catch(error) {
       view.setAttribute('aria-busy','false'); view.replaceChildren(note('Não foi possível carregar o site',`${error.message} Abra este painel pelo Live Server ou pela hospedagem HTTP, não por file://.`));
@@ -152,11 +151,14 @@
   function access(){view.append(note('Autenticação ainda não conectada','Esta interface é pública e não é uma área protegida. Não informe senhas nem dados privados. Login, sessões e permissões serão implementados no backend.'));const box=panel('Perfis previstos');box.style.marginTop='20px';box.append(el('p','Administrador: configurações, conteúdo e gestão de acessos.','help'),el('p','Editor: gestão de conteúdo, dentro das permissões definidas no servidor.','help'));const button=action('Gerenciar usuários — backend pendente',()=>{});button.disabled=true;box.append(button);view.append(box);}
   const productFields=[['name','Nome do produto','text',true],['nameEs','Nome em espanhol'],['category','Categoria','category'],['sku','Código / SKU'],['description','Descrição em português','textarea'],['descriptionEs','Descrição em espanhol','textarea'],['src','URL da imagem principal','image'],['gallery','Galeria: uma URL por linha','textarea'],['price','Preço normal (R$)','decimal'],['salePrice','Preço promocional (R$)','decimal'],['stock','Quantidade em estoque','integer'],['lowStock','Alerta de estoque baixo','integer'],['variations','Variações: tamanho, cor ou modelo','textarea'],['details','Características','textarea'],['order','Ordem de exibição','integer',true],['active','Produto ativo','checkbox'],['featured','Produto em destaque','checkbox'],['seoTitle','Título para SEO'],['seoDescription','Descrição para SEO','textarea']];
   const schemas={products:productFields,banners:[['name','Nome interno','text',true],['title','Título','text',true],['subtitle','Subtítulo','textarea'],['button','Texto do botão'],['link','Link de destino'],['src','Imagem desktop','image'],['mobileSrc','Imagem mobile','image'],['order','Ordem','integer',true],['active','Banner ativo','checkbox']],content:[['pt','Texto em português','textarea',true],['es','Texto em espanhol','textarea']],sections:[['name','Título da seção','text',true],['order','Posição','integer',true],['active','Seção visível','checkbox']],settings:[['name','Nome da empresa','text',true],['phone','Telefone','tel'],['whatsapp','WhatsApp com DDI e DDD','tel'],['message','Mensagem padrão do WhatsApp','textarea'],['email','E-mail','email'],['address','Endereço físico'],['hours','Horário de atendimento'],['instagram','Instagram','url'],['facebook','Facebook','url'],['tiktok','TikTok','url'],['youtube','YouTube','url'],['logo','Logotipo (URL)','image'],['favicon','Favicon (URL)'],['description','Descrição institucional','textarea'],['seoTitle','Título para SEO'],['seoDescription','Descrição para SEO','textarea']]};
+  productFields.splice(1,0,['slug','Endereço da página (slug estável)','text',true],['brand','Marca'],['model','Modelo']);
+  productFields.push(['detailsEs','Características em espanhol','textarea'],['specificationsText','Especificações: uma por linha, no formato Nome | Valor','textarea']);
   function field(def,value){const [key,title,type='text',required=false]=def;const label=el('label',title,type==='textarea'?'wide':'');let input;
     if(type==='category'){input=el('select');Object.entries(categories).forEach(([id,name])=>{const option=el('option',name);option.value=id;input.append(option);});}
     else if(type==='textarea')input=el('textarea');
     else{input=el('input');input.type=type==='integer'||type==='decimal'?'number':type==='image'?'url':type;}
     input.name=key;input.required=required;if(type==='checkbox')input.checked=!!value;else input.value=value??'';
+    if(key==='slug'){input.pattern='[a-z0-9]+(-[a-z0-9]+)*';input.readOnly=!!edited.original.published;}
     if(type==='integer'||type==='decimal'){input.min=key==='order'?'1':'0';input.max='999999999';input.step=type==='integer'?'1':'0.01';}
     if(type==='textarea'||type==='text')input.maxLength=type==='textarea'?10000:500;
     label.append(input);
@@ -167,6 +169,22 @@
   }
   function edit(kind,item){edited={kind,original:{...item}};$('#editor-title').textContent=kind==='products'?'Preparar produto':kind==='banners'?'Preparar banner':kind==='content'?'Editar texto':kind==='sections'?'Organizar seção':'Configurações gerais';const fields=$('#fields');fields.replaceChildren(...schemas[kind].map(def=>field(def,item[def[0]])));dialog.showModal();updatePreview();}
   function values(){const result={...edited.original};schemas[edited.kind].forEach(([key,,type])=>{const field=form.elements.namedItem(key);result[key]=type==='checkbox'?field.checked:field.value;});return result;}
+  function exportProduct(product){
+    const root=new URL('../',location.href).href;
+    const asset=value=>value?.startsWith(root)?value.slice(root.length):value;
+    const {draft,published,specificationsText,...result}=product;
+    result.src=asset(product.src);
+    result.gallery=product.gallery.split('\n').map(v=>asset(v.trim())).filter(Boolean);
+    result.variations=product.variations.split('\n').map(v=>v.trim()).filter(Boolean);
+    result.specifications=(specificationsText||'').split('\n').filter(v=>v.trim()).map(row=>{
+      const [label,...value]=row.split('|');
+      const existing=(product.specifications||[]).find(s=>s.label===label.trim()&&s.value===value.join('|').trim());
+      return existing||{label:label.trim(),value:value.join('|').trim()};
+    });
+    for(const field of ['price','salePrice','stock','lowStock'])result[field]=product[field]===''?null:Number(product[field]);
+    result.order=Number(product.order);
+    return result;
+  }
   function safeUrl(value){if(!value)return '';try{const url=new URL(value,publicUrl(''));return ['https:','http:'].includes(url.protocol)||blobs.has(value)?url.href:'';}catch{return '';}}
   function updatePreview(){if(!edited)return;const value=values();const target=$('#preview-body');target.replaceChildren();const src=safeUrl(value.src||value.logo);if(src)target.append(image(src,value.name||''));target.append(el('strong',value.title||value.name||'Prévia do texto'));if(edited.kind==='content'){target.append(el('small','Português'),el('p',value.pt),el('small','Español'),el('p',value.es));}else{target.append(el('p',value.description||value.subtitle||''));if(edited.kind==='products')target.append(el('p',value.price===''?'Preço sob consulta':money(value.salePrice||value.price)));if(edited.kind==='settings')target.append(el('p',`WhatsApp: ${value.whatsapp||'Não informado'}\nE-mail: ${value.email||'Não informado'}`));if(edited.kind==='sections')target.append(el('p',`Posição ${value.order} · ${value.active?'Visível':'Oculta'}`));if(value.button){const label=el('span',value.button,'button');target.append(label);}}}
   form.addEventListener('input',()=>{for(const field of form.elements)if(field.setCustomValidity)field.setCustomValidity('');updatePreview();});
@@ -177,6 +195,7 @@
   window.addEventListener('beforeunload',event=>{if(state.changes.length){event.preventDefault();event.returnValue='';}});
   $('#export').addEventListener('click',()=>{
     const payload={schemaVersion:1,exportedAt:new Date().toISOString(),mode:'frontend-draft-not-published',products:state.products.filter(p=>p.draft),banners:state.banners.filter(p=>p.draft),content:state.content.filter(p=>p.draft),sections:state.sections.filter(p=>p.draft),settings:state.settings.draft?state.settings:null,notes:'Rascunho para integração futura. Não publica o site. Imagens locais precisam ser enviadas posteriormente.',changes:state.changes};
+    payload.products=state.products.filter(p=>p.draft).map(exportProduct);
     const data=JSON.stringify(payload,(key,value)=>typeof value==='string'&&value.startsWith('blob:')?'':value,2);const url=URL.createObjectURL(new Blob([data],{type:'application/json'}));const link=el('a');link.href=url;link.download='eletrotech-rascunho.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);feedback('Rascunho exportado como JSON. Nenhum dado foi publicado; imagens locais não estão incluídas.');
   });
   loadSite();

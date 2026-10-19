@@ -4,7 +4,9 @@ $voidTags = @('area','base','br','col','embed','hr','img','input','link','meta',
 $issues = New-Object 'System.Collections.Generic.List[string]'
 $linksChecked = 0
 
-foreach ($file in Get-ChildItem -LiteralPath $projectRoot -Filter '*.html' -File) {
+$htmlFiles = @(Get-ChildItem -LiteralPath $projectRoot -Filter '*.html' -File)
+if (Test-Path (Join-Path $projectRoot 'produtos')) { $htmlFiles += @(Get-ChildItem -LiteralPath (Join-Path $projectRoot 'produtos') -Filter '*.html' -File) }
+foreach ($file in $htmlFiles) {
   $html = [IO.File]::ReadAllText($file.FullName)
   $clean = [regex]::Replace($html,'(?s)<!--.*?-->','')
   $stack = New-Object 'System.Collections.Generic.List[string]'
@@ -36,4 +38,4 @@ foreach ($url in [regex]::Matches([IO.File]::ReadAllText($cssPath),'url\([''"'']
   if (!(Test-Path -LiteralPath (Join-Path (Split-Path $cssPath) $url.Groups[1].Value))) { $issues.Add('Imagem CSS inexistente: '+$url.Groups[1].Value) }
 }
 if ($issues.Count) { throw ($issues -join [Environment]::NewLine) }
-Write-Output ('PASS: seis HTML balanceados; '+$linksChecked+' referências locais e âncoras verificadas; imagens CSS existentes.')
+Write-Output ('PASS: '+$htmlFiles.Count+' HTML balanceados; '+$linksChecked+' referências locais e âncoras verificadas; imagens CSS existentes.')

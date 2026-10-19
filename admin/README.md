@@ -54,6 +54,12 @@ dados privados. `noindex` é apenas uma orientação de indexação, não prote�
 - `index.html`: estrutura, navegação, avisos e diálogo do editor.
 - `admin.css`: identidade azul da Eletrotech e layout responsivo isolado do site.
 - `admin.js`: leitura do site, estado da aba, filtros, formulários e exportação.
+- Produtos: leitura de `../data/products.json`, a mesma fonte das páginas públicas.
+- Formulários de produto incluem slug estável, marca, modelo, galeria e
+  especificações no formato `Nome | Valor`, além dos campos anteriores.
+- A exportação converte preços/estoque para números ou `null` e galerias,
+  variações e especificações para listas. Isso prepara o contrato de publicação;
+  exportar ainda não grava o JSON publicado nem dispara o deploy.
 - `../qa/scripts/review-admin.ps1`: verificação real em Edge via Live Server.
 
 O frontend deve futuramente trocar a leitura de HTML e as alterações em memória

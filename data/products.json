@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "products": [
+    {
+      "id": "product-1", "slug": "motores-hercules", "active": true, "order": 1, "featured": false,
+      "name": "Motores Hércules", "nameEs": "Motores Hércules", "category": "motores", "brand": "Hércules", "model": "", "sku": "",
+      "description": "Motores elétricos novos para diferentes aplicações.", "descriptionEs": "Motores eléctricos nuevos para distintas aplicaciones.",
+      "details": "Modelos, potência, tensão e RPM sob consulta.", "detailsEs": "Modelos, potencia, tensión y RPM bajo consulta.",
+      "src": "images/motores-hercules-1.jpeg", "alt": "Motores Hércules apresentados pela Eletrotech", "gallery": ["images/motores-hercules-2.jpeg"],
+      "price": null, "salePrice": null, "stock": null, "lowStock": null, "variations": [],
+      "specifications": [{"label":"Potência, tensão e RPM","value":"Sob consulta","labelEs":"Potencia, tensión y RPM","valueEs":"Bajo consulta"}],
+      "seoTitle": "Motores Hércules | Eletrotech Marechal", "seoDescription": "Conheça a linha de motores Hércules apresentada pela Eletrotech. Consulte modelos, potência, tensão, disponibilidade e orçamento."
+    },
+    {
+      "id": "product-2", "slug": "materiais-para-paineis", "active": true, "order": 2, "featured": false,
+      "name": "Materiais para painéis", "nameEs": "Materiales para tableros", "category": "materiais", "brand": "", "model": "", "sku": "",
+      "description": "Componentes e materiais para montagem de painéis elétricos.", "descriptionEs": "Componentes y materiales para montar tableros eléctricos.",
+      "details": "Informe os componentes e quantidades do seu projeto.", "detailsEs": "Indique los componentes y cantidades de su proyecto.",
+      "src": "images/materiais-paineis-1.jpeg", "alt": "Materiais para montagem de painéis elétricos", "gallery": [],
+      "price": null, "salePrice": null, "stock": null, "lowStock": null, "variations": [], "specifications": [],
+      "seoTitle": "Materiais para painéis elétricos | Eletrotech", "seoDescription": "Componentes e materiais para montagem de painéis elétricos. Informe as necessidades do seu projeto e solicite um orçamento à Eletrotech."
+    },
+    {
+      "id": "product-3", "slug": "linha-zagonel", "active": true, "order": 3, "featured": false,
+      "name": "Linha Zagonel", "nameEs": "Línea Zagonel", "category": "zagonel", "brand": "Zagonel", "model": "", "sku": "",
+      "description": "Chuveiros e torneiras para o uso diário da casa.", "descriptionEs": "Duchas y grifos para el uso diario del hogar.",
+      "details": "Modelos e opções de instalação sob consulta.", "detailsEs": "Modelos y opciones de instalación bajo consulta.",
+      "src": "images/produtos-zagonel.jpeg", "alt": "Produtos da linha Zagonel", "gallery": [],
+      "price": null, "salePrice": null, "stock": null, "lowStock": null, "variations": [], "specifications": [],
+      "seoTitle": "Chuveiros e torneiras Zagonel | Eletrotech", "seoDescription": "Conheça os produtos Zagonel apresentados pela Eletrotech. Consulte modelos de chuveiros e torneiras, preços e opções de instalação."
+    },
+    {
+      "id": "product-4", "slug": "oximetro-portatil", "active": true, "order": 4, "featured": false,
+      "name": "Oxímetro portátil", "nameEs": "Oxímetro portátil", "category": "oxilife", "brand": "OxiLife Fish", "model": "", "sku": "",
+      "description": "Medição manual de oxigênio dissolvido, temperatura e saturação.", "descriptionEs": "Medición manual de oxígeno disuelto, temperatura y saturación.",
+      "details": "Uso portátil para checagens nos tanques.", "detailsEs": "Uso portátil para controles en estanques.",
+      "src": "images/oximetro-portatil.jpeg", "alt": "Oxímetro portátil OxiLife Fish", "gallery": [],
+      "price": null, "salePrice": null, "stock": null, "lowStock": null, "variations": [],
+      "specifications": [{"label":"Medições","value":"Oxigênio dissolvido, temperatura e saturação","labelEs":"Mediciones","valueEs":"Oxígeno disuelto, temperatura y saturación"},{"label":"Uso","value":"Portátil, para checagens nos tanques","labelEs":"Uso","valueEs":"Portátil, para controles en estanques"}],
+      "seoTitle": "Oxímetro portátil OxiLife Fish | Eletrotech", "seoDescription": "Oxímetro portátil para medição manual de oxigênio dissolvido, temperatura e saturação em tanques. Conheça o equipamento e consulte a Eletrotech."
+    },
+    {
+      "id": "product-5", "slug": "painel-da-sonda", "active": true, "order": 5, "featured": false,
+      "name": "Painel da sonda", "nameEs": "Tablero de sonda", "category": "oxilife", "brand": "OxiLife Fish", "model": "", "sku": "",
+      "description": "Monitoramento e controle de aeração para piscicultura.", "descriptionEs": "Monitoreo y control de aireación para piscicultura.",
+      "details": "Até 3 sondas e 4 grupos de aeradores, conforme a configuração.", "detailsEs": "Hasta 3 sondas y 4 grupos de aireadores, según la configuración.",
+      "src": "images/painel-sonda-3.jpeg", "alt": "Painel da sonda OxiLife Fish", "gallery": ["images/painel-sonda-hero.jpeg", "images/painel-sonda-campo.jpeg"],
+      "price": null, "salePrice": null, "stock": null, "lowStock": null, "variations": [],
+      "specifications": [{"label":"Sondas","value":"Até 3, conforme a configuração","labelEs":"Sondas","valueEs":"Hasta 3, según la configuración"},{"label":"Grupos de aeradores","value":"Até 4, conforme a configuração","labelEs":"Grupos de aireadores","valueEs":"Hasta 4, según la configuración"}],
+      "seoTitle": "Painel da sonda OxiLife Fish | Eletrotech", "seoDescription": "Painel OxiLife Fish para monitoramento e controle de aeração na piscicultura. Consulte a configuração de sondas e grupos de aeradores."
+    },
+    {
+      "id": "product-6", "slug": "alarme-para-piscicultura", "active": true, "order": 6, "featured": false,
+      "name": "Alarme para piscicultura", "nameEs": "Alarma para piscicultura", "category": "oxilife", "brand": "OxiLife Fish", "model": "", "sku": "",
+      "description": "Sistema de alerta para acompanhar ocorrências nos tanques.", "descriptionEs": "Sistema de alertas para supervisar eventos en estanques.",
+      "details": "Conexão sem fio e Wi-Fi. Consulte os requisitos de instalação.", "detailsEs": "Conexión inalámbrica y Wi-Fi. Consulte los requisitos de instalación.",
+      "src": "images/alarme-esquema.svg", "alt": "Ilustração do sistema de alerta; consulte a foto do equipamento", "illustration": true, "gallery": [],
+      "price": null, "salePrice": null, "stock": null, "lowStock": null, "variations": [],
+      "specifications": [{"label":"Conexão","value":"Sem fio e Wi-Fi; requisitos sob consulta","labelEs":"Conexión","valueEs":"Inalámbrica y Wi-Fi; requisitos bajo consulta"}],
+      "seoTitle": "Alarme para piscicultura OxiLife Fish | Eletrotech", "seoDescription": "Sistema de alerta para acompanhar ocorrências nos tanques. Consulte requisitos de instalação e conexão do alarme para piscicultura."
+    }
+  ]
+}
