@@ -30,3 +30,10 @@ Abra `index.html` diretamente no navegador. Não é necessário instalar depend�
 - `contato.html`: formulário e canais de contato.
 
 Mais detalhes estão em `docs/APRESENTACAO.md` e `docs/MUDANCAS.md`.
+
+## Interface administrativa
+
+Abra `admin/index.html` pelo Live Server ou `/admin/` na hospedagem para acessar
+a interface de preparação. Ela lê os conteúdos atuais e permite editar prévias
+e exportar rascunhos. O backend será desenvolvido depois: ainda não há login,
+persistência ou publicação de alterações. Consulte [admin/README.md](admin/README.md).
