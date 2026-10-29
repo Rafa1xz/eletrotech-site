@@ -1,10 +1,10 @@
-# Eletrotech — direção visual da página inicial
+# Eletrotech — direção visual do site público
 
 Direção escolhida pelo proprietário: organização equilibrada inspirada na clareza, tipografia, espaçamento e contenção de movimento de Apple.com. A aplicação é original e conserva a marca e o conteúdo da Eletrotech.
 
 ## Escopo
 
-A página inicial usa `css/home.css`, carregado depois dos estilos compartilhados. As páginas internas conservam sua apresentação existente. Não alterar o catálogo, as rotas ou a integração Sanity por consequência de uma mudança visual.
+A página inicial usa `css/home.css`, carregado depois dos estilos compartilhados. As páginas internas usam `css/pages.css` e seguem a mesma base neutra, azul de ação e tipografia de sistema, com organização própria para catálogo, formulário e detalhes de produto. Não alterar o catálogo, as rotas ou a integração Sanity por consequência de uma mudança visual.
 
 ## Composição
 
@@ -36,4 +36,14 @@ A página inicial usa `css/home.css`, carregado depois dos estilos compartilhado
 
 ## Implementação
 
-Tokens e regras estão limitados a `.home-page`. A gestão do conteúdo e a publicação automática permanecem no Sanity/GitHub Actions.
+`css/home.css` limita suas regras a `.home-page`. `css/pages.css` é carregado somente nas páginas internas, inclusive pelo gerador de produtos e portfólio, para persistir a direção nas próximas publicações do Sanity. A gestão do conteúdo e a publicação automática permanecem no Sanity/GitHub Actions.
+
+## Páginas internas
+
+- Aberturas claras, breadcrumb legível e um título dominante; imagens reais com legendas secundárias.
+- Catálogo: separar introdução e controles, com filtro ativo em azul e resultados em cartões neutros. Não substituir nem ocultar os estados de busca vazia ou filtros ativos.
+- Serviços e processo: títulos claros, sequência numerada nas etapas e preparação do orçamento como conteúdo de apoio.
+- Contato: formulário principal, alternativas de contato secundárias, campos de 48 px e mensagens de validação preservadas. No celular, o WhatsApp fica compacto enquanto um campo recebe foco.
+- OxiLife: marca subordinada ao título, imagem real do painel e capacidades com suas ressalvas existentes.
+- Produtos: galeria, título, disponibilidade e orçamento precedem informações técnicas e relacionados; imagens de equipamento não são recortadas pela galeria.
+- Portfólio: fotos e títulos lideram; manter ampliação e legenda.

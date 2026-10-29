@@ -81,7 +81,7 @@ function shell(p,main,available){
   ${p.src?`<meta property="og:image" content="${new URL(p.src,base).href}">`:''}
   ${available?'':'<meta name="robots" content="noindex,follow">'}
   <meta name="theme-color" content="#0B1425"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/styles.css"><link rel="stylesheet" href="css/industrial.css">
+  <link rel="stylesheet" href="css/styles.css"><link rel="stylesheet" href="css/industrial.css"><link rel="stylesheet" href="css/pages.css">
   <script src="js/site-config.js" defer></script><script src="js/i18n.js" defer></script><script src="js/script.js" defer></script><script src="js/gallery.js" defer></script>
   ${available?`<script type="application/ld+json">${json(structured)}</script>`:''}
   <script type="application/ld+json">${json(breadcrumb)}</script>
