@@ -11,6 +11,7 @@ A orientação do proprietário foi analisar o site inteiro, sem uma lista de re
 1. **WhatsApp cobria conteúdo com movimento reduzido.** O JavaScript expandia o botão automaticamente e o CSS fixava a largura de 184/205 px; sair com o mouse não o recolhia nesse modo. O estado inicial agora é compacto e o texto só abre por hover/foco. O recolhimento funciona também com movimento reduzido. O efeito solicitado permanece como pontos de digitação no ícone e texto digitado na interação.
 2. **Seta da página atual invisível no menu mobile.** O tema claro recebeu uma seta branca herdada. A seta agora herda a cor do próprio link.
 3. **Cabeçalho desalinhado em larguras acima de 1280 px.** A soma da marca, navegação e ações ultrapassava seu contêiner em aproximadamente 18 px, embora não causasse rolagem horizontal. Dimensões e altura do cabeçalho foram ajustadas; os limites reais do contêiner foram verificados.
+4. **Possível mistura de versões por cache.** O servidor público responde `Cache-Control: max-age=600` nos arquivos de interface. A preparação da publicação agora acrescenta uma revisão baseada no conteúdo às URLs de CSS/JS, inclusive nas páginas individuais. Isso faz o HTML atualizado requisitar a versão correspondente dos arquivos, sem desativar o cache. O teste de pacote verifica revisões estáveis, mudança após edição e caminhos relativos de produtos.
 
 ## Alterações de estrutura e apresentação
 
