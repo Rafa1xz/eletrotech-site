@@ -1,5 +1,7 @@
 # Auditoria e ajuste de hierarquia da página inicial
 
+> Registro da revisão anterior. A direção visual foi posteriormente atualizada por solicitação do proprietário; consulte `DESIGN.md` e `css/home.css` para a versão atual, com superfícies neutras, azul de ação e vídeo de aquário na abertura.
+
 Data: 28/10/2026. Escopo confirmado: página inicial da Eletrotech, mantendo conteúdo, identidade e funcionalidades. Implementação em `index.html` e regras restritas a `.home-page` em `css/industrial.css`.
 
 ## Resultado
