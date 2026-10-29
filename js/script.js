@@ -226,14 +226,19 @@
       const iconWrap = document.createElement('span');
       const label = document.createElement('span');
       const cursor = document.createElement('span');
+      const typingDots = document.createElement('span');
 
       typedText = document.createElement('span');
       iconWrap.className = 'ww-float-whatsapp__icon';
       label.className = 'ww-float-whatsapp__label';
       typedText.className = 'ww-float-whatsapp__typed';
       cursor.className = 'ww-float-whatsapp__cursor';
+      typingDots.className = 'ww-float-whatsapp__dots';
+      typingDots.setAttribute('aria-hidden', 'true');
+      for (let index = 0; index < 3; index++) typingDots.append(document.createElement('span'));
 
       if (originalIcon) iconWrap.append(originalIcon);
+      iconWrap.append(typingDots);
       label.setAttribute('aria-hidden', 'true');
       cursor.setAttribute('aria-hidden', 'true');
       label.append(typedText, cursor);
@@ -247,6 +252,7 @@
       button.classList.remove('is-typing');
     }
     function collapseAndRestart() {
+      if (button.matches(':hover, :focus-visible')) return;
       button.classList.remove('is-expanded', 'is-typing');
       later(() => { typedText.textContent = ''; }, 480);
     }
@@ -254,7 +260,7 @@
       const value = contactLabel();
       if (index >= value.length) {
         button.classList.remove('is-typing');
-        later(collapseAndRestart, 3300);
+        if (!button.matches(':hover, :focus-visible')) later(collapseAndRestart, 3300);
         return;
       }
       typedText.textContent = value.slice(0, index + 1);
@@ -279,11 +285,15 @@
       }
       later(startTypingCycle, 1200);
     }
+    function revealLabel() {
+      if (reducedMotion.matches) showFullLabel();
+      else if (!button.classList.contains('is-expanded')) startTypingCycle();
+    }
 
     button.dataset.contactEnhanced = 'true';
     renderContent();
-    button.addEventListener('mouseenter', showFullLabel);
-    button.addEventListener('focus', showFullLabel);
+    button.addEventListener('mouseenter', revealLabel);
+    button.addEventListener('focus', revealLabel);
     button.addEventListener('mouseleave', () => {
       if (!button.matches(':focus-visible') && !reducedMotion.matches) {
         clearTimers();

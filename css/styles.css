@@ -1644,7 +1644,47 @@ form .form-note {
   height: 1.05em;
   margin-left: 3px;
   background: rgba(255,255,255,.9);
+  opacity: 0;
+}
+.is-typing .ww-float-whatsapp__cursor {
   animation: ww-whatsapp-cursor 720ms steps(1,end) infinite;
+}
+.ww-float-whatsapp__dots {
+  position: absolute;
+  top: 5px;
+  right: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 26px;
+  height: 17px;
+  border-radius: 8px 8px 8px 2px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  opacity: 0;
+  transform: translateY(3px) scale(.85);
+  transition: opacity 160ms ease, transform 160ms ease;
+  pointer-events: none;
+}
+.ww-float-whatsapp__dots > span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--whatsapp-dark);
+}
+.is-typing .ww-float-whatsapp__dots {
+  opacity: 1;
+  transform: none;
+}
+.is-typing .ww-float-whatsapp__dots > span {
+  animation: ww-whatsapp-typing-dot 660ms ease-in-out infinite;
+}
+.ww-float-whatsapp__dots > span:nth-child(2) { animation-delay: 110ms; }
+.ww-float-whatsapp__dots > span:nth-child(3) { animation-delay: 220ms; }
+@keyframes ww-whatsapp-typing-dot {
+  0%, 60%, 100% { transform: translateY(0); opacity: .55; }
+  30% { transform: translateY(-3px); opacity: 1; }
 }
 .floating-contact.ww-whatsapp-contact.is-typing .ww-float-whatsapp__icon svg {
   animation: ww-whatsapp-icon-wiggle 620ms ease-in-out;
