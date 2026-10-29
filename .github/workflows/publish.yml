@@ -3,6 +3,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '2-57/5 * * * *'
 permissions:
   contents: read
 concurrency:
@@ -11,25 +13,45 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.content.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - name: Sincronizar conteúdo publicado do Sanity
+        env:
+          SANITY_PROJECT_ID: ${{ vars.SANITY_PROJECT_ID }}
+          SANITY_DATASET: ${{ vars.SANITY_DATASET }}
+          SANITY_API_READ_TOKEN: ${{ secrets.SANITY_API_READ_TOKEN }}
+        run: node scripts/sync-sanity.mjs
+      - name: Verificar mudanças e preservar URLs já publicadas
+        id: content
+        env:
+          PUBLISHED_SITE_URL: https://rafa1xz.github.io/eletrotech-site/
+          FORCE_PUBLISH: ${{ github.event_name != 'schedule' }}
+        run: node scripts/check-publication.mjs
       - name: Gerar catálogo, páginas individuais e sitemap
+        if: steps.content.outputs.changed == 'true'
         run: node scripts/build-products.mjs
       - name: Validar publicação e URLs estáveis
-        run: node --test qa/scripts/test-publication.mjs
+        if: steps.content.outputs.changed == 'true'
+        run: node --test qa/scripts/test-publication.mjs qa/scripts/test-sanity.mjs
       - name: Validar HTML e links locais
+        if: steps.content.outputs.changed == 'true'
         shell: pwsh
         run: ./qa/scripts/static-review.ps1
       - name: Preparar arquivos públicos
+        if: steps.content.outputs.changed == 'true'
         run: node scripts/prepare-site.mjs
       - uses: actions/upload-pages-artifact@v3
+        if: steps.content.outputs.changed == 'true'
         with:
           path: _site
   deploy:
     needs: build
+    if: needs.build.outputs.changed == 'true'
     runs-on: ubuntu-latest
     permissions:
       pages: write

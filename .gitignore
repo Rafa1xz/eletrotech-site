@@ -1,3 +1,11 @@
 qa/temp/
 dist/*.zip
 _site/
+node_modules/
+studio/dist/
+studio/.sanity/
+.env
+.env.*
+!.env.example
+!**/.env.example
+data/sanity-import.ndjson

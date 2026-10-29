@@ -37,7 +37,7 @@ O SVG do alarme continua claramente identificado como ilustração.
 ## Fonte única e publicação
 
 `data/products.json` é a fonte para o catálogo, os cards OxiLife, os relacionados,
-as páginas individuais e os produtos exibidos no painel. As fotos permanecem em
+as páginas individuais. O Sanity pode atualizar essa fonte durante o build. As fotos permanecem em
 `images/`. `data/site.json` fornece origem canônica e WhatsApp para os produtos e
 gera `js/site-config.js`, usado pelos contatos dinâmicos e formulário do site.
 
@@ -69,23 +69,11 @@ O fluxo OxiLife apresenta as quatro etapas existentes com conexão visual em
 desktop/mobile. Os equipamentos usam os mesmos dados do catálogo e levam às
 páginas individuais. Não há painel de sensores nem indicadores simulados.
 
-## Integração administrativa: pendência explícita
+## Integração de conteúdo
 
-O backend continua com o colega do grupo, conforme instrução do proprietário.
-O painel lê os dados publicados, possui os novos campos e exporta rascunhos
-estruturados, mas **não autentica, não persiste edições no servidor e não publica
-através de um botão**. Recarregar descarta as prévias. Não há upload persistente.
-
-Para completar os itens 4.1 e 9 do requisito relacionados a CMS, a API precisa
-validar/autenticar/gravar os dados e produzir o JSON público com os mesmos IDs.
-Depois deve acionar uma publicação autenticada. O token de GitHub deve ficar
-somente no backend. A publicação estática atual já cria/atualiza as páginas
-automaticamente quando essa fonte chega ao repositório. O guia detalhado está em
-`docs/INTEGRACAO-BACKEND.md`; o JSON de rascunho não é uma API pronta.
-
-O gerador atual aceita fotos locais em `images/`. A futura publicação deve
-transferir as mídias aprovadas para esse diretório antes de gerar as páginas,
-ou adaptar explicitamente a validação para o armazenamento escolhido pela equipe.
+O painel próprio foi removido e substituído pelo Sanity Studio. Consulte
+[SANITY.md](SANITY.md) para criação do projeto, importação, configuração e publicação.
+A conta foi conectada, o projeto `zr5fcto8` foi criado e os seis produtos foram importados no dataset `production`.
 
 ## Validações
 
@@ -95,7 +83,7 @@ ou adaptar explicitamente a validação para o armazenamento escolhido pela equi
 - Novas páginas: 35 combinações de página/largura (portfólio + seis produtos em
   cinco larguras), sem overflow; SEO, mensagem de produto e conteúdo sem JS.
 - Galeria: navegação por setas, Escape e retorno de foco; orçamento em espanhol.
-- Painel: 40 combinações, formulários e exportação de dados estruturados.
+- Histórico: o antigo painel foi validado em 40 combinações antes de ser removido.
 - Publicação: geração determinística; novo produto; edição; preço/variação/SKU;
   texto com HTML escapado; desativação; remoção com URL preservada; bloqueio de
   alteração de slug. Dados artificiais usados somente em cópia temporária do teste.
@@ -103,9 +91,8 @@ ou adaptar explicitamente a validação para o armazenamento escolhido pela equi
 
 Esses testes usam Edge headless e não substituem testes em celulares físicos,
 leitor de tela, auditoria completa de contraste ou indexação real no buscador.
-Autenticação, banco, uploads e API não foram testados porque ainda não existem.
+A leitura real do Sanity e o build foram validados após conectar a conta; novos uploads e publicação remota ainda não foram exercitados.
 
 Comandos: `node --test qa/scripts/test-publication.mjs`,
 `node qa/scripts/review-redesign.mjs`,
-`powershell -File qa/scripts/static-review.ps1` e
-`powershell -File qa/scripts/review-admin.ps1` (requer servidor local na porta 5500).
+`powershell -File qa/scripts/static-review.ps1`.

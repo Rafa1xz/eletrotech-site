@@ -1,0 +1,15 @@
+{
+  "name": "eletrotech-site",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/sync-sanity.mjs && node scripts/build-products.mjs && node scripts/prepare-site.mjs",
+    "test": "node --test qa/scripts/test-publication.mjs qa/scripts/test-sanity.mjs",
+    "studio": "npm --prefix studio run dev",
+    "studio:build": "npm --prefix studio run build",
+    "sanity:seed": "node scripts/export-sanity.mjs",
+    "sanity:sync": "node scripts/sync-sanity.mjs"
+  }
+}
