@@ -279,11 +279,14 @@
     }
     function scheduleInitialCycle() {
       clearTimers();
-      if (reducedMotion.matches) {
-        showFullLabel();
-        return;
-      }
-      later(startTypingCycle, 1200);
+      button.classList.remove('is-expanded', 'is-typing');
+      typedText.textContent = contactLabel();
+      if (reducedMotion.matches) return;
+      // Indicate typing without covering page content with an automatic banner.
+      later(() => {
+        button.classList.add('is-typing');
+        later(() => button.classList.remove('is-typing'), 1800);
+      }, 1200);
     }
     function revealLabel() {
       if (reducedMotion.matches) showFullLabel();
@@ -295,13 +298,13 @@
     button.addEventListener('mouseenter', revealLabel);
     button.addEventListener('focus', revealLabel);
     button.addEventListener('mouseleave', () => {
-      if (!button.matches(':focus-visible') && !reducedMotion.matches) {
+      if (!button.matches(':focus-visible')) {
         clearTimers();
         later(collapseAndRestart, 900);
       }
     });
     button.addEventListener('blur', () => {
-      if (!button.matches(':hover') && !reducedMotion.matches) {
+      if (!button.matches(':hover')) {
         clearTimers();
         later(collapseAndRestart, 500);
       }

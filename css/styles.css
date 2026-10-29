@@ -20,7 +20,7 @@
   --whatsapp-dark: #128c45;
   --radius: 18px;
   --max: 1280px;
-  --header-height: 88px;
+  --header-height: 72px;
   --space-xs: .5rem;
   --space-sm: .75rem;
   --space-md: 1rem;
@@ -262,12 +262,12 @@ svg.fa-icon {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-md);
-  min-height: 36px;
+  min-height: 28px;
 }
 .topbar a {
   display: inline-flex;
   align-items: center;
-  min-height: 36px;
+  min-height: 28px;
 }
 .site-header {
   position: sticky;
@@ -285,13 +285,13 @@ svg.fa-icon {
   display: flex;
   align-items: center;
   gap: 22px;
-  min-height: 88px;
+  min-height: 72px;
 }
 .brand {
-  flex: 0 0 178px;
+  flex: 0 0 156px;
 }
 .brand img {
-  width: 178px;
+  width: 156px;
   height: auto;
 }
 #main-nav {
@@ -1836,10 +1836,10 @@ form .form-note {
 }
 @media (max-width:1040px) {
   :root {
-    --header-height: 78px;
+    --header-height: 72px;
   }
   .nav-shell {
-    min-height: 78px;
+    min-height: 72px;
     gap: 12px;
   }
   .brand {
@@ -1936,7 +1936,7 @@ form .form-note {
     color: #fff;
   }
   #main-nav>a[aria-current]::after {
-    color: #fff;
+    color: currentColor;
   }
   .nav-panel-label {
     display: block;
@@ -2027,6 +2027,7 @@ form .form-note {
   :root {
     --header-height: 72px;
   }
+  .topbar { display: none; }
   .wrap {
     width: calc(100% - 40px);
   }
@@ -2051,10 +2052,10 @@ form .form-note {
     gap: var(--space-xs);
   }
   .brand {
-    flex-basis: 130px;
+    flex-basis: 116px;
   }
   .brand img {
-    width: 130px;
+    width: 116px;
   }
   .header-actions {
     gap: 6px;
@@ -2439,11 +2440,7 @@ form .form-note {
     transition: none !important;
     animation: none !important;
   }
-  .floating-contact.ww-whatsapp-contact {
-    width: 205px;
-  }
   .floating-contact.ww-whatsapp-contact .ww-float-whatsapp__label {
-    opacity: 1;
     transform: none;
   }
   .floating-contact.ww-whatsapp-contact .ww-float-whatsapp__cursor {
@@ -2451,11 +2448,6 @@ form .form-note {
   }
   .hero-video {
     display: none;
-  }
-}
-@media (max-width:680px) and (prefers-reduced-motion:reduce) {
-  .floating-contact.ww-whatsapp-contact {
-    width: 184px;
   }
 }
 @media (forced-colors:active) {
