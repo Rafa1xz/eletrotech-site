@@ -80,6 +80,7 @@ main .eyebrow { display: none; }
 .filter-btn { min-height: 44px; padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: var(--soft); }
 .filter-btn[aria-pressed=true] { color: #08111f; background: var(--accent); border-color: var(--accent); }
 .filter-count { color: inherit; background: #0000000c; }
+.filter-btn[aria-pressed=true] .filter-count { color: #08111f; background: #0000000c; }
 .catalog-search { background: var(--soft); border-radius: 10px; }
 .catalog-search input { font: inherit; color: var(--ink); }
 .product-grid { gap: 24px; }
