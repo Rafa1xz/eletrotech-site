@@ -2,14 +2,22 @@
   "name": "eletrotech-site",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=24" },
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "dev": "node scripts/serve.mjs",
-    "build": "node scripts/sync-sanity.mjs && node scripts/build-products.mjs && node scripts/prepare-site.mjs",
-    "test": "node --test qa/scripts/test-publication.mjs qa/scripts/test-sanity.mjs",
+    "build": "node scripts/sync-sanity.mjs && node scripts/render-content.mjs && node scripts/build-products.mjs && node scripts/prepare-site.mjs",
+    "test": "node --test qa/scripts/test-publication.mjs qa/scripts/test-sanity.mjs qa/scripts/test-cms.mjs",
     "studio": "npm --prefix studio run dev",
     "studio:build": "npm --prefix studio run build",
     "sanity:seed": "node scripts/export-sanity.mjs",
-    "sanity:sync": "node scripts/sync-sanity.mjs"
+    "sanity:sync": "node scripts/sync-sanity.mjs",
+    "cms:render": "node scripts/render-content.mjs",
+    "cms:seed": "node scripts/export-cms.mjs",
+    "cms:bootstrap": "node scripts/export-cms.mjs && npm --prefix studio run cms:bootstrap"
+  },
+  "devDependencies": {
+    "cheerio": "^1.1.2"
   }
 }

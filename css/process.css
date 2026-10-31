@@ -1,0 +1,60 @@
+/* Process page proposal; does not affect home or generated portfolio. */
+body.process-page .wrap { width: min(1200px,calc(100% - 48px)); }
+body.process-page .page-intro { padding: 32px 0; background: linear-gradient(110deg,#e8f3ff,#f4f9ff); }
+body.process-page .intro-layout { display: grid; grid-template-columns: 1fr 1.05fr; gap: 40px; align-items: center; }
+body.process-page .breadcrumb { margin-bottom: 26px; font-size: 12px; }
+body.process-page .intro-content>.eyebrow { display: block; margin: 0 0 16px; color: #aa4708; font-size: 11px; font-weight: 650; letter-spacing: .12em; }
+body.process-page .intro-content>.eyebrow::before { display: none; }
+body.process-page .page-intro h1 { color: #102c4d; max-width: none; font-size: clamp(34px,3.5vw,48px); line-height: 1.1; font-weight: 750; }
+body.process-page .intro-copy { margin-top: 22px; color: #526174; font-size: 17px; line-height: 1.65; }
+body.process-page .process-primary,body.process-page .process-aside .btn { margin-top: 26px; min-height: 52px; padding: 14px 24px; border-radius: 9px; color: #102337; background: #ff8b32; border-color: #ff8b32; box-shadow: none; font-size: 14px; }
+body.process-page .intro-visual { position: relative; margin: 0; background: transparent; border: 0; box-shadow: none; }
+body.process-page .intro-visual img { display: block; width: 100%; height: 360px; object-fit: cover; border-radius: 18px; }
+body.process-page .intro-visual figcaption { position: absolute; bottom: 10px; right: 10px; margin: 0; padding: 4px 8px; background: #fffffff0; border-radius: 5px; color: #526174; font-size: 10px; }
+body.process-page .page-intro+.section { padding-block: 56px 36px; }
+body.process-page .section-heading { margin-bottom: 36px; }
+body.process-page .section-heading>div { max-width: none; width: 100%; }
+body.process-page .section-heading .eyebrow { display: none; }
+body.process-page .section-heading h2 { color: #102c4d; font-size: clamp(28px,3vw,38px); max-width: none; }
+body.process-page .process-layout { display: grid; grid-template-columns: minmax(0,1.45fr) minmax(0,1fr); gap: 48px; align-items: start; }
+body.process-page .process-steps { display: grid; grid-template-columns: 1fr; gap: 0; margin: 0; padding: 0; list-style: none; }
+body.process-page .process-steps .step { position: relative; display: grid; grid-template-columns: 120px minmax(0,1fr); column-gap: 20px; padding: 0 0 36px; border: 0; background: transparent; box-shadow: none; }
+body.process-page .process-steps .step:last-child { padding-bottom: 0; }
+body.process-page .process-steps .step:not(:last-child)::after { content: ''; position: absolute; left: 103px; top: 30px; bottom: -2px; width: 1px; background: #b9cde0; }
+body.process-page .process-marker { grid-column: 1; grid-row: 1/3; display: flex; gap: 20px; align-items: flex-start; position: relative; }
+body.process-page .process-icon { display: grid; place-items: center; flex: 0 0 68px; width: 68px; height: 68px; background: #eaf4ff; border-radius: 50%; color: #102c4d; }
+body.process-page .process-icon svg { width: 34px; height: 34px; stroke-width: 1.7; }
+body.process-page .process-steps .step-num { position: relative; z-index: 1; flex: 0 0 32px; display: grid; place-items: center; width: 32px; height: 32px; margin: 2px 0 0; padding: 0; color: #102337; background: #ff8b32; border-radius: 50%; font-size: 12px; font-weight: 700; box-shadow: none; }
+body.process-page .process-steps h3 { grid-column: 2; margin: 3px 0 10px; color: #102c4d; font-size: 21px; line-height: 1.25; }
+body.process-page .process-steps p { grid-column: 2; margin: 0; color: #526174; font-size: 15px; line-height: 1.7; }
+body.process-page .process-aside { position: static; padding: 32px; background: #eaf4ff; border: 1px solid #e1edf8; border-radius: 16px; box-shadow: none; }
+body.process-page .process-aside .eyebrow { display: block; color: #aa4708; font-size: 11px; letter-spacing: .12em; }
+body.process-page .process-aside .eyebrow::before { display: none; }
+body.process-page .process-aside h3 { color: #102c4d; font-size: 26px; margin-block: 16px 12px; }
+body.process-page .process-aside>p:not(.eyebrow) { color: #526174; font-size: 14px; }
+body.process-page .process-aside .check-list { list-style: none; margin: 26px 0 0; padding: 0; }
+body.process-page .process-aside li { display: flex; align-items: flex-start; gap: 12px; padding: 0; margin: 0 0 18px; color: #526174; font-size: 14px; line-height: 1.65; }
+body.process-page .process-aside li::before { content: '\2713'; position: static; transform: none; flex: 0 0 24px; display: grid; place-items: center; width: 24px; height: 24px; border: 0; border-radius: 50%; background: #102c4d; color: #fff; font-size: 14px; }
+body.process-page .process-aside .btn { width: 100%; margin-top: 10px; }
+body.process-page .process-services-link { margin-top: 28px; color: #174686; font-size: 14px; }
+body.process-page .process-services-link>span:last-child { color: #aa4708; }
+body.process-page .process-supplement { margin-bottom: 30px; }
+body.process-page .process-supplement>details { border: 1px solid #dce6ef; border-radius: 12px; padding: 16px 20px; }
+body.process-page .process-supplement summary { cursor: pointer; min-height: 30px; color: #174686; font-size: 14px; font-weight: 600; }
+body.process-page .process-supplement .wrap { width: 100%; }
+body.process-page .process-supplement .section { padding-block: 28px; }
+body.process-page .process-contact { padding: 0 0 40px; background: #fff; }
+body.process-page .process-contact .cta-inner { position: relative; isolation: isolate; overflow: hidden; display: grid; grid-template-columns: 1.5fr 1fr; gap: 36px; align-items: center; padding: 40px; background: #102c4d; border: 0; border-radius: 18px; box-shadow: none; }
+body.process-page .process-contact .cta-inner::before { content: none; }
+body.process-page .process-contact .cta-inner::after { content: ''; display: block; position: absolute; inset: 0 0 0 auto; z-index: -1; width: 40%; opacity: .4; background: url('../assets/contact-circuit.svg') right center/cover no-repeat; }
+body.process-page .process-contact .contact-kicker { display: none; }
+body.process-page .process-contact h2 { color: #fff; font-size: clamp(27px,3vw,38px); margin: 0; }
+body.process-page .process-contact p { color: #c1d4e5; font-size: 16px; margin: 16px 0 0; }
+body.process-page .contact-action { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+body.process-page .process-contact .btn-primary { background: #ff8b32; border-color: #ff8b32; color: #102337; border-radius: 10px; padding: 15px 24px; font-size: 14px; box-shadow: none; }
+body.process-page .process-contact .btn-primary::before { content: none; }
+body.process-page .process-contact .btn-primary svg { width: 23px; height: 23px; }
+body.process-page .process-contact small { color: #c1d4e5; font-size: 12px; }
+@media(max-width:1000px) { body.process-page .process-layout { grid-template-columns: minmax(0,1.25fr) minmax(0,1fr); gap: 28px; } body.process-page .process-aside { padding: 24px; } body.process-page .process-steps .step { grid-template-columns: 96px minmax(0,1fr); gap: 14px; } body.process-page .process-icon { flex-basis: 52px; width: 52px; height: 52px; } body.process-page .process-icon svg { width: 28px; height: 28px; } body.process-page .process-marker { gap: 12px; } body.process-page .process-steps .step:not(:last-child)::after { left: 79px; } body.process-page .process-steps h3 { font-size: 19px; } }
+@media(max-width:760px) { body.process-page .intro-layout,body.process-page .process-layout,body.process-page .process-contact .cta-inner { grid-template-columns: 1fr; } body.process-page .intro-visual img { height: 280px; } body.process-page .process-aside { margin-top: 8px; } body.process-page .process-contact .cta-inner { padding: 28px 24px; gap: 24px; } body.process-page .contact-action { align-items: flex-start; } }
+@media(max-width:380px) { body.process-page .wrap { width: calc(100% - 32px); } body.process-page .page-intro h1 { font-size: 32px; } body.process-page .process-steps .step { grid-template-columns: 76px minmax(0,1fr); gap: 12px; } body.process-page .process-icon { flex-basis: 40px; width: 40px; height: 40px; } body.process-page .process-icon svg { width: 24px; height: 24px; } body.process-page .process-marker { gap: 8px; } body.process-page .process-steps .step-num { flex-basis: 28px; width: 28px; height: 28px; } body.process-page .process-steps .step:not(:last-child)::after { left: 61px; } }

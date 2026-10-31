@@ -96,3 +96,15 @@ P?gina de servi?os reformulada: hero em duas colunas com foto real e CTA laranja
 Servi?os e produtos unificados em produtos.html (services-page combined-page), com menu ?nico, servi?os, cat?logo funcional e rodap? da home. servicos.html redireciona preservando query e ?ncoras. Gerador continua atualizando a grade de produtos e retira classes da p?gina unificada ao gerar detalhes. Busca do cabe?alho aponta para #catalogo.
 
 P?gina unificada refinada conforme representa??o: hero ?O servi?o certo. O equipamento ideal.?, dois atalhos principais com indica??o por rolagem, servi?os compactos em fundo azul-claro e cat?logo branco separado. Cat?logo completo preservado; processo e orienta??es acess?veis em details. Faixa OxiLife e CTA compactos; rodap? e logo oficial mantidos.
+
+Nova representa??o da p?gina unificada implementada em css/combined.css: hero com cena de oficina ilustrativa gerada por imagegen (images/servicos-produtos-oficina-ilustrativa.png; prompt: quadro aberto e motores azuis em oficina, sem marcas/textos), servi?os brancos e produtos horizontais com imagens contidas. Mantidos dados, pre?os, filtros, seis servi?os e seis produtos, logo e rodap? oficiais. Sem restaurar blocos removidos.
+
+P?gina Como trabalhamos: proposta implementada em css/process.css, abertura com foto ilustrativa de planejamento, timeline vertical com SVGs Lucide, quadro de prepara??o ao lado e contato navy/laranja. Hist?rico e FAQ preservados em bloco expans?vel. Logo oficial e rodap? da home mantidos. Imagem images/processo-planejamento-ilustrativo.png gerada por imagegen; prompt: m?os de t?cnico revisando planta el?trica em bancada com disjuntores e ferramentas, sem rosto/marca, cena ilustrativa.
+
+Rodap? atualizado: mesmo degrad? da abertura de servi?os/produtos, linear-gradient(105deg,#e4f1ff,#f4f9ff), em todas as p?ginas, mantendo textos azul-marinho. Substitui o fundo branco anterior.
+
+P?gina OxiLife Fish redesenhada em css/oxilife.css: hero navy com cena ilustrativa existente e painel aberto, tr?s etapas com ?cones Lucide, hist?rico preservado como nota, configura??o em campo antes dos equipamentos, tr?s produtos reais e CTA. Mantidas capacidades 3/4 com ressalva de configura??o, requisitos de conex?o, calibra??o e energia. Rodap? id?ntico ao da home, degrad? claro e borda reta.
+
+Contato redesenhado em css/contact.css: hero azul-claro com SVG Lucide decorativo, formul?rio ? esquerda e canais diretos ? direita, prepara??o em cart?o claro e links de explora??o. IDs, nomes, limites, valida??o e fluxo WhatsApp mantidos. Logo e rodap? da home preservados. Telefone/e-mail reais; sem promessas de prazo.
+
+V?deo da home: removido o limite antigo de 4,5 segundos e o estado finished. Fundo_Peixes.mp4 agora repete continuamente (autoplay/loop, mudo), pausa fora do banner/aba e retoma ao voltar; tenta novamente em foco, pageshow, retorno da conex?o e intera??o. Preservados movimento reduzido, economia de dados e imagem est?tica no celular.

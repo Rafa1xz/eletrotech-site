@@ -48,48 +48,39 @@
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const connection = navigator.connection;
     let visible = true;
-    let finished = false;
-    let failed = false;
     let playRequest = 0;
-    let remainingMotion = 4500;
-    let motionStarted = null;
-    let stopTimer;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.loop = video.dataset.videoLoop !== 'false';
+    video.playbackRate = Number(video.dataset.playbackRate) || .75;
 
     function updateVideo() {
       const request = ++playRequest;
-      const enabled = wideScreen.matches && !reducedMotion.matches && !connection?.saveData && !failed;
+      const enabled = video.dataset.videoEnabled !== 'false' && wideScreen.matches && !reducedMotion.matches && !connection?.saveData;
       video.hidden = !enabled;
       if (!enabled) {
         video.pause();
-        // A fonte não é conectada no celular ou quando o usuário prefere imagem fixa.
+        // Keep the static poster for small screens and motion/data preferences.
         if (video.hasAttribute('src')) { video.removeAttribute('src'); video.load(); }
-      } else if (!visible || document.hidden || finished) {
-        video.pause();
-      } else {
-        if (!video.hasAttribute('src')) video.src = video.dataset.src;
-        video.muted = true;
-        video.defaultMuted = true;
-        video.playbackRate = .75;
+        return;
+      }
+      if (!visible || document.hidden) { video.pause(); return; }
+      if (!video.hasAttribute('src')) video.src = video.dataset.src;
+      if (video.error) video.load();
+      if (video.paused) {
         video.play().catch(error => {
-          if (request === playRequest && error.name !== 'AbortError') { failed = true; updateVideo(); }
+          // A visibility change may cancel play; future lifecycle events retry.
+          if (request === playRequest && error.name !== 'AbortError') video.hidden = true;
         });
       }
     }
 
-    // Uma passagem curta termina automaticamente; o botão foi retirado a pedido.
-    video.addEventListener('playing', () => {
-      if (motionStarted !== null || finished) return;
-      motionStarted = performance.now();
-      stopTimer = setTimeout(() => { remainingMotion = 0; finished = true; video.pause(); }, remainingMotion);
-    });
-    video.addEventListener('pause', () => {
-      clearTimeout(stopTimer);
-      if (motionStarted !== null) remainingMotion = Math.max(0, remainingMotion - (performance.now() - motionStarted));
-      motionStarted = null;
-      if (!remainingMotion) finished = true;
-    });
-    video.addEventListener('error', () => { failed = true; updateVideo(); });
+    // Repeat continuously; pause only while the page or banner is out of view.
     document.addEventListener('visibilitychange', updateVideo);
+    window.addEventListener('pageshow', updateVideo);
+    window.addEventListener('focus', updateVideo);
+    window.addEventListener('online', updateVideo);
+    document.addEventListener('pointerdown', updateVideo, { passive: true });
     [wideScreen, reducedMotion].forEach(query => query.addEventListener('change', updateVideo));
     connection?.addEventListener?.('change', updateVideo);
     if ('IntersectionObserver' in window) {

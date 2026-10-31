@@ -1,0 +1,63 @@
+/* Contact proposal: existing form IDs, validation and WhatsApp behavior retained. */
+body.contact-page .wrap { width: min(1200px,calc(100% - 48px)); }
+body.contact-page .page-intro { padding: 34px 0 42px; background: linear-gradient(105deg,#e4f1ff,#f4f9ff); }
+body.contact-page .contact-hero-layout { display: grid; grid-template-columns: 1.65fr 1fr; gap: 48px; align-items: center; }
+body.contact-page .breadcrumb { margin-bottom: 24px; font-size: 12px; }
+body.contact-page .contact-hero-copy>.eyebrow { display: block; color: #aa4708; font-size: 11px; letter-spacing: .12em; margin-bottom: 14px; }
+body.contact-page .contact-hero-copy>.eyebrow::before { display: none; }
+body.contact-page .page-intro h1 { color: #102c4d; max-width: 22ch; font-size: clamp(32px,4vw,54px); line-height: 1.08; font-weight: 750; }
+body.contact-page .intro-copy { margin-top: 22px; max-width: 56ch; font-size: 18px; line-height: 1.6; color: #526174; }
+body.contact-page .contact-hero-art { position: relative; display: grid; place-items: center; min-height: 220px; color: #174686; }
+body.contact-page .contact-hero-art::before { content: ''; position: absolute; width: 220px; height: 220px; border-radius: 50%; background: #ffffff50; }
+body.contact-page .contact-hero-art svg { position: relative; width: 185px; height: 185px; stroke-width: .85; }
+body.contact-page .contact-art-accent { position: absolute; width: 30px; height: 4px; right: 24%; top: 7%; transform: rotate(-55deg); background: #f37216; border-radius: 4px; }
+body.contact-page main>.section { padding: 40px 0; background: #fff; }
+body.contact-page .contact-grid { display: grid; grid-template-columns: minmax(0,1.45fr) minmax(0,1fr); align-items: start; gap: 40px; }
+body.contact-page .contact-form-panel { padding: 32px; background: #fff; border: 1px solid #dfe7f0; border-radius: 16px; box-shadow: 0 8px 30px #102c4d05; }
+body.contact-page .contact-form-panel>.eyebrow { display: block; color: #aa4708; font-size: 11px; letter-spacing: .08em; margin-bottom: 14px; }
+body.contact-page .contact-form-panel>.eyebrow::before { display: none; }
+body.contact-page #quote-title { margin: 0 0 12px; color: #102c4d; font-size: 32px; }
+body.contact-page .contact-form-panel>p:not(.eyebrow) { color: #526174; font-size: 15px; line-height: 1.6; }
+body.contact-page #quote-form { margin-top: 24px; scroll-margin-top: 120px; }
+body.contact-page .form-required-note { color: #64748b; font-size: 11px; margin-bottom: 16px; }
+body.contact-page .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+body.contact-page .form-field { min-width: 0; margin-bottom: 20px; }
+body.contact-page .form-field label { display: block; color: #102c4d; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+body.contact-page .field-required { color: #aa4708; }
+body.contact-page .form-field input,body.contact-page .form-field select,body.contact-page .form-field textarea { width: 100%; max-width: 100%; min-width: 0; min-height: 48px; padding: 12px 14px; color: #102c4d; background: #fff; border: 1px solid #cfdae7; border-radius: 9px; font-size: 14px; box-shadow: none; }
+body.contact-page .form-field input::placeholder,body.contact-page .form-field textarea::placeholder { color: #77869a; opacity: 1; }
+body.contact-page .form-field textarea { min-height: 150px; resize: vertical; }
+body.contact-page .form-field input:focus,body.contact-page .form-field select:focus,body.contact-page .form-field textarea:focus { outline: 2px solid #174686; outline-offset: 2px; border-color: #174686; }
+body.contact-page .form-field [aria-invalid=true] { border-color: #b42318; }
+body.contact-page .field-error { color: #b42318; font-size: 12px; margin-top: 8px; }
+body.contact-page .field-meta { gap: 12px; color: #64748b; font-size: 11px; }
+body.contact-page .field-meta p { font-size: 11px; color: #64748b; }
+body.contact-page #quote-form>button[type=submit] { display: flex; width: 100%; min-height: 56px; padding: 15px 20px; border-radius: 10px; background: #ff8b32; border-color: #ff8b32; color: #102337; box-shadow: none; font-size: 14px; gap: 12px; }
+body.contact-page #quote-form>button[type=submit]::before { content: none; }
+body.contact-page #quote-form>button[type=submit] svg { width: 24px; height: 24px; flex-shrink: 0; }
+body.contact-page .form-note { margin-top: 14px; color: #64748b; font-size: 12px; line-height: 1.6; text-align: center; }
+body.contact-page #form-status { color: #174686; font-size: 13px; margin-top: 14px; }
+body.contact-page #prepared-message { width: 100%; white-space: normal; border-radius: 9px; font-size: 13px; }
+body.contact-page .contact-channels { min-width: 0; }
+body.contact-page #direct-contact-title { color: #102c4d; font-size: clamp(24px,2.3vw,30px); line-height: 1.2; margin: 10px 0 24px; }
+body.contact-page .contact-direct-links { display: grid; gap: 14px; }
+body.contact-page .contact-direct-links>a { display: flex; align-items: center; gap: 16px; min-width: 0; min-height: 70px; padding: 18px 22px; border: 1px solid #cfdae7; border-radius: 12px; color: #102c4d; font-size: 17px; font-weight: 600; }
+body.contact-page .contact-direct-links>a>span { min-width: 0; overflow-wrap: anywhere; }
+body.contact-page .contact-direct-links svg { width: 26px; height: 26px; flex-shrink: 0; }
+body.contact-page .contact-direct-links>a.contact-whatsapp { background: #0b773a; border-color: #0b773a; color: #fff; font-size: 16px; }
+body.contact-page .contact-whatsapp>span:last-child { margin-left: auto; }
+body.contact-page .contact-preparation { padding: 28px; margin-top: 26px; border-radius: 16px; background: linear-gradient(105deg,#e4f1ff,#f4f9ff); }
+body.contact-page .contact-kicker { margin: 0 0 12px; color: #aa4708; font-size: 11px; letter-spacing: .1em; font-weight: 650; }
+body.contact-page .contact-preparation h3 { margin: 0 0 22px; color: #102c4d; font-size: 28px; }
+body.contact-page .contact-preparation ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+body.contact-page .contact-preparation li { display: flex; align-items: flex-start; gap: 12px; color: #526174; font-size: 14px; line-height: 1.6; }
+body.contact-page .contact-preparation li::before { content: '\2713'; display: grid; place-items: center; flex: 0 0 22px; width: 22px; height: 22px; background: #174686; color: #fff; border-radius: 50%; font-size: 13px; }
+body.contact-page .contact-hours { border-top: 1px solid #cbdced; padding-top: 20px; margin-top: 24px; color: #526174; font-size: 12px; line-height: 1.65; }
+body.contact-page .contact-instagram { display: inline-flex; align-items: center; min-height: 44px; color: #174686; font-size: 13px; margin-top: 12px; }
+body.contact-page .contact-explore { display: grid; grid-template-columns: 1fr 1fr; padding: 24px 0 32px; margin-bottom: 16px; border-top: 1px solid #dfe7f0; }
+body.contact-page .contact-explore a { display: flex; align-items: center; justify-content: center; gap: 16px; min-height: 48px; color: #102c4d; font-size: 15px; font-weight: 600; }
+body.contact-page .contact-explore a+a { border-left: 1px solid #dfe7f0; }
+body.contact-page .contact-explore a>span:last-child { color: #aa4708; }
+@media(max-width:1000px) { body.contact-page .contact-grid { gap: 24px; grid-template-columns: minmax(0,1.25fr) minmax(0,1fr); } body.contact-page .contact-form-panel,body.contact-page .contact-preparation { padding: 24px; } body.contact-page .contact-direct-links>a { padding: 16px; font-size: 15px; gap: 12px; } }
+@media(max-width:760px) { body.contact-page .contact-grid { grid-template-columns: 1fr; gap: 32px; } body.contact-page .contact-hero-layout { grid-template-columns: 1fr; gap: 0; } body.contact-page .contact-hero-art { display: none; } body.contact-page .page-intro h1 { max-width: 24ch; } body.contact-page .contact-explore { grid-template-columns: 1fr; gap: 8px; } body.contact-page .contact-explore a+a { border-left: 0; } }
+@media(max-width:420px) { body.contact-page .wrap { width: calc(100% - 32px); } body.contact-page .contact-form-panel { padding: 22px 18px; } body.contact-page .form-row { grid-template-columns: 1fr; gap: 0; } body.contact-page #quote-form>button[type=submit] { font-size: 12px; padding-inline: 12px; gap: 8px; } body.contact-page .field-meta { flex-wrap: wrap; } body.contact-page .contact-direct-links>a.contact-whatsapp { font-size: 14px; } body.contact-page .contact-direct-links>a { font-size: 14px; } }

@@ -9,3 +9,5 @@ studio/.sanity/
 !.env.example
 !**/.env.example
 data/sanity-import.ndjson
+
+data/cms-import.ndjson

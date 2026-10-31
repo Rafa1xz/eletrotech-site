@@ -81,7 +81,7 @@ function shell(p,main,available){
   ${p.src?`<meta property="og:image" content="${new URL(p.src,base).href}">`:''}
   ${available?'':'<meta name="robots" content="noindex,follow">'}
   <meta name="theme-color" content="#0B1425"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/styles.css"><link rel="stylesheet" href="css/industrial.css"><link rel="stylesheet" href="css/pages.css"><link rel="stylesheet" href="css/reference-layout.css?v=006baf702a9c">
+  <link rel="stylesheet" href="css/styles.css"><link rel="stylesheet" href="css/industrial.css"><link rel="stylesheet" href="css/pages.css"><link rel="stylesheet" href="css/reference-layout.css?v=82b1c8c47a49">
   <script src="js/site-config.js" defer></script><script src="js/i18n.js" defer></script><script src="js/script.js" defer></script><script src="js/gallery.js" defer></script>
   ${available?`<script type="application/ld+json">${json(structured)}</script>`:''}
   <script type="application/ld+json">${json(breadcrumb)}</script>
@@ -131,6 +131,8 @@ for(const [id,slug] of Object.entries(routes)){
   await write(link(p),shell(p,main,!!p.active));
 }
 await write('data/product-routes.json',JSON.stringify(routes,null,2)+'\n');
+const managedPortfolio=await read('portfolio.html').catch(error=>{if(error.code==='ENOENT')return '';throw error;});
+if(!managedPortfolio.includes('data-cms-section')){
 let portfolio=await read('como-trabalhamos.html');
 portfolio=portfolio.replace('class="process-page"','class="portfolio-page"').replace(/ aria-current="page"/g,'');
 portfolio=portfolio.replace(/<main\b[^>]*>[\s\S]*?<\/main>/,await read('templates/portfolio-main.html'));
@@ -139,6 +141,7 @@ portfolio=portfolio.replace(/<meta (name="description"|property="og:description"
 portfolio=portfolio.replace(/<meta property="og:title"[^>]*>/,'<meta property="og:title" content="Projetos e equipamentos | Eletrotech Marechal">');
 portfolio=portfolio.replace('</head>',`<link rel="canonical" href="${new URL('portfolio.html',base).href}"><script src="js/gallery.js" defer></script></head>`);
 await write('portfolio.html',portfolio);
+}
 const urls=['index.html','servicos.html','produtos.html','como-trabalhamos.html','oxilife-fish.html','contato.html','portfolio.html',...active.map(link)];
 await write('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(path=>`  <url><loc>${new URL(path,base).href}</loc></url>`).join('\n')}\n</urlset>\n`);
 console.log(`Publicação estática: ${active.length} produtos ativos, ${Object.keys(routes).length} URLs preservadas.`);

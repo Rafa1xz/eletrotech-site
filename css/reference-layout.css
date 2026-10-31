@@ -40,8 +40,8 @@ body.home-page .hero-actions>.btn-primary:hover { background: linear-gradient(13
 body.home-page .hero-actions>.btn-light-outline { color: #fff; background: #ffffff0d; border: 1px solid #ffffff45; text-decoration: none; }
 body.home-page .hero-actions>.btn-light-outline:hover { background: #ffffff18; border-color: #ffffff90; text-decoration: none; }
 body.home-page .home-hero::after { content: ''; display: block; position: absolute; z-index: 3; inset: auto 0 -1px; height: 46px; opacity: 1; pointer-events: none; background: url("../assets/hero-wave.svg") center/100% 100% no-repeat; }
-body:is(.home-page, body) .site-footer { position: relative; margin: 0; padding: 90px 0 24px; background: #fff; color: #475569; border: 0; }
-body:is(.home-page, body) .site-footer::before { content: ''; position: absolute; z-index: 1; top: -1px; left: 0; right: 0; width: 100%; height: 50px; border: 0; border-radius: 0; box-shadow: none; background: url("../assets/footer-wave.svg") center/100% 100% no-repeat; pointer-events: none; }
+body:is(.home-page, body) .site-footer { position: relative; margin: 0; padding: 90px 0 24px; background: linear-gradient(105deg,#e4f1ff,#f4f9ff); color: #475569; border: 0; }
+body:is(.home-page, body) .site-footer::before { content: none; }
 body:is(.home-page, body) .site-footer::after { content: none; }
 body:is(.home-page, body) .footer-grid { grid-template-columns: 1.1fr .75fr 1fr; gap: 64px; }
 body:is(.home-page, body) .footer-brand { display: inline-block; padding: 0; background: transparent; }
@@ -457,3 +457,4 @@ body.combined-page .service-content { padding: 18px 20px; }
 @media(min-width:1200px) { body.combined-page .services-catalog .section-heading h2 { white-space: nowrap; } }
 @media(max-width:1000px) { body.combined-page .services-catalog .section-heading { grid-template-columns: 1fr; gap: 16px; } }
 @media(max-width:640px) { body.combined-page main>.page-intro>.wrap,body.combined-page .combined-navigation>.wrap,body.combined-page .services-catalog>.wrap,body.combined-page .combined-catalog>.wrap { width: calc(100% - 40px); } body.combined-page .intro-layout { grid-template-columns: 1fr; gap: 24px; } body.combined-page .intro-visual img { height: 260px; } body.combined-page .combined-section-link { gap: 8px; } body.combined-page .combined-section-link svg { width: 17px; height: 17px; } }
+[hidden] { display: none !important; }

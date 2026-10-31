@@ -1,64 +1,65 @@
-﻿# Sanity — instalação e publicação
+# Sanity — gerenciamento e publicação
 
-O painel de rascunhos foi removido. O Studio está instalado e conectado ao projeto **Eletrotech Marechal** (`zr5fcto8`), organização `oqf4kpjsl`, dataset público `production`. Os seis produtos e o documento de configurações foram importados. A sincronização real, a geração do site, os quatro testes e a compilação do Studio passaram.
+Projeto atual: **Eletrotech Marechal**, `mdb824ut`, organização `o9sh4d25p`, dataset público `production`. Criado na conta Google escolhida pelo usuário porque as contas autenticadas não tinham acesso ao projeto anterior. O projeto anterior não foi alterado.
 
-O site público permanece em HTML/CSS/JS. React é usado somente pelo Studio separado.
+Painel: https://eletrotech-marechal-loja.sanity.studio/
 
-## Conectar em outra máquina
+Foram importados seis produtos, seis serviços, seis páginas e as configurações atuais. O site público permanece em HTML/CSS/JS; React é usado somente pelo Studio separado.
 
-Com Node.js 24 instalado, na raiz:
+## Gerenciamento pelo lojista
 
-```powershell
-npm install --prefix studio
-cd studio
-npx sanity login
-cd ..
-```
+- Produtos: cadastrar, enviar fotos, editar traduções, preços, estoque, especificações e SEO. Preserve IDs e slugs já publicados; prefira desativar em vez de excluir.
+- Serviços: cadastrar, editar fotos e textos, definir ordem, ativar/desativar e escolher os destaques da home.
+- Páginas: textos PT/ES, títulos e descrições de busca, imagens e links dos modelos existentes. As seções podem ser reordenadas e ocultadas.
+- Banner da home: enviar vídeo MP4/WebM e imagem de capa, configurar repetição, velocidade e ativação. O vídeo respeita as preferências de movimento reduzido do visitante.
+- Configurações: logo, nome, WhatsApp, telefone, e-mail, Instagram, horários, texto e cores do rodapé.
 
-O login ocorre no navegador. Use a conta que tem acesso ao projeto existente; não é necessário criar outro projeto.
-
-Copie `.env.example` para `.env` e `studio/.env.example` para `studio/.env.local`. Preencha `zr5fcto8` nos campos de Project ID e use o dataset `production`. Nesta máquina os arquivos já estão configurados. Não envie tokens pelo chat nem os coloque em arquivos versionados.
-
-## Importação inicial já realizada
-
-Os comandos abaixo são referência para migração para outro dataset vazio. Não repita a importação no dataset atual para substituir edições.
-
-```powershell
-npm run sanity:seed
-cd studio
-npx sanity dataset import ../data/sanity-import.ndjson --dataset production
-cd ..
-npm run studio
-```
-
-A exportação contém seis produtos e o documento `site-settings`, com IDs e slugs originais. O comando de importação envia esses dados ao dataset. Importe uma vez; não use `--replace` para sobrescrever edições posteriores.
-
-As fotos locais continuam válidas. Para substituir uma foto, use o upload no Studio. O build baixa as imagens publicadas do CDN do Sanity para o site estático.
+O painel edita os modelos existentes. Novos tipos de layout, funcionalidades e páginas adicionais exigem alteração no código.
 
 ## Editar e publicar
 
-1. Abra https://eletrotech-marechal.sanity.studio/ e entre com sua conta.
-2. Edite o produto e clique em Publish. Rascunhos não entram no site.
-3. O GitHub Actions confere o conteúdo publicado a cada cinco minutos e publica o site quando encontra mudanças.
-4. Para antecipar a atualização, execute `Publicar site` em Actions. Para gerar uma cópia local, execute `npm run build`.
+1. Entre no painel com a conta que possui acesso ao novo projeto.
+2. Escolha Produtos, Serviços, uma página ou Configurações.
+3. Faça a alteração e clique em **Publish**. Rascunhos não aparecem no site.
+4. O GitHub Actions verifica o conteúdo publicado a cada cinco minutos e gera o site quando encontra mudanças. O agendamento pode atrasar. Para antecipar, execute **Publicar site** em Actions.
 
-As variáveis `SANITY_PROJECT_ID=zr5fcto8` e `SANITY_DATASET=production` estão configuradas no repositório `Rafa1xz/eletrotech-site`. Dataset público não exige token de leitura. Para dataset privado, adicione o secret `SANITY_API_READ_TOKEN` com permissão de leitura.
+As variáveis do repositório `Rafa1xz/eletrotech-site` foram atualizadas para `SANITY_PROJECT_ID=mdb824ut` e `SANITY_DATASET=production`. O dataset público dispensa token de leitura. Credenciais de edição não são incluídas no site.
 
-O Studio está hospedado em https://eletrotech-marechal.sanity.studio/ e exige login para editar. Para atualizar o código do Studio hospedado, execute `npm run deploy` dentro de `studio/` após o login. O ID da aplicação e o hostname estão registrados em `sanity.cli.js`.
+## Desenvolvimento
 
-A automação consulta somente conteúdo publicado, sem expor tokens no navegador nem exigir computador ligado. O agendamento do GitHub pode atrasar: cinco minutos é a frequência de verificação, não uma garantia de prazo. O GitHub desativa agendamentos de repositórios públicos após 60 dias sem atividade no repositório; se isso acontecer, reative o workflow em Actions. A execução manual continua disponível.
+Use Node.js 24. Na raiz:
 
-O workflow compara os JSON publicados antes de gerar o site. Sem mudanças, encerra sem deploy. O registro de URLs já publicado é recuperado em cada execução, preservando também os endereços dos produtos criados e removidos exclusivamente pelo Sanity.
+```powershell
+npm ci
+npm ci --prefix studio
+```
 
-## Escopo
+Configure `.env` com `SANITY_PROJECT_ID=mdb824ut` e `SANITY_DATASET=production`. Configure `studio/.env.local` com `SANITY_STUDIO_PROJECT_ID=mdb824ut` e `SANITY_STUDIO_DATASET=production`. Ambos são ignorados pelo Git.
 
-- Produtos: cadastro, imagens, traduções PT/ES, SEO, preço, promoção, estoque, variações e especificações.
-- Configurações: nome, URL, WhatsApp e e-mail usados pelo gerador e scripts de contato. Textos fixos nos HTML institucionais continuam nos arquivos.
-- Rotas existentes: o gerador bloqueia alteração/reutilização de slugs registrados. Use IDs únicos e preserve IDs e endereços publicados.
-- `active: false` mantém a página de indisponibilidade e retira o produto do catálogo e sitemap.
-- Novas URLs são preservadas no manifesto público e recuperadas antes de cada geração. Para builds locais, execute `node scripts/check-publication.mjs` antes do gerador para recuperar esse registro.
-- Catálogo vazio inesperado interrompe a sincronização. Para esvaziar intencionalmente, defina `SANITY_ALLOW_EMPTY=true`.
-- Falhas de API, mídia ou validação interrompem o workflow; a versão publicada permanece disponível.
-- Login, criação, importação, leitura real e hospedagem do Studio foram concluídos. O fluxo de upload de novas fotos ainda não foi exercitado na conta.
+```powershell
+npm run dev
+npm run studio
+npm run build
+npm test
+powershell -NoProfile -ExecutionPolicy Bypass -File qa/scripts/static-review.ps1
+```
 
-Referências oficiais: [instalação](https://www.sanity.io/docs/studio/installation), [login](https://www.sanity.io/docs/cli-reference/login), [inicialização](https://www.sanity.io/docs/cli-reference/init), [variáveis](https://www.sanity.io/docs/studio/environment-variables) e [consulta](https://www.sanity.io/docs/http-reference/query).
+O build lê o Sanity, baixa mídia, renderiza páginas e serviços e gera produtos, sitemap e o pacote `_site/`. Templates ficam em `templates/pages/`. Faça alterações estruturais nesses templates; mudanças diretas nos HTML gerados serão substituídas pelo próximo build.
+
+Para atualizar o Studio hospedado:
+
+```powershell
+cd studio
+npx sanity login --provider google
+npm run deploy -- --yes --schema-required
+```
+
+## Inicialização e verificações
+
+`npm run cms:bootstrap` cria páginas e serviços ausentes com `createIfNotExists` e preenche configurações ausentes, preservando documentos existentes. Exportações NDJSON são ignoradas pelo Git e excluídas do pacote público. Não importe produtos com substituição para atualizar o site.
+
+Foram verificados nove testes automatizados, geração com leitura real do novo projeto, validação dos links locais, compilação e publicação do Studio. Também foram exercitados criação, edição e exclusão de um cadastro temporário de teste, upload de imagem e download pelo CDN. O teste não publicou produto no catálogo.
+
+As URLs dos produtos são preservadas pelo manifesto de rotas. Falhas de API, mídia ou validação interrompem a publicação e mantêm a versão anterior online. O catálogo vazio inesperado interrompe o build; para esvaziar intencionalmente, use `SANITY_ALLOW_EMPTY=true`.
+
+O GitHub pode desativar agendamentos de repositórios públicos após 60 dias sem atividade; reative em Actions se necessário. A execução manual continua disponível.

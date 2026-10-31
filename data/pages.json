@@ -1,0 +1,2757 @@
+{
+  "pages": [
+    {
+      "_id": "page-home",
+      "_type": "sitePage",
+      "pageId": "home",
+      "title": "Início",
+      "file": "index.html",
+      "menuTitle": "Início",
+      "showInMenu": true,
+      "sections": [
+        {
+          "_key": "section-001",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-001",
+          "title": "Energia para seguir.Controle para evoluir."
+        },
+        {
+          "_key": "section-002",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-002",
+          "title": "Conhecimento técnico. Aplicação prática."
+        },
+        {
+          "_key": "section-003",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-003",
+          "title": "Equipamentos que fazem parte da solução."
+        },
+        {
+          "_key": "section-004",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-004",
+          "title": "Mais controle. Mais cuidado com a sua produção."
+        },
+        {
+          "_key": "section-005",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-005",
+          "title": "Você acompanha cada etapa."
+        },
+        {
+          "_key": "section-006",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-006",
+          "title": "Vamos encontrar a solução para o seu projeto?"
+        }
+      ],
+      "texts": [
+        {
+          "_key": "text-001",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Sistemas eléctricos y OxiLife Fish | Eletrotech Marechal",
+          "key": "text-001",
+          "label": "Sistemas elétricos e OxiLife Fish | Eletrotech Marechal",
+          "pt": "Sistemas elétricos e OxiLife Fish | Eletrotech Marechal"
+        },
+        {
+          "_key": "text-002",
+          "_type": "pageText",
+          "attribute": "content",
+          "es": "Tableros, automatización, mantenimiento eléctrico y equipos para piscicultura. Conozca Eletrotech Marechal y solicite un presupuesto.",
+          "key": "text-002",
+          "label": "Painéis, automação, manutenção elétrica e equipamentos para piscicultura. Conheça a Eletro",
+          "pt": "Painéis, automação, manutenção elétrica e equipamentos para piscicultura. Conheça a Eletrotech Marechal e solicite um orçamento."
+        },
+        {
+          "_key": "text-003",
+          "_type": "pageText",
+          "attribute": "content",
+          "es": "Sistemas eléctricos y OxiLife Fish | Eletrotech Marechal",
+          "key": "text-003",
+          "label": "Sistemas elétricos e OxiLife Fish | Eletrotech Marechal",
+          "pt": "Sistemas elétricos e OxiLife Fish | Eletrotech Marechal"
+        },
+        {
+          "_key": "text-004",
+          "_type": "pageText",
+          "attribute": "content",
+          "es": "Tableros, automatización, mantenimiento eléctrico y equipos para piscicultura. Conozca Eletrotech Marechal y solicite un presupuesto.",
+          "key": "text-004",
+          "label": "Painéis, automação, manutenção elétrica e equipamentos para piscicultura. Conheça a Eletro",
+          "pt": "Painéis, automação, manutenção elétrica e equipamentos para piscicultura. Conheça a Eletrotech Marechal e solicite um orçamento."
+        },
+        {
+          "_key": "text-005",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Energía para seguir.",
+          "key": "text-005",
+          "label": "Energia para seguir.",
+          "pt": "Energia para seguir."
+        },
+        {
+          "_key": "text-006",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Control para avanzar.",
+          "key": "text-006",
+          "label": "Controle para evoluir.",
+          "pt": "Controle para evoluir."
+        },
+        {
+          "_key": "text-007",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Tableros eléctricos, automatización y mantenimiento.",
+          "key": "text-007",
+          "label": "Painéis elétricos, automação e manutenção.",
+          "pt": "Painéis elétricos, automação e manutenção."
+        },
+        {
+          "_key": "text-008",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Soluciones inteligentes para piscicultura.",
+          "key": "text-008",
+          "label": "Soluções inteligentes para piscicultura.",
+          "pt": "Soluções inteligentes para piscicultura."
+        },
+        {
+          "_key": "text-009",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Solicitar presupuesto",
+          "key": "text-009",
+          "label": "Solicitar orçamento",
+          "pt": "Solicitar orçamento"
+        },
+        {
+          "_key": "text-010",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Conocer servicios",
+          "key": "text-010",
+          "label": "Conhecer serviços",
+          "pt": "Conhecer serviços"
+        },
+        {
+          "_key": "text-011",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Soluciones para quienes necesitan continuar",
+          "key": "text-011",
+          "label": "Soluções para quem precisa continuar",
+          "pt": "Soluções para quem precisa continuar"
+        },
+        {
+          "_key": "text-012",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "INDUSTRIA",
+          "key": "text-012",
+          "label": "INDÚSTRIA",
+          "pt": "INDÚSTRIA"
+        },
+        {
+          "_key": "text-013",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "HOGARES",
+          "key": "text-013",
+          "label": "RESIDÊNCIAS",
+          "pt": "RESIDÊNCIAS"
+        },
+        {
+          "_key": "text-014",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "SERVICIOS ELETROTECH",
+          "key": "text-014",
+          "label": "SERVIÇOS ELETROTECH",
+          "pt": "SERVIÇOS ELETROTECH"
+        },
+        {
+          "_key": "text-015",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Conocimiento técnico. Aplicación práctica.",
+          "key": "text-015",
+          "label": "Conhecimento técnico. Aplicação prática.",
+          "pt": "Conhecimento técnico. Aplicação prática."
+        },
+        {
+          "_key": "text-016",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "De la instalación al mantenimiento, encuentre el servicio para su proyecto.",
+          "key": "text-016",
+          "label": "Da instalação à manutenção, encontre o serviço para o seu projeto.",
+          "pt": "Da instalação à manutenção, encontre o serviço para o seu projeto."
+        },
+        {
+          "_key": "text-017",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Explorar todos los servicios",
+          "key": "text-017",
+          "label": "Explorar todos os serviços",
+          "pt": "Explorar todos os serviços"
+        },
+        {
+          "_key": "text-018",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "EQUIPOS ELETROTECH",
+          "key": "text-018",
+          "label": "EQUIPAMENTOS ELETROTECH",
+          "pt": "EQUIPAMENTOS ELETROTECH"
+        },
+        {
+          "_key": "text-019",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Equipos que forman parte de la solución.",
+          "key": "text-019",
+          "label": "Equipamentos que fazem parte da solução.",
+          "pt": "Equipamentos que fazem parte da solução."
+        },
+        {
+          "_key": "text-020",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Motores, materiales y equipos para distintas aplicaciones.",
+          "key": "text-020",
+          "label": "Motores, materiais e equipamentos para diferentes aplicações.",
+          "pt": "Motores, materiais e equipamentos para diferentes aplicações."
+        },
+        {
+          "_key": "text-021",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Motores eléctricos",
+          "key": "text-021",
+          "label": "Motores elétricos",
+          "pt": "Motores elétricos"
+        },
+        {
+          "_key": "text-022",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Fuerza y rendimiento para distintas aplicaciones.",
+          "key": "text-022",
+          "label": "Força e desempenho para diferentes aplicações.",
+          "pt": "Força e desempenho para diferentes aplicações."
+        },
+        {
+          "_key": "text-023",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Ver motores",
+          "key": "text-023",
+          "label": "Ver motores",
+          "pt": "Ver motores"
+        },
+        {
+          "_key": "text-024",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Para su hogar",
+          "key": "text-024",
+          "label": "Para sua casa",
+          "pt": "Para sua casa"
+        },
+        {
+          "_key": "text-025",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Practicidad y confort para el día a día.",
+          "key": "text-025",
+          "label": "Praticidade e conforto para o dia a dia.",
+          "pt": "Praticidade e conforto para o dia a dia."
+        },
+        {
+          "_key": "text-026",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Conocer la línea",
+          "key": "text-026",
+          "label": "Conhecer a linha",
+          "pt": "Conhecer a linha"
+        },
+        {
+          "_key": "text-027",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Del tablero a la instalación",
+          "key": "text-027",
+          "label": "Do painel à instalação",
+          "pt": "Do painel à instalação"
+        },
+        {
+          "_key": "text-028",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Componentes para montar y conectar su proyecto.",
+          "key": "text-028",
+          "label": "Componentes para montar e conectar seu projeto.",
+          "pt": "Componentes para montar e conectar seu projeto."
+        },
+        {
+          "_key": "text-029",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Ver materiales",
+          "key": "text-029",
+          "label": "Ver materiais",
+          "pt": "Ver materiais"
+        },
+        {
+          "_key": "text-030",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Ver catálogo completo",
+          "key": "text-030",
+          "label": "Ver catálogo completo",
+          "pt": "Ver catálogo completo"
+        },
+        {
+          "_key": "text-031",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "PROYECTO DESTACADO",
+          "key": "text-031",
+          "label": "PROJETO EM DESTAQUE",
+          "pt": "PROJETO EM DESTAQUE"
+        },
+        {
+          "_key": "text-032",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Más control. Más cuidado con su producción.",
+          "key": "text-032",
+          "label": "Mais controle. Mais cuidado com a sua produção.",
+          "pt": "Mais controle. Mais cuidado com a sua produção."
+        },
+        {
+          "_key": "text-033",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Sondas, tableros y alarmas para monitorear y controlar la aireación de sus estanques.",
+          "key": "text-033",
+          "label": "Sondas, painéis e alarmes para monitorar e controlar a aeração dos seus tanques.",
+          "pt": "Sondas, painéis e alarmes para monitorar e controlar a aeração dos seus tanques."
+        },
+        {
+          "_key": "text-034",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Monitoreo",
+          "key": "text-034",
+          "label": "Monitoramento",
+          "pt": "Monitoramento"
+        },
+        {
+          "_key": "text-035",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Control",
+          "key": "text-035",
+          "label": "Controle",
+          "pt": "Controle"
+        },
+        {
+          "_key": "text-036",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Alertas",
+          "key": "text-036",
+          "label": "Alertas",
+          "pt": "Alertas"
+        },
+        {
+          "_key": "text-037",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Conocer OxiLife Fish",
+          "key": "text-037",
+          "label": "Conhecer OxiLife Fish",
+          "pt": "Conhecer OxiLife Fish"
+        },
+        {
+          "_key": "text-038",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Hablar con el equipo",
+          "key": "text-038",
+          "label": "Falar com a equipe",
+          "pt": "Falar com a equipe"
+        },
+        {
+          "_key": "text-039",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Tecnologia aplicada à piscicultura.",
+          "key": "text-039",
+          "label": "Tecnologia aplicada à piscicultura.",
+          "pt": "Tecnologia aplicada à piscicultura."
+        },
+        {
+          "_key": "text-040",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Un proyecto Eletrotech para llevar más control al campo.",
+          "key": "text-040",
+          "label": "Um projeto Eletrotech para levar mais controle ao campo.",
+          "pt": "Um projeto Eletrotech para levar mais controle ao campo."
+        },
+        {
+          "_key": "text-041",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "CÓMO TRABAJAMOS",
+          "key": "text-041",
+          "label": "COMO TRABALHAMOS",
+          "pt": "COMO TRABALHAMOS"
+        },
+        {
+          "_key": "text-042",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Usted acompaña cada etapa.",
+          "key": "text-042",
+          "label": "Você acompanha cada etapa.",
+          "pt": "Você acompanha cada etapa."
+        },
+        {
+          "_key": "text-043",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Entendemos su necesidad",
+          "key": "text-043",
+          "label": "Entendemos sua necessidade",
+          "pt": "Entendemos sua necessidade"
+        },
+        {
+          "_key": "text-044",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Nos cuenta qué necesita. Evaluamos la aplicación y, cuando corresponde, el lugar.",
+          "key": "text-044",
+          "label": "Você conta o que precisa. Avaliamos a aplicação e, quando necessário, o local.",
+          "pt": "Você conta o que precisa. Avaliamos a aplicação e, quando necessário, o local."
+        },
+        {
+          "_key": "text-045",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Definimos el presupuesto",
+          "key": "text-045",
+          "label": "Definimos o orçamento",
+          "pt": "Definimos o orçamento"
+        },
+        {
+          "_key": "text-046",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Alcance, materiales, precios y plazos se acuerdan antes de iniciar el servicio.",
+          "key": "text-046",
+          "label": "Escopo, materiais, valores e prazo são alinhados antes de iniciar o serviço.",
+          "pt": "Escopo, materiais, valores e prazo são alinhados antes de iniciar o serviço."
+        },
+        {
+          "_key": "text-047",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Ejecutamos y probamos",
+          "key": "text-047",
+          "label": "Executamos e testamos",
+          "pt": "Executamos e testamos"
+        },
+        {
+          "_key": "text-048",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Montaje, instalación y verificación del funcionamiento según el proyecto.",
+          "key": "text-048",
+          "label": "Montagem, instalação e verificação do funcionamento conforme o projeto.",
+          "pt": "Montagem, instalação e verificação do funcionamento conforme o projeto."
+        },
+        {
+          "_key": "text-049",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Entregamos y orientamos",
+          "key": "text-049",
+          "label": "Entregamos e orientamos",
+          "pt": "Entregamos e orientamos"
+        },
+        {
+          "_key": "text-050",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Explicamos la operación y acordamos las necesidades de soporte y mantenimiento.",
+          "key": "text-050",
+          "label": "Explicamos a operação e combinamos as necessidades de suporte e manutenção.",
+          "pt": "Explicamos a operação e combinamos as necessidades de suporte e manutenção."
+        },
+        {
+          "_key": "text-051",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Entender cómo trabajamos",
+          "key": "text-051",
+          "label": "Entender como trabalhamos",
+          "pt": "Entender como trabalhamos"
+        },
+        {
+          "_key": "text-052",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "¿CONVERSAMOS?",
+          "key": "text-052",
+          "label": "VAMOS CONVERSAR?",
+          "pt": "VAMOS CONVERSAR?"
+        },
+        {
+          "_key": "text-053",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "¿Encontramos la solución para su proyecto?",
+          "key": "text-053",
+          "label": "Vamos encontrar a solução para o seu projeto?",
+          "pt": "Vamos encontrar a solução para o seu projeto?"
+        },
+        {
+          "_key": "text-054",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Cuéntenos qué necesita. Nuestro equipo le ayuda a definir los próximos pasos.",
+          "key": "text-054",
+          "label": "Conte o que você precisa. Nossa equipe ajuda a definir os próximos passos.",
+          "pt": "Conte o que você precisa. Nossa equipe ajuda a definir os próximos passos."
+        },
+        {
+          "_key": "text-055",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Hablar con el equipo",
+          "key": "text-055",
+          "label": "Falar com a equipe",
+          "pt": "Falar com a equipe"
+        },
+        {
+          "_key": "text-056",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Converse por WhatsApp",
+          "key": "text-056",
+          "label": "Converse pelo WhatsApp",
+          "pt": "Converse pelo WhatsApp"
+        }
+      ],
+      "images": [
+        {
+          "_key": "image-001",
+          "_type": "pageImage",
+          "altEs": "Motores Hércules",
+          "altPt": "Motores Hércules",
+          "key": "image-001",
+          "label": "Motores Hércules",
+          "src": "images/motores-hercules-1.jpeg"
+        },
+        {
+          "_key": "image-002",
+          "_type": "pageImage",
+          "altEs": "Línea Zagonel",
+          "altPt": "Linha Zagonel",
+          "key": "image-002",
+          "label": "Linha Zagonel",
+          "src": "images/produtos-zagonel.jpeg"
+        },
+        {
+          "_key": "image-003",
+          "_type": "pageImage",
+          "altEs": "Materiales para tableros eléctricos",
+          "altPt": "Materiais para painéis",
+          "key": "image-003",
+          "label": "Materiais para painéis",
+          "src": "images/materiais-paineis-1.jpeg"
+        },
+        {
+          "_key": "image-004",
+          "_type": "pageImage",
+          "altEs": "Escena ilustrativa de estanque con aireador y tablero de control",
+          "altPt": "Cena ilustrativa de viveiro com aerador e painel de controle",
+          "key": "image-004",
+          "label": "Cena ilustrativa de viveiro com aerador e painel de controle",
+          "src": "images/oxilife-painel-aberto-ilustrativo.png"
+        }
+      ],
+      "videos": [
+        {
+          "_key": "video-001",
+          "_type": "pageVideo",
+          "enabled": true,
+          "key": "video-001",
+          "label": "Vídeo do banner principal",
+          "loop": true,
+          "playbackRate": 0.75,
+          "poster": "images/fundo-peixes-poster.jpg",
+          "src": "videos/Fundo_Peixes.mp4"
+        }
+      ],
+      "links": [
+        {
+          "_key": "link-001",
+          "_type": "pageLink",
+          "href": "https://wa.me/554599241306",
+          "key": "link-001",
+          "label": "Solicitar orçamento↗",
+          "whatsappTopic": "Orçamento"
+        },
+        {
+          "_key": "link-002",
+          "_type": "pageLink",
+          "href": "produtos.html#servicos",
+          "key": "link-002",
+          "label": "Conhecer serviços →",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-003",
+          "_type": "pageLink",
+          "href": "produtos.html#servicos",
+          "key": "link-003",
+          "label": "Explorar todos os serviços →",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-004",
+          "_type": "pageLink",
+          "href": "produtos/motores-hercules.html",
+          "key": "link-004",
+          "label": "HÉRCULES Motores elétricos Força e desempenho para diferentes aplicações. Ver motores↗",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-005",
+          "_type": "pageLink",
+          "href": "produtos/linha-zagonel.html",
+          "key": "link-005",
+          "label": "ZAGONEL Para sua casa Praticidade e conforto para o dia a dia. Conhecer a linha↗",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-006",
+          "_type": "pageLink",
+          "href": "produtos/materiais-para-paineis.html",
+          "key": "link-006",
+          "label": "MATERIAIS ELÉTRICOS Do painel à instalação Componentes para montar e conectar seu projeto.",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-007",
+          "_type": "pageLink",
+          "href": "produtos.html",
+          "key": "link-007",
+          "label": "Ver catálogo completo →",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-008",
+          "_type": "pageLink",
+          "href": "oxilife-fish.html",
+          "key": "link-008",
+          "label": "Conhecer OxiLife Fish→",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-009",
+          "_type": "pageLink",
+          "href": "https://wa.me/554599241306",
+          "key": "link-009",
+          "label": "Falar com a equipe",
+          "whatsappTopic": "OxiLife Fish"
+        },
+        {
+          "_key": "link-010",
+          "_type": "pageLink",
+          "href": "como-trabalhamos.html",
+          "key": "link-010",
+          "label": "Entender como trabalhamos →",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-011",
+          "_type": "pageLink",
+          "href": "https://wa.me/554599241306",
+          "key": "link-011",
+          "label": "Falar com a equipe↗",
+          "whatsappTopic": "Orçamento"
+        }
+      ],
+      "_createdAt": "2026-10-31T00:31:38Z",
+      "_rev": "pR9eTOqkSKLxQuUierssF1",
+      "_updatedAt": "2026-10-31T00:31:38Z"
+    },
+    {
+      "_id": "page-catalog",
+      "_type": "sitePage",
+      "pageId": "catalog",
+      "title": "Serviços e produtos",
+      "file": "produtos.html",
+      "menuTitle": "Serviços e produtos",
+      "showInMenu": true,
+      "sections": [
+        {
+          "_key": "section-001",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-001",
+          "title": "O serviço certo.O equipamento ideal."
+        },
+        {
+          "_key": "section-002",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-002",
+          "title": "Conhecimento técnico. Aplicação prática."
+        },
+        {
+          "_key": "section-003",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-003",
+          "title": "Produtos para sua aplicação."
+        },
+        {
+          "_key": "section-004",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-004",
+          "title": "Vamos encontrar a solução para o seu projeto?"
+        }
+      ],
+      "texts": [
+        {
+          "_key": "text-001",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Servicios y productos | Eletrotech Marechal",
+          "key": "text-001",
+          "label": "Serviços e produtos | Eletrotech Marechal",
+          "pt": "Serviços e produtos | Eletrotech Marechal"
+        },
+        {
+          "_key": "text-002",
+          "_type": "pageText",
+          "attribute": "content",
+          "es": "Montaje de tableros, automatización, instalaciones, rebobinado y mantenimiento de bombas. Solicite una evaluación de Eletrotech.",
+          "key": "text-002",
+          "label": "Montagem de painéis, automação, instalações, rebobinagem e manutenção de bombas. Solicite ",
+          "pt": "Montagem de painéis, automação, instalações, rebobinagem e manutenção de bombas. Solicite uma avaliação da Eletrotech."
+        },
+        {
+          "_key": "text-003",
+          "_type": "pageText",
+          "attribute": "content",
+          "es": "Servicios eléctricos | Eletrotech Marechal",
+          "key": "text-003",
+          "label": "Serviços elétricos | Eletrotech Marechal",
+          "pt": "Serviços elétricos | Eletrotech Marechal"
+        },
+        {
+          "_key": "text-004",
+          "_type": "pageText",
+          "attribute": "content",
+          "es": "Montaje de tableros, automatización, instalaciones, rebobinado y mantenimiento de bombas. Solicite una evaluación de Eletrotech.",
+          "key": "text-004",
+          "label": "Montagem de painéis, automação, instalações, rebobinagem e manutenção de bombas. Solicite ",
+          "pt": "Montagem de painéis, automação, instalações, rebobinagem e manutenção de bombas. Solicite uma avaliação da Eletrotech."
+        },
+        {
+          "_key": "text-005",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Inicio",
+          "key": "text-005",
+          "label": "Início",
+          "pt": "Início"
+        },
+        {
+          "_key": "text-006",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Servicios y productos",
+          "key": "text-006",
+          "label": "Serviços e produtos",
+          "pt": "Serviços e produtos"
+        },
+        {
+          "_key": "text-007",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "SOLUCIONES ELETROTECH",
+          "key": "text-007",
+          "label": "SOLUÇÕES ELETROTECH",
+          "pt": "SOLUÇÕES ELETROTECH"
+        },
+        {
+          "_key": "text-008",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "El servicio adecuado.",
+          "key": "text-008",
+          "label": "O serviço certo.",
+          "pt": "O serviço certo."
+        },
+        {
+          "_key": "text-009",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "El equipo ideal.",
+          "key": "text-009",
+          "label": "O equipamento ideal.",
+          "pt": "O equipamento ideal."
+        },
+        {
+          "_key": "text-010",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Soluciones eléctricas para su hogar, empresa y propiedad.",
+          "key": "text-010",
+          "label": "Soluções elétricas para sua casa, empresa e propriedade.",
+          "pt": "Soluções elétricas para sua casa, empresa e propriedade."
+        },
+        {
+          "_key": "text-011",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Solicitar presupuesto",
+          "key": "text-011",
+          "label": "Solicitar orçamento",
+          "pt": "Solicitar orçamento"
+        },
+        {
+          "_key": "text-012",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Imagen ilustrativa",
+          "key": "text-012",
+          "label": "Imagem ilustrativa",
+          "pt": "Imagem ilustrativa"
+        },
+        {
+          "_key": "text-013",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "LO QUE HACEMOS",
+          "key": "text-013",
+          "label": "O QUE FAZEMOS",
+          "pt": "O QUE FAZEMOS"
+        },
+        {
+          "_key": "text-014",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Conocimiento técnico. Aplicación práctica.",
+          "key": "text-014",
+          "label": "Conhecimento técnico. Aplicação prática.",
+          "pt": "Conhecimento técnico. Aplicação prática."
+        },
+        {
+          "_key": "text-015",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "ENCUENTRE SU EQUIPO",
+          "key": "text-015",
+          "label": "ENCONTRE SEU EQUIPAMENTO",
+          "pt": "ENCONTRE SEU EQUIPAMENTO"
+        },
+        {
+          "_key": "text-016",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Productos para su aplicación.",
+          "key": "text-016",
+          "label": "Produtos para sua aplicação.",
+          "pt": "Produtos para sua aplicação."
+        },
+        {
+          "_key": "text-017",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Explore por categoría",
+          "key": "text-017",
+          "label": "Explore por categoria",
+          "pt": "Explore por categoria"
+        },
+        {
+          "_key": "text-018",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Todos",
+          "key": "text-018",
+          "label": "Todos",
+          "pt": "Todos"
+        },
+        {
+          "_key": "text-019",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Motores",
+          "key": "text-019",
+          "label": "Motores",
+          "pt": "Motores"
+        },
+        {
+          "_key": "text-020",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Materiales eléctricos",
+          "key": "text-020",
+          "label": "Materiais elétricos",
+          "pt": "Materiais elétricos"
+        },
+        {
+          "_key": "text-021",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Zagonel",
+          "key": "text-021",
+          "label": "Zagonel",
+          "pt": "Zagonel"
+        },
+        {
+          "_key": "text-022",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "OxiLife Fish",
+          "key": "text-022",
+          "label": "OxiLife Fish",
+          "pt": "OxiLife Fish"
+        },
+        {
+          "_key": "text-023",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Buscar producto",
+          "key": "text-023",
+          "label": "Buscar produto",
+          "pt": "Buscar produto"
+        },
+        {
+          "_key": "text-024",
+          "_type": "pageText",
+          "attribute": "placeholder",
+          "es": "Motores, tableros...",
+          "key": "text-024",
+          "label": "Motores, painéis...",
+          "pt": "Motores, painéis..."
+        },
+        {
+          "_key": "text-025",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Limpiar filtros",
+          "key": "text-025",
+          "label": "Limpar filtros",
+          "pt": "Limpar filtros"
+        },
+        {
+          "_key": "text-026",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "No se encontraron productos.",
+          "key": "text-026",
+          "label": "Nenhum produto encontrado.",
+          "pt": "Nenhum produto encontrado."
+        },
+        {
+          "_key": "text-027",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Pruebe otro término o elija otra categoría.",
+          "key": "text-027",
+          "label": "Tente outro termo ou escolha outra categoria.",
+          "pt": "Tente outro termo ou escolha outra categoria."
+        },
+        {
+          "_key": "text-028",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Limpiar filtros",
+          "key": "text-028",
+          "label": "Limpar filtros",
+          "pt": "Limpar filtros"
+        },
+        {
+          "_key": "text-029",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "¿CONVERSAMOS?",
+          "key": "text-029",
+          "label": "VAMOS CONVERSAR?",
+          "pt": "VAMOS CONVERSAR?"
+        },
+        {
+          "_key": "text-030",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "¿Encontramos la solución para su proyecto?",
+          "key": "text-030",
+          "label": "Vamos encontrar a solução para o seu projeto?",
+          "pt": "Vamos encontrar a solução para o seu projeto?"
+        },
+        {
+          "_key": "text-031",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Cuéntenos qué necesita. Nuestro equipo le ayuda a definir los próximos pasos.",
+          "key": "text-031",
+          "label": "Conte o que você precisa. Nossa equipe ajuda a definir os próximos passos.",
+          "pt": "Conte o que você precisa. Nossa equipe ajuda a definir os próximos passos."
+        },
+        {
+          "_key": "text-032",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Hablar con el equipo",
+          "key": "text-032",
+          "label": "Falar com a equipe",
+          "pt": "Falar com a equipe"
+        },
+        {
+          "_key": "text-033",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Converse por WhatsApp",
+          "key": "text-033",
+          "label": "Converse pelo WhatsApp",
+          "pt": "Converse pelo WhatsApp"
+        }
+      ],
+      "images": [
+        {
+          "_key": "image-001",
+          "_type": "pageImage",
+          "altEs": "Imagen ilustrativa de taller con tablero eléctrico y motores",
+          "altPt": "Imagem ilustrativa de oficina com painel elétrico e motores",
+          "key": "image-001",
+          "label": "Imagem ilustrativa de oficina com painel elétrico e motores",
+          "src": "images/servicos-produtos-oficina-ilustrativa.png"
+        }
+      ],
+      "videos": [],
+      "links": [
+        {
+          "_key": "link-001",
+          "_type": "pageLink",
+          "href": "index.html",
+          "key": "link-001",
+          "label": "Início",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-002",
+          "_type": "pageLink",
+          "href": "https://wa.me/554599241306",
+          "key": "link-002",
+          "label": "Solicitar orçamento→",
+          "whatsappTopic": "Orçamento"
+        },
+        {
+          "_key": "link-003",
+          "_type": "pageLink",
+          "href": "https://wa.me/554599241306",
+          "key": "link-003",
+          "label": "Falar com a equipe↗",
+          "whatsappTopic": "Orçamento"
+        }
+      ],
+      "_createdAt": "2026-10-31T00:31:38Z",
+      "_rev": "pR9eTOqkSKLxQuUierssF1",
+      "_updatedAt": "2026-10-31T00:31:38Z"
+    },
+    {
+      "_id": "page-process",
+      "_type": "sitePage",
+      "pageId": "process",
+      "title": "Como trabalhamos",
+      "file": "como-trabalhamos.html",
+      "menuTitle": "Como trabalhamos",
+      "showInMenu": true,
+      "sections": [
+        {
+          "_key": "section-001",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-001",
+          "title": "Do primeiro contato à entrega."
+        },
+        {
+          "_key": "section-002",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-002",
+          "title": "Quatro etapas. Um projeto acompanhado."
+        },
+        {
+          "_key": "section-003",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-003",
+          "title": "Vamos dar o próximo passo?"
+        }
+      ],
+      "texts": [
+        {
+          "_key": "text-001",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Cómo trabajamos | Eletrotech Marechal",
+          "key": "text-001",
+          "label": "Como trabalhamos | Eletrotech Marechal",
+          "pt": "Como trabalhamos | Eletrotech Marechal"
+        },
+        {
+          "_key": "text-002",
+          "_type": "pageText",
+          "attribute": "content",
+          "es": "Conozca las etapas de diagnóstico, presupuesto, ejecución, pruebas y entrega de los proyectos de Eletrotech Marechal.",
+          "key": "text-002",
+          "label": "Entenda as etapas de diagnóstico, orçamento, execução, testes e entrega dos projetos da El",
+          "pt": "Entenda as etapas de diagnóstico, orçamento, execução, testes e entrega dos projetos da Eletrotech Marechal."
+        },
+        {
+          "_key": "text-003",
+          "_type": "pageText",
+          "attribute": "content",
+          "es": "Cómo trabajamos | Eletrotech Marechal",
+          "key": "text-003",
+          "label": "Como trabalhamos | Eletrotech Marechal",
+          "pt": "Como trabalhamos | Eletrotech Marechal"
+        },
+        {
+          "_key": "text-004",
+          "_type": "pageText",
+          "attribute": "content",
+          "es": "Conozca las etapas de diagnóstico, presupuesto, ejecución, pruebas y entrega de los proyectos de Eletrotech Marechal.",
+          "key": "text-004",
+          "label": "Entenda as etapas de diagnóstico, orçamento, execução, testes e entrega dos projetos da El",
+          "pt": "Entenda as etapas de diagnóstico, orçamento, execução, testes e entrega dos projetos da Eletrotech Marechal."
+        },
+        {
+          "_key": "text-005",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Inicio",
+          "key": "text-005",
+          "label": "Início",
+          "pt": "Início"
+        },
+        {
+          "_key": "text-006",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Cómo trabajamos",
+          "key": "text-006",
+          "label": "Como trabalhamos",
+          "pt": "Como trabalhamos"
+        },
+        {
+          "_key": "text-007",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "CÓMO TRABAJAMOS",
+          "key": "text-007",
+          "label": "COMO TRABALHAMOS",
+          "pt": "COMO TRABALHAMOS"
+        },
+        {
+          "_key": "text-008",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Del primer contacto a la entrega.",
+          "key": "text-008",
+          "label": "Do primeiro contato à entrega.",
+          "pt": "Do primeiro contato à entrega."
+        },
+        {
+          "_key": "text-009",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Claridad para entender, planificar y acompañar su proyecto.",
+          "key": "text-009",
+          "label": "Clareza para entender, planejar e acompanhar o seu projeto.",
+          "pt": "Clareza para entender, planejar e acompanhar o seu projeto."
+        },
+        {
+          "_key": "text-010",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Hablar con el equipo",
+          "key": "text-010",
+          "label": "Falar com a equipe",
+          "pt": "Falar com a equipe"
+        },
+        {
+          "_key": "text-011",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Imagen ilustrativa",
+          "key": "text-011",
+          "label": "Imagem ilustrativa",
+          "pt": "Imagem ilustrativa"
+        },
+        {
+          "_key": "text-012",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "NUESTRO PROCESO",
+          "key": "text-012",
+          "label": "NOSSO PROCESSO",
+          "pt": "NOSSO PROCESSO"
+        },
+        {
+          "_key": "text-013",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Cuatro etapas. Un proyecto acompañado.",
+          "key": "text-013",
+          "label": "Quatro etapas. Um projeto acompanhado.",
+          "pt": "Quatro etapas. Um projeto acompanhado."
+        },
+        {
+          "_key": "text-014",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Entendemos su necesidad",
+          "key": "text-014",
+          "label": "Entendemos sua necessidade",
+          "pt": "Entendemos sua necessidade"
+        },
+        {
+          "_key": "text-015",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Nos cuenta qué necesita. Evaluamos la aplicación y, cuando corresponde, el lugar.",
+          "key": "text-015",
+          "label": "Você conta o que precisa. Avaliamos a aplicação e, quando necessário, o local.",
+          "pt": "Você conta o que precisa. Avaliamos a aplicação e, quando necessário, o local."
+        },
+        {
+          "_key": "text-016",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Definimos el presupuesto",
+          "key": "text-016",
+          "label": "Definimos o orçamento",
+          "pt": "Definimos o orçamento"
+        },
+        {
+          "_key": "text-017",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Alcance, materiales, precios y plazos se acuerdan antes de iniciar el servicio.",
+          "key": "text-017",
+          "label": "Escopo, materiais, valores e prazo são alinhados antes de iniciar o serviço.",
+          "pt": "Escopo, materiais, valores e prazo são alinhados antes de iniciar o serviço."
+        },
+        {
+          "_key": "text-018",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Ejecutamos y probamos",
+          "key": "text-018",
+          "label": "Executamos e testamos",
+          "pt": "Executamos e testamos"
+        },
+        {
+          "_key": "text-019",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Montaje, instalación y verificación del funcionamiento según el proyecto.",
+          "key": "text-019",
+          "label": "Montagem, instalação e verificação do funcionamento conforme o projeto.",
+          "pt": "Montagem, instalação e verificação do funcionamento conforme o projeto."
+        },
+        {
+          "_key": "text-020",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Entregamos y orientamos",
+          "key": "text-020",
+          "label": "Entregamos e orientamos",
+          "pt": "Entregamos e orientamos"
+        },
+        {
+          "_key": "text-021",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Explicamos la operación y acordamos las necesidades de soporte y mantenimiento.",
+          "key": "text-021",
+          "label": "Explicamos a operação e combinamos as necessidades de suporte e manutenção.",
+          "pt": "Explicamos a operação e combinamos as necessidades de suporte e manutenção."
+        },
+        {
+          "_key": "text-022",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "PRIMER CONTACTO",
+          "key": "text-022",
+          "label": "PRIMEIRO CONTATO",
+          "pt": "PRIMEIRO CONTATO"
+        },
+        {
+          "_key": "text-023",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "¿Qué ayuda a empezar?",
+          "key": "text-023",
+          "label": "O que ajuda a começar?",
+          "pt": "O que ajuda a começar?"
+        },
+        {
+          "_key": "text-024",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Reúna la información de su aplicación para hablar con el equipo.",
+          "key": "text-024",
+          "label": "Reúna as informações da sua aplicação para conversar com a equipe.",
+          "pt": "Reúna as informações da sua aplicação para conversar com a equipe."
+        },
+        {
+          "_key": "text-025",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Ciudad y descripción de la necesidad.",
+          "key": "text-025",
+          "label": "Cidade e descrição da necessidade.",
+          "pt": "Cidade e descrição da necessidade."
+        },
+        {
+          "_key": "text-026",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Fotos del equipo o del lugar.",
+          "key": "text-026",
+          "label": "Fotos do equipamento ou do local.",
+          "pt": "Fotos do equipamento ou do local."
+        },
+        {
+          "_key": "text-027",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Modelo, tensión y potencia, cuando estén disponibles.",
+          "key": "text-027",
+          "label": "Modelo, tensão e potência, quando disponíveis.",
+          "pt": "Modelo, tensão e potência, quando disponíveis."
+        },
+        {
+          "_key": "text-028",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Preparar mi mensaje",
+          "key": "text-028",
+          "label": "Preparar minha mensagem",
+          "pt": "Preparar minha mensagem"
+        },
+        {
+          "_key": "text-029",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Conocer servicios y productos",
+          "key": "text-029",
+          "label": "Conhecer serviços e produtos",
+          "pt": "Conhecer serviços e produtos"
+        },
+        {
+          "_key": "text-030",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "¿CONVERSAMOS?",
+          "key": "text-030",
+          "label": "VAMOS CONVERSAR?",
+          "pt": "VAMOS CONVERSAR?"
+        },
+        {
+          "_key": "text-031",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "¿Damos el siguiente paso?",
+          "key": "text-031",
+          "label": "Vamos dar o próximo passo?",
+          "pt": "Vamos dar o próximo passo?"
+        },
+        {
+          "_key": "text-032",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Cuente su necesidad al equipo Eletrotech.",
+          "key": "text-032",
+          "label": "Conte sua necessidade para a equipe Eletrotech.",
+          "pt": "Conte sua necessidade para a equipe Eletrotech."
+        },
+        {
+          "_key": "text-033",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Hablar con el equipo",
+          "key": "text-033",
+          "label": "Falar com a equipe",
+          "pt": "Falar com a equipe"
+        },
+        {
+          "_key": "text-034",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Converse por WhatsApp",
+          "key": "text-034",
+          "label": "Converse pelo WhatsApp",
+          "pt": "Converse pelo WhatsApp"
+        }
+      ],
+      "images": [
+        {
+          "_key": "image-001",
+          "_type": "pageImage",
+          "altEs": "Imagen ilustrativa de planificación de proyecto eléctrico en taller",
+          "altPt": "Imagem ilustrativa de planejamento de projeto elétrico em oficina",
+          "key": "image-001",
+          "label": "Imagem ilustrativa de planejamento de projeto elétrico em oficina",
+          "src": "images/processo-planejamento-ilustrativo.png"
+        }
+      ],
+      "videos": [],
+      "links": [
+        {
+          "_key": "link-001",
+          "_type": "pageLink",
+          "href": "index.html",
+          "key": "link-001",
+          "label": "Início",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-002",
+          "_type": "pageLink",
+          "href": "https://wa.me/554599241306",
+          "key": "link-002",
+          "label": "Falar com a equipe→",
+          "whatsappTopic": "Projeto"
+        },
+        {
+          "_key": "link-003",
+          "_type": "pageLink",
+          "href": "contato.html#quote-form",
+          "key": "link-003",
+          "label": "Preparar minha mensagem →",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-004",
+          "_type": "pageLink",
+          "href": "produtos.html",
+          "key": "link-004",
+          "label": "Conhecer serviços e produtos→",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-005",
+          "_type": "pageLink",
+          "href": "https://wa.me/554599241306",
+          "key": "link-005",
+          "label": "Falar com a equipe↗",
+          "whatsappTopic": "Orçamento"
+        }
+      ],
+      "_createdAt": "2026-10-31T00:31:38Z",
+      "_rev": "pR9eTOqkSKLxQuUierssF1",
+      "_updatedAt": "2026-10-31T00:31:38Z"
+    },
+    {
+      "_id": "page-oxilife",
+      "_type": "sitePage",
+      "pageId": "oxilife",
+      "title": "OxiLife Fish",
+      "file": "oxilife-fish.html",
+      "menuTitle": "OxiLife Fish",
+      "showInMenu": true,
+      "sections": [
+        {
+          "_key": "section-001",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-001",
+          "title": "Oxigênio sob controle."
+        },
+        {
+          "_key": "section-002",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-002",
+          "title": "Da água à informação."
+        },
+        {
+          "_key": "section-003",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-003",
+          "title": "Tecnologia junto aos seus tanques."
+        },
+        {
+          "_key": "section-004",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-004",
+          "title": "Equipamentos OxiLife Fish"
+        },
+        {
+          "_key": "section-005",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-005",
+          "title": "Vamos conversar sobre seus tanques?"
+        }
+      ],
+      "texts": [
+        {
+          "_key": "text-001",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "OxiLife Fish — monitoreo para piscicultura | Eletrotech Marechal",
+          "key": "text-001",
+          "label": "OxiLife Fish — monitoramento para piscicultura | Eletrotech Marechal",
+          "pt": "OxiLife Fish — monitoramento para piscicultura | Eletrotech Marechal"
+        },
+        {
+          "_key": "text-002",
+          "_type": "pageText",
+          "attribute": "content",
+          "es": "Conozca sondas, tableros, oxímetro y alarmas OxiLife Fish para monitoreo de oxígeno disuelto y control de aireación.",
+          "key": "text-002",
+          "label": "Conheça sondas, painéis, oxímetro e alarmes OxiLife Fish para monitoramento de oxigênio di",
+          "pt": "Conheça sondas, painéis, oxímetro e alarmes OxiLife Fish para monitoramento de oxigênio dissolvido e controle de aeração."
+        },
+        {
+          "_key": "text-003",
+          "_type": "pageText",
+          "attribute": "content",
+          "es": "OxiLife Fish — monitoreo para piscicultura | Eletrotech Marechal",
+          "key": "text-003",
+          "label": "OxiLife Fish — monitoramento para piscicultura | Eletrotech Marechal",
+          "pt": "OxiLife Fish — monitoramento para piscicultura | Eletrotech Marechal"
+        },
+        {
+          "_key": "text-004",
+          "_type": "pageText",
+          "attribute": "content",
+          "es": "Conozca sondas, tableros, oxímetro y alarmas OxiLife Fish para monitoreo de oxígeno disuelto y control de aireación.",
+          "key": "text-004",
+          "label": "Conheça sondas, painéis, oxímetro e alarmes OxiLife Fish para monitoramento de oxigênio di",
+          "pt": "Conheça sondas, painéis, oxímetro e alarmes OxiLife Fish para monitoramento de oxigênio dissolvido e controle de aeração."
+        },
+        {
+          "_key": "text-005",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Inicio",
+          "key": "text-005",
+          "label": "Início",
+          "pt": "Início"
+        },
+        {
+          "_key": "text-006",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "UN PROYECTO ELETROTECH MARECHAL",
+          "key": "text-006",
+          "label": "UM PROJETO ELETROTECH MARECHAL",
+          "pt": "UM PROJETO ELETROTECH MARECHAL"
+        },
+        {
+          "_key": "text-007",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Oxígeno bajo control.",
+          "key": "text-007",
+          "label": "Oxigênio sob controle.",
+          "pt": "Oxigênio sob controle."
+        },
+        {
+          "_key": "text-008",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Monitoreo de oxígeno disuelto y control de aireación para acompañar su producción con más información.",
+          "key": "text-008",
+          "label": "Monitoramento de oxigênio dissolvido e controle de aeração para acompanhar sua produção co",
+          "pt": "Monitoramento de oxigênio dissolvido e controle de aeração para acompanhar sua produção com mais informação."
+        },
+        {
+          "_key": "text-009",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Consultar una solución",
+          "key": "text-009",
+          "label": "Consultar uma solução",
+          "pt": "Consultar uma solução"
+        },
+        {
+          "_key": "text-010",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Cómo funciona",
+          "key": "text-010",
+          "label": "Como funciona",
+          "pt": "Como funciona"
+        },
+        {
+          "_key": "text-011",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "sondas por tablero¹",
+          "key": "text-011",
+          "label": "sondas por painel¹",
+          "pt": "sondas por painel¹"
+        },
+        {
+          "_key": "text-012",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "grupos de aireadores¹",
+          "key": "text-012",
+          "label": "grupos de aeradores¹",
+          "pt": "grupos de aeradores¹"
+        },
+        {
+          "_key": "text-013",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "lectura y control",
+          "key": "text-013",
+          "label": "leitura e controle",
+          "pt": "leitura e controle"
+        },
+        {
+          "_key": "text-014",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "¹ Capacidades según la configuración del sistema.",
+          "key": "text-014",
+          "label": "¹ Capacidades conforme a configuração do sistema.",
+          "pt": "¹ Capacidades conforme a configuração do sistema."
+        },
+        {
+          "_key": "text-015",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Imagen de fondo ilustrativa",
+          "key": "text-015",
+          "label": "Imagem de fundo ilustrativa",
+          "pt": "Imagem de fundo ilustrativa"
+        },
+        {
+          "_key": "text-016",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "CÓMO FUNCIONA",
+          "key": "text-016",
+          "label": "COMO FUNCIONA",
+          "pt": "COMO FUNCIONA"
+        },
+        {
+          "_key": "text-017",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Del agua a la información.",
+          "key": "text-017",
+          "label": "Da água à informação.",
+          "pt": "Da água à informação."
+        },
+        {
+          "_key": "text-018",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Un sistema que conecta medición, control y supervisión.",
+          "key": "text-018",
+          "label": "Um sistema que conecta medição, controle e acompanhamento.",
+          "pt": "Um sistema que conecta medição, controle e acompanhamento."
+        },
+        {
+          "_key": "text-019",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "La sonda mide",
+          "key": "text-019",
+          "label": "A sonda mede",
+          "pt": "A sonda mede"
+        },
+        {
+          "_key": "text-020",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "El oxígeno disuelto y la temperatura se leen en el estanque.",
+          "key": "text-020",
+          "label": "Oxigênio dissolvido e temperatura são lidos no tanque.",
+          "pt": "Oxigênio dissolvido e temperatura são lidos no tanque."
+        },
+        {
+          "_key": "text-021",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "El tablero controla",
+          "key": "text-021",
+          "label": "O painel controla",
+          "pt": "O painel controla"
+        },
+        {
+          "_key": "text-022",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Los límites configurados determinan la activación de los grupos de aireadores.",
+          "key": "text-022",
+          "label": "Os limites configurados orientam o acionamento dos grupos de aeradores.",
+          "pt": "Os limites configurados orientam o acionamento dos grupos de aeradores."
+        },
+        {
+          "_key": "text-023",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Usted supervisa",
+          "key": "text-023",
+          "label": "Você acompanha",
+          "pt": "Você acompanha"
+        },
+        {
+          "_key": "text-024",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Consulte la información en el tablero o por la aplicación, según la instalación y conexión.",
+          "key": "text-024",
+          "label": "Consulte as informações no painel ou pelo aplicativo, conforme a instalação e a conexão.",
+          "pt": "Consulte as informações no painel ou pelo aplicativo, conforme a instalação e a conexão."
+        },
+        {
+          "_key": "text-025",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Las lecturas registradas en un pendrive ayudan a supervisar el comportamiento del estanque.",
+          "key": "text-025",
+          "label": "Leituras registradas em pendrive ajudam a acompanhar o comportamento da lagoa.",
+          "pt": "Leituras registradas em pendrive ajudam a acompanhar o comportamento da lagoa."
+        },
+        {
+          "_key": "text-026",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Equipo presentado en una instalación en campo.",
+          "key": "text-026",
+          "label": "Equipamento apresentado em uma instalação em campo.",
+          "pt": "Equipamento apresentado em uma instalação em campo."
+        },
+        {
+          "_key": "text-027",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "PLANIFIQUE SU INSTALACIÓN",
+          "key": "text-027",
+          "label": "PLANEJE SUA INSTALAÇÃO",
+          "pt": "PLANEJE SUA INSTALAÇÃO"
+        },
+        {
+          "_key": "text-028",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Tecnología junto a sus estanques.",
+          "key": "text-028",
+          "label": "Tecnologia junto aos seus tanques.",
+          "pt": "Tecnologia junto aos seus tanques."
+        },
+        {
+          "_key": "text-029",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Indique la cantidad de estanques, los aireadores utilizados y las condiciones de energía y conectividad. El equipo evalúa la composición del sistema.",
+          "key": "text-029",
+          "label": "Informe a quantidade de tanques, os aeradores utilizados e as condições de energia e conec",
+          "pt": "Informe a quantidade de tanques, os aeradores utilizados e as condições de energia e conectividade. A equipe avalia a composição do sistema."
+        },
+        {
+          "_key": "text-030",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Confirme los requisitos de internet para la aplicación y las alertas.",
+          "key": "text-030",
+          "label": "Confirme os requisitos de internet para aplicativo e alertas.",
+          "pt": "Confirme os requisitos de internet para aplicativo e alertas."
+        },
+        {
+          "_key": "text-031",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Acuerde el comportamiento esperado ante cortes de energía o conexión.",
+          "key": "text-031",
+          "label": "Alinhe o comportamento esperado em caso de falta de energia ou conexão.",
+          "pt": "Alinhe o comportamento esperado em caso de falta de energia ou conexão."
+        },
+        {
+          "_key": "text-032",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Solicite instrucciones de calibración, limpieza y mantenimiento de las sondas.",
+          "key": "text-032",
+          "label": "Solicite orientações de calibração, limpeza e manutenção das sondas.",
+          "pt": "Solicite orientações de calibração, limpeza e manutenção das sondas."
+        },
+        {
+          "_key": "text-033",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Evaluar mis estanques",
+          "key": "text-033",
+          "label": "Avaliar meus tanques",
+          "pt": "Avaliar meus tanques"
+        },
+        {
+          "_key": "text-034",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "EQUIPOS",
+          "key": "text-034",
+          "label": "EQUIPAMENTOS",
+          "pt": "EQUIPAMENTOS"
+        },
+        {
+          "_key": "text-035",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Equipos OxiLife Fish",
+          "key": "text-035",
+          "label": "Equipamentos OxiLife Fish",
+          "pt": "Equipamentos OxiLife Fish"
+        },
+        {
+          "_key": "text-036",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "\n              ELETROTECH MARECHAL\n            ",
+          "key": "text-036",
+          "label": "ELETROTECH MARECHAL",
+          "pt": "\n              ELETROTECH MARECHAL\n            "
+        },
+        {
+          "_key": "text-037",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "¿Conversamos sobre sus estanques?",
+          "key": "text-037",
+          "label": "Vamos conversar sobre seus tanques?",
+          "pt": "Vamos conversar sobre seus tanques?"
+        },
+        {
+          "_key": "text-038",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Hable con el equipo sobre sondas, tableros y monitoreo para sus estanques.",
+          "key": "text-038",
+          "label": "Converse com a equipe sobre sondas, painéis e monitoramento para seus tanques.",
+          "pt": "Converse com a equipe sobre sondas, painéis e monitoramento para seus tanques."
+        },
+        {
+          "_key": "text-039",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Hablar con el equipo",
+          "key": "text-039",
+          "label": "Falar com a equipe",
+          "pt": "Falar com a equipe"
+        }
+      ],
+      "images": [
+        {
+          "_key": "image-001",
+          "_type": "pageImage",
+          "altEs": "",
+          "altPt": "",
+          "key": "image-001",
+          "label": "Imagem de fundo",
+          "src": "images/oxilife-painel-aberto-ilustrativo.png"
+        },
+        {
+          "_key": "image-002",
+          "_type": "pageImage",
+          "altEs": "Tablero de monitoreo instalado en campo",
+          "altPt": "Painel de monitoramento instalado em campo",
+          "key": "image-002",
+          "label": "Painel de monitoramento instalado em campo",
+          "src": "images/painel-sonda-campo.jpeg"
+        }
+      ],
+      "videos": [],
+      "links": [
+        {
+          "_key": "link-001",
+          "_type": "pageLink",
+          "href": "index.html",
+          "key": "link-001",
+          "label": "Início",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-002",
+          "_type": "pageLink",
+          "href": "https://wa.me/554599241306",
+          "key": "link-002",
+          "label": "Consultar uma solução↗",
+          "whatsappTopic": "OxiLife Fish"
+        },
+        {
+          "_key": "link-003",
+          "_type": "pageLink",
+          "href": "#funcionamento",
+          "key": "link-003",
+          "label": "Como funciona →",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-004",
+          "_type": "pageLink",
+          "href": "https://wa.me/554599241306",
+          "key": "link-004",
+          "label": "Avaliar meus tanques↗",
+          "whatsappTopic": "Instalação OxiLife Fish"
+        },
+        {
+          "_key": "link-005",
+          "_type": "pageLink",
+          "href": "https://wa.me/554599241306",
+          "key": "link-005",
+          "label": "Falar com a equipe↗",
+          "whatsappTopic": "OxiLife Fish"
+        }
+      ],
+      "_createdAt": "2026-10-31T00:31:38Z",
+      "_rev": "pR9eTOqkSKLxQuUierssF1",
+      "_updatedAt": "2026-10-31T00:31:38Z"
+    },
+    {
+      "_id": "page-contact",
+      "_type": "sitePage",
+      "pageId": "contact",
+      "title": "Contato",
+      "file": "contato.html",
+      "menuTitle": "Contato",
+      "showInMenu": true,
+      "sections": [
+        {
+          "_key": "section-001",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-001",
+          "title": "Vamos conversar sobre seu projeto."
+        },
+        {
+          "_key": "section-002",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-002",
+          "title": "O que você precisa?"
+        }
+      ],
+      "texts": [
+        {
+          "_key": "text-001",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Contacto y presupuesto | Eletrotech Marechal",
+          "key": "text-001",
+          "label": "Contato e orçamento | Eletrotech Marechal",
+          "pt": "Contato e orçamento | Eletrotech Marechal"
+        },
+        {
+          "_key": "text-002",
+          "_type": "pageText",
+          "attribute": "content",
+          "es": "Hable con Eletrotech Marechal por WhatsApp, correo o Instagram. Solicite presupuestos de servicios, productos y OxiLife Fish.",
+          "key": "text-002",
+          "label": "Fale com a Eletrotech Marechal pelo WhatsApp, e-mail ou Instagram. Solicite orçamento de s",
+          "pt": "Fale com a Eletrotech Marechal pelo WhatsApp, e-mail ou Instagram. Solicite orçamento de serviços, produtos e OxiLife Fish."
+        },
+        {
+          "_key": "text-003",
+          "_type": "pageText",
+          "attribute": "content",
+          "es": "Contacto y presupuesto | Eletrotech Marechal",
+          "key": "text-003",
+          "label": "Contato e orçamento | Eletrotech Marechal",
+          "pt": "Contato e orçamento | Eletrotech Marechal"
+        },
+        {
+          "_key": "text-004",
+          "_type": "pageText",
+          "attribute": "content",
+          "es": "Hable con Eletrotech Marechal por WhatsApp, correo o Instagram. Solicite presupuestos de servicios, productos y OxiLife Fish.",
+          "key": "text-004",
+          "label": "Fale com a Eletrotech Marechal pelo WhatsApp, e-mail ou Instagram. Solicite orçamento de s",
+          "pt": "Fale com a Eletrotech Marechal pelo WhatsApp, e-mail ou Instagram. Solicite orçamento de serviços, produtos e OxiLife Fish."
+        },
+        {
+          "_key": "text-005",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Inicio",
+          "key": "text-005",
+          "label": "Início",
+          "pt": "Início"
+        },
+        {
+          "_key": "text-006",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Contacto",
+          "key": "text-006",
+          "label": "Contato",
+          "pt": "Contato"
+        },
+        {
+          "_key": "text-007",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "CONVERSEMOS",
+          "key": "text-007",
+          "label": "VAMOS CONVERSAR",
+          "pt": "VAMOS CONVERSAR"
+        },
+        {
+          "_key": "text-008",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Hablemos de su proyecto.",
+          "key": "text-008",
+          "label": "Vamos conversar sobre seu projeto.",
+          "pt": "Vamos conversar sobre seu projeto."
+        },
+        {
+          "_key": "text-009",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Resuelva dudas, consulte equipos o solicite la evaluación de un servicio.",
+          "key": "text-009",
+          "label": "Tire dúvidas, consulte equipamentos ou solicite a avaliação de um serviço.",
+          "pt": "Tire dúvidas, consulte equipamentos ou solicite a avaliação de um serviço."
+        },
+        {
+          "_key": "text-010",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "SOLICITE UNA CONVERSACIÓN",
+          "key": "text-010",
+          "label": "SOLICITE UMA CONVERSA",
+          "pt": "SOLICITE UMA CONVERSA"
+        },
+        {
+          "_key": "text-011",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "¿Qué necesita?",
+          "key": "text-011",
+          "label": "O que você precisa?",
+          "pt": "O que você precisa?"
+        },
+        {
+          "_key": "text-012",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Prepare su mensaje para revisarlo y enviarlo por WhatsApp.",
+          "key": "text-012",
+          "label": "Prepare sua mensagem para revisar e enviar pelo WhatsApp.",
+          "pt": "Prepare sua mensagem para revisar e enviar pelo WhatsApp."
+        },
+        {
+          "_key": "text-013",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "* Campos obligatorios",
+          "key": "text-013",
+          "label": "* Campos obrigatórios",
+          "pt": "* Campos obrigatórios"
+        },
+        {
+          "_key": "text-014",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Su nombre",
+          "key": "text-014",
+          "label": "Seu nome",
+          "pt": "Seu nome"
+        },
+        {
+          "_key": "text-015",
+          "_type": "pageText",
+          "attribute": "placeholder",
+          "es": "¿Cómo podemos llamarle?",
+          "key": "text-015",
+          "label": "Como podemos chamar você?",
+          "pt": "Como podemos chamar você?"
+        },
+        {
+          "_key": "text-016",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Ciudad",
+          "key": "text-016",
+          "label": "Cidade",
+          "pt": "Cidade"
+        },
+        {
+          "_key": "text-017",
+          "_type": "pageText",
+          "attribute": "placeholder",
+          "es": "Su ciudad",
+          "key": "text-017",
+          "label": "Sua cidade",
+          "pt": "Sua cidade"
+        },
+        {
+          "_key": "text-018",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Me interesa",
+          "key": "text-018",
+          "label": "Tenho interesse em",
+          "pt": "Tenho interesse em"
+        },
+        {
+          "_key": "text-019",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Servicios eléctricos",
+          "key": "text-019",
+          "label": "Serviços elétricos",
+          "pt": "Serviços elétricos"
+        },
+        {
+          "_key": "text-020",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Productos",
+          "key": "text-020",
+          "label": "Produtos",
+          "pt": "Produtos"
+        },
+        {
+          "_key": "text-021",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "OxiLife Fish",
+          "key": "text-021",
+          "label": "OxiLife Fish",
+          "pt": "OxiLife Fish"
+        },
+        {
+          "_key": "text-022",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Mantenimiento",
+          "key": "text-022",
+          "label": "Manutenção",
+          "pt": "Manutenção"
+        },
+        {
+          "_key": "text-023",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "¿Cómo podemos ayudar?",
+          "key": "text-023",
+          "label": "Como podemos ajudar?",
+          "pt": "Como podemos ajudar?"
+        },
+        {
+          "_key": "text-024",
+          "_type": "pageText",
+          "attribute": "placeholder",
+          "es": "Cuéntenos qué servicio o equipo necesita.",
+          "key": "text-024",
+          "label": "Conte qual serviço ou equipamento você procura.",
+          "pt": "Conte qual serviço ou equipamento você procura."
+        },
+        {
+          "_key": "text-025",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Describa su necesidad con al menos 10 caracteres.",
+          "key": "text-025",
+          "label": "Descreva sua necessidade com pelo menos 10 caracteres.",
+          "pt": "Descreva sua necessidade com pelo menos 10 caracteres."
+        },
+        {
+          "_key": "text-026",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Preparar mensaje en WhatsApp",
+          "key": "text-026",
+          "label": "Preparar mensagem no WhatsApp",
+          "pt": "Preparar mensagem no WhatsApp"
+        },
+        {
+          "_key": "text-027",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Los datos no se almacenan en este sitio. Usted revisa y confirma el envío en WhatsApp.",
+          "key": "text-027",
+          "label": "Os dados não são armazenados neste site. Você revisa e confirma o envio no WhatsApp.",
+          "pt": "Os dados não são armazenados neste site. Você revisa e confirma o envio no WhatsApp."
+        },
+        {
+          "_key": "text-028",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Abrir mensaje preparado",
+          "key": "text-028",
+          "label": "Abrir mensagem preparada",
+          "pt": "Abrir mensagem preparada"
+        },
+        {
+          "_key": "text-029",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "¿Prefiere hablar directamente?",
+          "key": "text-029",
+          "label": "Prefere falar diretamente?",
+          "pt": "Prefere falar diretamente?"
+        },
+        {
+          "_key": "text-030",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Conversar por WhatsApp",
+          "key": "text-030",
+          "label": "Conversar pelo WhatsApp",
+          "pt": "Conversar pelo WhatsApp"
+        },
+        {
+          "_key": "text-031",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "PARA AGILIZAR",
+          "key": "text-031",
+          "label": "PARA AGILIZAR",
+          "pt": "PARA AGILIZAR"
+        },
+        {
+          "_key": "text-032",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Tenga a mano",
+          "key": "text-032",
+          "label": "Tenha em mãos",
+          "pt": "Tenha em mãos"
+        },
+        {
+          "_key": "text-033",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Fotos del equipo o lugar",
+          "key": "text-033",
+          "label": "Fotos do equipamento ou local",
+          "pt": "Fotos do equipamento ou local"
+        },
+        {
+          "_key": "text-034",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Ciudad y descripción de la necesidad",
+          "key": "text-034",
+          "label": "Cidade e descrição da necessidade",
+          "pt": "Cidade e descrição da necessidade"
+        },
+        {
+          "_key": "text-035",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Modelo, tensión y potencia, si están disponibles",
+          "key": "text-035",
+          "label": "Modelo, tensão e potência, se disponíveis",
+          "pt": "Modelo, tensão e potência, se disponíveis"
+        },
+        {
+          "_key": "text-036",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Atención fuera de horario: consulte la disponibilidad.",
+          "key": "text-036",
+          "label": "Atendimento fora de horário: consulte a disponibilidade.",
+          "pt": "Atendimento fora de horário: consulte a disponibilidade."
+        },
+        {
+          "_key": "text-037",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Conocer servicios y productos",
+          "key": "text-037",
+          "label": "Conhecer serviços e produtos",
+          "pt": "Conhecer serviços e produtos"
+        },
+        {
+          "_key": "text-038",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Entender cómo trabajamos",
+          "key": "text-038",
+          "label": "Entender como trabalhamos",
+          "pt": "Entender como trabalhamos"
+        }
+      ],
+      "images": [],
+      "videos": [],
+      "links": [
+        {
+          "_key": "link-001",
+          "_type": "pageLink",
+          "href": "index.html",
+          "key": "link-001",
+          "label": "Início",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-002",
+          "_type": "pageLink",
+          "href": "https://wa.me/554599241306",
+          "key": "link-002",
+          "label": "Conversar pelo WhatsApp→",
+          "whatsappTopic": "Contato"
+        },
+        {
+          "_key": "link-003",
+          "_type": "pageLink",
+          "href": "tel:+554599241306",
+          "key": "link-003",
+          "label": "+55 45 9924-1306",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-004",
+          "_type": "pageLink",
+          "href": "mailto:eletrotekc@outlook.com",
+          "key": "link-004",
+          "label": "eletrotekc@outlook.com",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-005",
+          "_type": "pageLink",
+          "href": "https://instagram.com/eletrotechmarechal",
+          "key": "link-005",
+          "label": "Instagram @eletrotechmarechal ↗",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-006",
+          "_type": "pageLink",
+          "href": "produtos.html",
+          "key": "link-006",
+          "label": "Conhecer serviços e produtos→",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-007",
+          "_type": "pageLink",
+          "href": "como-trabalhamos.html",
+          "key": "link-007",
+          "label": "Entender como trabalhamos→",
+          "whatsappTopic": ""
+        }
+      ],
+      "_createdAt": "2026-10-31T00:31:38Z",
+      "_rev": "pR9eTOqkSKLxQuUierssF1",
+      "_updatedAt": "2026-10-31T00:31:38Z"
+    },
+    {
+      "_id": "page-portfolio",
+      "_type": "sitePage",
+      "pageId": "portfolio",
+      "title": "Projetos e equipamentos",
+      "file": "portfolio.html",
+      "menuTitle": "Projetos e equipamentos",
+      "showInMenu": false,
+      "sections": [
+        {
+          "_key": "section-001",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-001",
+          "title": "A técnica aparecenos detalhes."
+        },
+        {
+          "_key": "section-002",
+          "_type": "pageSection",
+          "enabled": true,
+          "key": "section-002",
+          "title": "Controle, componente por componente."
+        }
+      ],
+      "texts": [
+        {
+          "_key": "text-001",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Proyectos y equipos | Eletrotech Marechal",
+          "key": "text-001",
+          "label": "Projetos e equipamentos | Eletrotech Marechal",
+          "pt": "Projetos e equipamentos | Eletrotech Marechal"
+        },
+        {
+          "_key": "text-002",
+          "_type": "pageText",
+          "attribute": "content",
+          "es": "Fotos de montagens, instalações e equipamentos apresentados pela Eletrotech. Conheça soluções de elétrica, automação e piscicultura.",
+          "key": "text-002",
+          "label": "Fotos de montagens, instalações e equipamentos apresentados pela Eletrotech. Conheça soluç",
+          "pt": "Fotos de montagens, instalações e equipamentos apresentados pela Eletrotech. Conheça soluções de elétrica, automação e piscicultura."
+        },
+        {
+          "_key": "text-003",
+          "_type": "pageText",
+          "attribute": "content",
+          "es": "Projetos e equipamentos | Eletrotech Marechal",
+          "key": "text-003",
+          "label": "Projetos e equipamentos | Eletrotech Marechal",
+          "pt": "Projetos e equipamentos | Eletrotech Marechal"
+        },
+        {
+          "_key": "text-004",
+          "_type": "pageText",
+          "attribute": "content",
+          "es": "Fotos de montagens, instalações e equipamentos apresentados pela Eletrotech. Conheça soluções de elétrica, automação e piscicultura.",
+          "key": "text-004",
+          "label": "Fotos de montagens, instalações e equipamentos apresentados pela Eletrotech. Conheça soluç",
+          "pt": "Fotos de montagens, instalações e equipamentos apresentados pela Eletrotech. Conheça soluções de elétrica, automação e piscicultura."
+        },
+        {
+          "_key": "text-005",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Inicio",
+          "key": "text-005",
+          "label": "Início",
+          "pt": "Início"
+        },
+        {
+          "_key": "text-006",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Proyectos y equipos",
+          "key": "text-006",
+          "label": "Projetos e equipamentos",
+          "pt": "Projetos e equipamentos"
+        },
+        {
+          "_key": "text-007",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "DEL TALLER AL CAMPO",
+          "key": "text-007",
+          "label": "DA BANCADA AO CAMPO",
+          "pt": "DA BANCADA AO CAMPO"
+        },
+        {
+          "_key": "text-008",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "La técnica se ve",
+          "key": "text-008",
+          "label": "A técnica aparece",
+          "pt": "A técnica aparece"
+        },
+        {
+          "_key": "text-009",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "en los detalles.",
+          "key": "text-009",
+          "label": "nos detalhes.",
+          "pt": "nos detalhes."
+        },
+        {
+          "_key": "text-010",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Montajes, instalaciones y equipos presentados por Eletrotech. Explore las fotos y conozca las soluciones relacionadas.",
+          "key": "text-010",
+          "label": "Montagens, instalações e equipamentos apresentados pela Eletrotech. Explore as fotos e con",
+          "pt": "Montagens, instalações e equipamentos apresentados pela Eletrotech. Explore as fotos e conheça as soluções relacionadas."
+        },
+        {
+          "_key": "text-011",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "01 / MONTAJE ELÉCTRICO",
+          "key": "text-011",
+          "label": "01 / MONTAGEM ELÉTRICA",
+          "pt": "01 / MONTAGEM ELÉTRICA"
+        },
+        {
+          "_key": "text-012",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Control, componente por componente.",
+          "key": "text-012",
+          "label": "Controle, componente por componente.",
+          "pt": "Controle, componente por componente."
+        },
+        {
+          "_key": "text-013",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Registro del montaje de un tablero eléctrico. Eletrotech trabaja con diseño y montaje a medida para controlar motores, iluminación y procesos.",
+          "key": "text-013",
+          "label": "Registro da montagem de um painel elétrico. A Eletrotech trabalha com projeto e montagem s",
+          "pt": "Registro da montagem de um painel elétrico. A Eletrotech trabalha com projeto e montagem sob medida para controle de motores, iluminação e processos."
+        },
+        {
+          "_key": "text-014",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Conocer los servicios",
+          "key": "text-014",
+          "label": "Conhecer os serviços",
+          "pt": "Conhecer os serviços"
+        },
+        {
+          "_key": "text-015",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "02 / PISCICULTURA",
+          "key": "text-015",
+          "label": "02 / PISCICULTURA",
+          "pt": "02 / PISCICULTURA"
+        },
+        {
+          "_key": "text-016",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Tecnología junto a los estanques.",
+          "key": "text-016",
+          "label": "Tecnologia junto aos tanques.",
+          "pt": "Tecnologia junto aos tanques."
+        },
+        {
+          "_key": "text-017",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Tablero de monitoreo instalado en campo. Conozca cómo OxiLife Fish conecta medición, control y supervisión en piscicultura.",
+          "key": "text-017",
+          "label": "Painel de monitoramento instalado em campo. Conheça como o OxiLife Fish conecta medição, c",
+          "pt": "Painel de monitoramento instalado em campo. Conheça como o OxiLife Fish conecta medição, controle e acompanhamento na piscicultura."
+        },
+        {
+          "_key": "text-018",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Explorar OxiLife Fish",
+          "key": "text-018",
+          "label": "Explorar OxiLife Fish",
+          "pt": "Explorar OxiLife Fish"
+        },
+        {
+          "_key": "text-019",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "03 / PROCESOS",
+          "key": "text-019",
+          "label": "03 / PROCESSOS",
+          "pt": "03 / PROCESSOS"
+        },
+        {
+          "_key": "text-020",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Del proyecto a la instalación.",
+          "key": "text-020",
+          "label": "Do projeto à instalação.",
+          "pt": "Do projeto à instalação."
+        },
+        {
+          "_key": "text-021",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Montaje presentado por el equipo. Conozca las etapas de atención, evaluación, ejecución y orientación sobre la operación.",
+          "key": "text-021",
+          "label": "Montagem apresentada pela equipe. Entenda as etapas de atendimento, avaliação, execução e ",
+          "pt": "Montagem apresentada pela equipe. Entenda as etapas de atendimento, avaliação, execução e orientação sobre a operação."
+        },
+        {
+          "_key": "text-022",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Cómo trabajamos",
+          "key": "text-022",
+          "label": "Como trabalhamos",
+          "pt": "Como trabalhamos"
+        },
+        {
+          "_key": "text-023",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "04 / EQUIPOS",
+          "key": "text-023",
+          "label": "04 / EQUIPAMENTOS",
+          "pt": "04 / EQUIPAMENTOS"
+        },
+        {
+          "_key": "text-024",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Motores para distintas aplicaciones.",
+          "key": "text-024",
+          "label": "Motores para diferentes aplicações.",
+          "pt": "Motores para diferentes aplicações."
+        },
+        {
+          "_key": "text-025",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Equipo de la línea Hércules presentado por Eletrotech. Confirme modelos, potencia, tensión y disponibilidad con el equipo.",
+          "key": "text-025",
+          "label": "Equipamento da linha Hércules apresentado pela Eletrotech. Modelos, potência, tensão e dis",
+          "pt": "Equipamento da linha Hércules apresentado pela Eletrotech. Modelos, potência, tensão e disponibilidade devem ser confirmados com a equipe."
+        },
+        {
+          "_key": "text-026",
+          "_type": "pageText",
+          "attribute": "",
+          "es": "Ver equipo",
+          "key": "text-026",
+          "label": "Ver equipamento",
+          "pt": "Ver equipamento"
+        }
+      ],
+      "images": [
+        {
+          "_key": "image-001",
+          "_type": "pageImage",
+          "altEs": "Detalhe da montagem de painel elétrico Eletrotech",
+          "altPt": "Detalhe da montagem de painel elétrico Eletrotech",
+          "key": "image-001",
+          "label": "Detalhe da montagem de painel elétrico Eletrotech",
+          "src": "images/painel-eletrico-2.jpeg"
+        },
+        {
+          "_key": "image-002",
+          "_type": "pageImage",
+          "altEs": "Painel de monitoramento instalado em campo",
+          "altPt": "Painel de monitoramento instalado em campo",
+          "key": "image-002",
+          "label": "Painel de monitoramento instalado em campo",
+          "src": "images/painel-sonda-campo.jpeg"
+        },
+        {
+          "_key": "image-003",
+          "_type": "pageImage",
+          "altEs": "Visão da montagem de um painel elétrico",
+          "altPt": "Visão da montagem de um painel elétrico",
+          "key": "image-003",
+          "label": "Visão da montagem de um painel elétrico",
+          "src": "images/painel-eletrico-1.jpeg"
+        },
+        {
+          "_key": "image-004",
+          "_type": "pageImage",
+          "altEs": "Motor Hércules apresentado pela Eletrotech",
+          "altPt": "Motor Hércules apresentado pela Eletrotech",
+          "key": "image-004",
+          "label": "Motor Hércules apresentado pela Eletrotech",
+          "src": "images/motores-hercules-2.jpeg"
+        }
+      ],
+      "videos": [],
+      "links": [
+        {
+          "_key": "link-001",
+          "_type": "pageLink",
+          "href": "index.html",
+          "key": "link-001",
+          "label": "Início",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-002",
+          "_type": "pageLink",
+          "href": "images/painel-eletrico-2.jpeg",
+          "key": "link-002",
+          "label": "Link",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-003",
+          "_type": "pageLink",
+          "href": "servicos.html",
+          "key": "link-003",
+          "label": "Conhecer os serviços →",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-004",
+          "_type": "pageLink",
+          "href": "images/painel-sonda-campo.jpeg",
+          "key": "link-004",
+          "label": "Link",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-005",
+          "_type": "pageLink",
+          "href": "oxilife-fish.html",
+          "key": "link-005",
+          "label": "Explorar OxiLife Fish →",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-006",
+          "_type": "pageLink",
+          "href": "images/painel-eletrico-1.jpeg",
+          "key": "link-006",
+          "label": "Link",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-007",
+          "_type": "pageLink",
+          "href": "como-trabalhamos.html",
+          "key": "link-007",
+          "label": "Como trabalhamos →",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-008",
+          "_type": "pageLink",
+          "href": "images/motores-hercules-2.jpeg",
+          "key": "link-008",
+          "label": "Link",
+          "whatsappTopic": ""
+        },
+        {
+          "_key": "link-009",
+          "_type": "pageLink",
+          "href": "produtos/motores-hercules.html",
+          "key": "link-009",
+          "label": "Ver equipamento →",
+          "whatsappTopic": ""
+        }
+      ],
+      "_createdAt": "2026-10-31T00:31:38Z",
+      "_rev": "pR9eTOqkSKLxQuUierssF1",
+      "_updatedAt": "2026-10-31T00:31:38Z"
+    }
+  ]
+}

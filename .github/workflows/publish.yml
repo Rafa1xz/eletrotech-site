@@ -20,6 +20,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - name: Instalar dependencias do renderizador
+        run: npm ci
       - name: Sincronizar conteúdo publicado do Sanity
         env:
           SANITY_PROJECT_ID: ${{ vars.SANITY_PROJECT_ID }}
@@ -32,12 +34,15 @@ jobs:
           PUBLISHED_SITE_URL: https://rafa1xz.github.io/eletrotech-site/
           FORCE_PUBLISH: ${{ github.event_name != 'schedule' }}
         run: node scripts/check-publication.mjs
+      - name: Renderizar paginas e servicos do Sanity
+        if: steps.content.outputs.changed == 'true'
+        run: node scripts/render-content.mjs
       - name: Gerar catálogo, páginas individuais e sitemap
         if: steps.content.outputs.changed == 'true'
         run: node scripts/build-products.mjs
       - name: Validar publicação e URLs estáveis
         if: steps.content.outputs.changed == 'true'
-        run: node --test qa/scripts/test-publication.mjs qa/scripts/test-sanity.mjs
+        run: npm test
       - name: Validar HTML e links locais
         if: steps.content.outputs.changed == 'true'
         shell: pwsh

@@ -1,0 +1,85 @@
+/* Dedicated flagship page. Existing product data and technical caveats retained. */
+body.ox-page .wrap { width: min(1200px,calc(100% - 48px)); }
+body.ox-page .ox-hero { position: relative; isolation: isolate; overflow: hidden; color: #fff; background: #06263c; }
+body.ox-page .ox-hero-scene { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scaleX(-1); }
+body.ox-page .ox-hero::before { content: ''; display: block; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg,#04263cf5 0%,#04263ce8 29%,#04263c75 51%,#04263c12 80%); }
+body.ox-page .ox-hero::after { content: none; }
+body.ox-page .ox-hero .hero-grid { display: grid; grid-template-columns: 1fr; padding: 34px 0 48px; min-height: 690px; gap: 0; align-content: center; }
+body.ox-page .ox-hero .hero-grid>div { max-width: 565px; }
+body.ox-page .breadcrumb,body.ox-page .breadcrumb a { color: #d3e3ee; font-size: 12px; }
+body.ox-page .ox-hero .eyebrow { display: block; color: #ffac64; font-size: 11px; letter-spacing: .13em; margin: 18px 0; }
+body.ox-page .ox-hero .eyebrow::before { display: none; }
+body.ox-page .ox-wordmark { font-size: clamp(42px,5vw,68px); font-weight: 700; letter-spacing: -.055em; color: #fff; margin: 0 0 20px; line-height: 1.1; }
+body.ox-page .ox-wordmark>span { color: #27c4ce; }
+body.ox-page .ox-hero .hero-copy .ox-wordmark { font-size: clamp(42px,5vw,68px); line-height: 1.1; font-weight: 700; color: #fff; }
+body.ox-page .ox-hero .hero-copy>p:not(.eyebrow):not(.ox-wordmark):not(.metric-note) { color: #e0edf5; font-size: 17px; }
+body.ox-page .ox-hero .hero-copy>p.metric-note.metric-note { color: #d3e7f2; font-size: 11px; }
+body.ox-page .ox-hero h1 { max-width: 14ch; font-size: clamp(36px,4.4vw,60px); line-height: 1.07; letter-spacing: -.04em; color: #fff; }
+body.ox-page .ox-hero h1+p { max-width: 46ch; font-size: 17px; line-height: 1.65; margin-top: 22px; color: #e0edf5; }
+body.ox-page .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+body.ox-page .hero-actions .btn { min-height: 50px; padding: 14px 22px; border-radius: 9px; font-size: 14px; }
+body.ox-page .btn-cyan,body.ox-page .btn-primary { color: #102337; background: #ff8b32; border-color: #ff8b32; box-shadow: none; }
+body.ox-page .hero-actions .btn-light-outline { background: #06263c30; border-color: #b3ccd980; color: #fff; }
+body.ox-page .ox-metrics { display: flex; flex-wrap: wrap; gap: 0; margin-top: 30px; padding-top: 0; border: 0; }
+body.ox-page .ox-metrics>span { flex: 0 1 auto; padding: 0 20px; color: #d3e7f2; font-size: 12px; }
+body.ox-page .ox-metrics>span:first-child { padding-left: 0; }
+body.ox-page .ox-metrics>span+span { border-left: 1px solid #ffffff40; }
+body.ox-page .ox-metrics b { font-size: 26px; color: #6ee2ed; }
+body.ox-page .metric-note { color: #d3e7f2; font-size: 11px; margin-top: 14px; }
+body.ox-page .ox-scene-caption { position: absolute; bottom: 12px; right: 20px; font-size: 10px; color: #fff; background: #06263c99; padding: 4px 8px; border-radius: 5px; }
+body.ox-page #funcionamento { padding-block: 52px 40px; background: #fff; scroll-margin-top: 100px; }
+body.ox-page .section-heading { display: block; text-align: center; margin-bottom: 34px; }
+body.ox-page .section-heading>div,body.ox-page .section-heading h2 { margin-inline: auto; max-width: none; }
+body.ox-page .section-heading .eyebrow { display: block; color: #aa4708; font-size: 11px; letter-spacing: .14em; margin: 0 0 12px; }
+body.ox-page .section-heading .eyebrow::before { display: none; }
+body.ox-page .section-heading h2 { color: #102c4d; font-size: clamp(28px,3.2vw,40px); }
+body.ox-page .section-heading>p { max-width: 60ch; margin: 14px auto 0; font-size: 15px; color: #526174; }
+body.ox-page #funcionamento .steps-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 36px; }
+body.ox-page #funcionamento .step { position: relative; padding: 0 16px; text-align: center; border: 0; background: transparent; box-shadow: none; }
+body.ox-page .ox-flow-icon { display: grid; place-items: center; width: 70px; height: 70px; margin: 0 auto 18px; color: #0a8195; }
+body.ox-page .ox-flow-icon svg { width: 54px; height: 54px; stroke-width: 1.4; }
+body.ox-page .ox-flow-composite { position: relative; width: 90px; height: 80px; color: #102c4d; }
+body.ox-page .ox-flow-composite>span { position: absolute; display: block; }
+body.ox-page .ox-flow-composite svg { width: 100%; height: 100%; stroke-width: 1.5; }
+body.ox-page .ox-icon-water { inset: 37px 0 2px; color: #0bafc4; }
+body.ox-page .ox-icon-probe { width: 31px; height: 65px; left: 33px; top: 0; background: #fff; }
+body.ox-page .ox-icon-panel { inset: 5px 10px; }
+body.ox-page .ox-icon-gear { width: 32px; height: 32px; left: 31px; top: 27px; color: #0bafc4; background: #fff; }
+body.ox-page .ox-icon-monitor { inset: 2px 7px; }
+body.ox-page .ox-icon-chart { width: 42px; height: 29px; left: 24px; top: 17px; color: #0bafc4; background: #fff; }
+body.ox-page #funcionamento .step-num { display: inline; width: auto; height: auto; padding: 0; margin: 0 6px 0 0; background: transparent; color: #087e94; border-radius: 0; font-size: 18px; font-weight: 700; }
+body.ox-page #funcionamento .step h3 { display: inline; color: #102c4d; font-size: 19px; line-height: 1.3; }
+body.ox-page #funcionamento .step p { color: #526174; font-size: 15px; line-height: 1.65; margin-top: 12px; }
+body.ox-page #funcionamento .step:not(:last-child)::after { content: '\2192'; position: absolute; right: -28px; top: 66px; color: #087e94; font-size: 26px; }
+body.ox-page .ox-history-note { margin-top: 28px; text-align: center; color: #526174; font-size: 13px; }
+body.ox-page .ox-application { padding-block: 44px; background: linear-gradient(105deg,#e4f1ff,#f4f9ff); }
+body.ox-page .ox-application .split { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 48px; }
+body.ox-page .ox-application figure { margin: 0; }
+body.ox-page .ox-application figure img { display: block; width: 100%; height: 430px; object-fit: cover; object-position: center; border-radius: 16px; }
+body.ox-page .ox-application figcaption { font-size: 11px; color: #526174; margin-top: 10px; }
+body.ox-page .ox-application .eyebrow { display: block; font-size: 11px; letter-spacing: .1em; color: #aa4708; margin-bottom: 16px; }
+body.ox-page .ox-application .eyebrow::before { display: none; }
+body.ox-page .ox-application h2 { color: #102c4d; font-size: clamp(28px,3vw,40px); line-height: 1.15; margin-bottom: 20px; }
+body.ox-page .ox-application p,body.ox-page .ox-application li { color: #526174; font-size: 14px; line-height: 1.7; }
+body.ox-page .ox-application .check-list { margin-block: 20px; }
+body.ox-page .ox-application .btn { border-radius: 9px; font-size: 14px; }
+body.ox-page #equipamentos { padding-block: 52px; background: #fff; }
+body.ox-page #equipamentos .product-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
+body.ox-page #equipamentos .product-card { border: 1px solid #dfe7ef; border-radius: 12px; background: #fff; box-shadow: none; min-width: 0; overflow: hidden; }
+body.ox-page #equipamentos .product-image { height: 250px; padding: 18px; background: #f7fafc; border-color: #edf1f5; }
+body.ox-page #equipamentos .product-image img { width: 100%; height: 100%; object-fit: contain; }
+body.ox-page #equipamentos .product-body { padding: 22px; }
+body.ox-page #equipamentos h3,body.ox-page #equipamentos h3 a { color: #102c4d; font-size: 21px; }
+body.ox-page #equipamentos .product-body p { color: #526174; font-size: 14px; }
+body.ox-page #equipamentos .btn-outline { color: #174686; border: 1px solid #a9bed5; border-radius: 7px; background: #fff; min-height: 42px; font-size: 13px; }
+body.ox-page #equipamentos .product-card-meta { color: #526174; font-size: 12px; }
+body.ox-page .cta-section { background: #fff; padding: 0 0 36px; }
+body.ox-page .cta-inner { position: relative; isolation: isolate; overflow: hidden; display: grid; grid-template-columns: 1.6fr 1fr; gap: 36px; align-items: center; padding: 36px; border-radius: 16px; background: linear-gradient(90deg,#06263cf5,#06263ca8),url('../images/oxilife-painel-aberto-ilustrativo.png') center/cover; border: 0; box-shadow: none; }
+body.ox-page .cta-inner::before,body.ox-page .cta-inner::after { content: none; }
+body.ox-page .cta-inner .eyebrow { display: none; }
+body.ox-page .cta-inner h2 { color: #fff; font-size: clamp(26px,2.8vw,36px); line-height: 1.2; margin: 0; }
+body.ox-page .cta-inner p { color: #d3e7f2; font-size: 15px; margin-top: 14px; }
+body.ox-page .cta-inner>.btn { justify-self: center; border-radius: 9px; font-size: 14px; padding: 15px 24px; }
+@media(max-width:1000px) { body.ox-page .ox-hero .hero-grid>div { max-width: 500px; } body.ox-page .ox-hero::before { background: linear-gradient(90deg,#04263cf5,#04263cd9 48%,#04263c30); } body.ox-page .ox-application .split { gap: 28px; } }
+@media(max-width:760px) { body.ox-page .ox-hero .hero-grid { min-height: 740px; } body.ox-page #funcionamento .steps-grid,body.ox-page .ox-application .split,body.ox-page #equipamentos .product-grid,body.ox-page .cta-inner { grid-template-columns: 1fr; } body.ox-page #funcionamento .step:not(:last-child)::after { content: none; } body.ox-page .ox-application figure img { height: 350px; } body.ox-page .cta-inner { padding: 28px 24px; gap: 24px; } body.ox-page .cta-inner>.btn { justify-self: start; } }
+@media(max-width:480px) { body.ox-page .wrap { width: calc(100% - 40px); } body.ox-page .ox-hero .hero-grid { padding-top: 28px; min-height: 740px; } body.ox-page .ox-hero-scene { object-position: 40% center; opacity: .45; } body.ox-page .ox-hero::before { background: linear-gradient(90deg,#04263ce8,#04263c80); } body.ox-page .ox-metrics>span { padding-inline: 12px; font-size: 11px; } body.ox-page .hero-actions .btn { font-size: 13px; padding-inline: 16px; } body.ox-page .ox-application figure img { height: 300px; } }

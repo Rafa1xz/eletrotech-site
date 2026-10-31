@@ -1,3 +1,4 @@
+import {cmsSchemaTypes,cmsSettingsFields} from './content.js';
 import {defineField, defineType} from 'sanity';
 
 const text = (name, title, required = false, type = 'string') => defineField({
@@ -42,11 +43,11 @@ const product = defineType({
 
 const siteSettings = defineType({
   name: 'siteSettings', title: 'Configurações do site', type: 'document',
-  fields: [text('name', 'Nome da empresa', true),
+  fields: [text('name', 'Nome da empresa', true), ...cmsSettingsFields,
     defineField({name: 'url', title: 'URL pública com barra final', type: 'url', validation: rule => rule.required().uri({scheme: ['https']})}),
     defineField({name: 'whatsapp', title: 'WhatsApp com DDI e DDD', type: 'string', validation: rule => rule.required().regex(/^\d{10,15}$/)}),
     defineField({name: 'email', title: 'E-mail', type: 'string', validation: rule => rule.required().email()}),
   ],
 });
 
-export const schemaTypes = [product, siteSettings];
+export const schemaTypes = [product, siteSettings, ...cmsSchemaTypes];

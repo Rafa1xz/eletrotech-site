@@ -12,6 +12,8 @@ export default defineConfig({
   dataset: process.env.SANITY_STUDIO_DATASET || 'production',
   plugins: [structureTool({structure: S => S.list().title('Conteúdo').items([
     S.documentTypeListItem('product').title('Produtos'),
+    S.documentTypeListItem('service').title('Servi\u00e7os'),
+    ...[['home','In\u00edcio'],['catalog','Servi\u00e7os e produtos'],['process','Como trabalhamos'],['oxilife','OxiLife Fish'],['contact','Contato'],['portfolio','Projetos e equipamentos']].map(([id,title]) => S.listItem().id(id).title(title).child(S.document().schemaType('sitePage').documentId('page-'+id))),
     S.listItem().title('Configurações do site').child(S.document().schemaType('siteSettings').documentId('site-settings')),
   ])})],
   schema: {types: schemaTypes},
