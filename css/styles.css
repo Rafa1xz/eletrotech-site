@@ -2119,9 +2119,6 @@ form .form-note {
   .home-hero::before {
     background: linear-gradient(180deg,#071b30c9,#102c4d9e 65%,#071b30b8);
   }
-  .hero-video {
-    display: none;
-  }
   .hero-copy h1 {
     font-size: clamp(2.6rem,10.5vw,3.8rem);
   }

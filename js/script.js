@@ -44,23 +44,23 @@
   function initFishBackground() {
     const video = document.getElementById('hero-fish-video');
     if (!video) return;
-    const wideScreen = window.matchMedia('(min-width: 681px)');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const connection = navigator.connection;
     let visible = true;
     let playRequest = 0;
     video.muted = true;
     video.defaultMuted = true;
+    video.playsInline = true;
     video.loop = video.dataset.videoLoop !== 'false';
     video.playbackRate = Number(video.dataset.playbackRate) || .75;
 
     function updateVideo() {
       const request = ++playRequest;
-      const enabled = video.dataset.videoEnabled !== 'false' && wideScreen.matches && !reducedMotion.matches && !connection?.saveData;
+      const enabled = video.dataset.videoEnabled !== 'false' && !reducedMotion.matches && !connection?.saveData;
       video.hidden = !enabled;
       if (!enabled) {
         video.pause();
-        // Keep the static poster for small screens and motion/data preferences.
+        // Keep the static poster when disabled or motion/data preferences require it.
         if (video.hasAttribute('src')) { video.removeAttribute('src'); video.load(); }
         return;
       }
@@ -81,7 +81,8 @@
     window.addEventListener('focus', updateVideo);
     window.addEventListener('online', updateVideo);
     document.addEventListener('pointerdown', updateVideo, { passive: true });
-    [wideScreen, reducedMotion].forEach(query => query.addEventListener('change', updateVideo));
+    document.addEventListener('touchend', updateVideo, { passive: true });
+    reducedMotion.addEventListener('change', updateVideo);
     connection?.addEventListener?.('change', updateVideo);
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(entries => { visible = entries[0].isIntersecting; updateVideo(); }).observe(video.closest('.home-hero'));
