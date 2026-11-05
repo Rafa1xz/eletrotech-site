@@ -84,6 +84,7 @@ function shell(p,main,available){
   <link rel="stylesheet" href="css/styles.css"><link rel="stylesheet" href="css/industrial.css"><link rel="stylesheet" href="css/pages.css"><link rel="stylesheet" href="css/reference-layout.css?v=82b1c8c47a49">
   <link rel="stylesheet" href="css/product-cards.css">
   <link rel="stylesheet" href="css/product-detail.css">
+  <link rel="stylesheet" href="css/buttons.css">
   <script src="js/site-config.js" defer></script><script src="js/i18n.js" defer></script><script src="js/script.js" defer></script><script src="js/gallery.js" defer></script>
   ${available?`<script type="application/ld+json">${json(structured)}</script>`:''}
   <script type="application/ld+json">${json(breadcrumb)}</script>

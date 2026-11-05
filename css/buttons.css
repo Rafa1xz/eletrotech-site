@@ -1,0 +1,23 @@
+/* Shared action palette: change these tokens to update every orange button. */
+:root {
+  --button-orange: #ff821e;
+  --button-orange-hover: #ff963f;
+  --button-orange-ink: #103355;
+}
+#conteudo :is(.btn-primary,.btn-cyan,.services-primary,.process-primary,.ox-project-button,.service-quote,.product-details,.process-aside .btn,.services-oxilife>.text-link,#quote-form>button[type=submit]) {
+  background: var(--button-orange);
+  border-color: var(--button-orange);
+  color: var(--button-orange-ink);
+  box-shadow: none;
+}
+#conteudo :is(.btn-primary,.btn-cyan,.services-primary,.process-primary,.ox-project-button,.service-quote,.product-details,.process-aside .btn,.services-oxilife>.text-link,#quote-form>button[type=submit])::before {
+  content: none;
+}
+@media(hover:hover) {
+  #conteudo :is(.btn-primary,.btn-cyan,.services-primary,.process-primary,.ox-project-button,.service-quote,.product-details,.process-aside .btn,.services-oxilife>.text-link,#quote-form>button[type=submit]):hover {
+    background: var(--button-orange-hover);
+    border-color: var(--button-orange-hover);
+    color: var(--button-orange-ink);
+    box-shadow: none;
+  }
+}
