@@ -70,16 +70,20 @@ export function renderPage(template,page,site,{services=[],icons={},defaults={},
     for(const service of list){
       if(!safeId(service.serviceId)||ids.has(service.serviceId))throw Error('Identificador de serviço inválido/duplicado.');ids.add(service.serviceId);
       if(home&&!service.showOnHome)continue;
-      const card=$('<article class="service-card">').attr('id',service.serviceId);
+      const card=$('<article class="service-card service-card--showcase">').attr('id',service.serviceId);
       if(service.active===false)card.attr('hidden','');
-      card.append($('<img class="service-photo">').attr({src:localMedia(service.src),alt:service.alt||service.name,loading:'lazy',decoding:'async'}));
-      const body=$('<div class="service-content">'),top=$('<div class="card-top">');
-      top.append($('<span class="service-symbol">').html(icons[service.icon]||Object.values(icons)[0]||''));
-      top.append($('<span class="tag">').text(service.category||''));body.append(top);
-      body.append($('<h3>').append(tr($,service.name,service.nameEs)),$('<p>').append(tr($,service.description,service.descriptionEs)));
-      const link=$('<a class="text-link" target="_blank" rel="noopener noreferrer">').attr('data-whatsapp',service.whatsappTopic||service.name).attr('href',`https://wa.me/${site.whatsapp}`);
-      link.append(tr($,'Solicitar orçamento','Solicitar presupuesto'),$('<span aria-hidden="true">').text('↗'));body.append(link);
-      if(service.note)body.append($('<span class="service-photo-note">').append(tr($,service.note,service.noteEs)));
+      const media=$('<div class="service-card-media">');
+      media.append($('<img class="service-photo">').attr({src:localMedia(service.src),alt:service.alt||service.name,loading:'lazy',decoding:'async'}));
+      if(service.category)media.append($('<span class="service-category">').text(service.category));
+      card.append(media);
+      const body=$('<div class="service-card-body">'),heading=$('<div class="service-heading">');
+      heading.append($('<span class="service-symbol" aria-hidden="true">').html(icons[service.icon]||Object.values(icons)[0]||''));
+      heading.append($('<h3>').append(tr($,service.name,service.nameEs)));body.append(heading);
+      body.append($('<p class="service-description">').append(tr($,service.description,service.descriptionEs)));
+      const action=$('<div class="service-card-action">');
+      const link=$('<a class="service-quote" target="_blank" rel="noopener noreferrer">').attr('data-whatsapp',service.whatsappTopic||service.name).attr('href',`https://wa.me/${site.whatsapp}`);
+      link.append(tr($,'Solicitar orçamento','Solicitar presupuesto'),$('<svg class="service-quote-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg>'));
+      action.append(link);body.append(action);
       card.append(body);grid.append(card);
     }
   }
