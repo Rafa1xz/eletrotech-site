@@ -83,6 +83,7 @@ function shell(p,main,available){
   <meta name="theme-color" content="#0B1425"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/styles.css"><link rel="stylesheet" href="css/industrial.css"><link rel="stylesheet" href="css/pages.css"><link rel="stylesheet" href="css/reference-layout.css?v=82b1c8c47a49">
   <link rel="stylesheet" href="css/product-cards.css">
+  <link rel="stylesheet" href="css/product-detail.css">
   <script src="js/site-config.js" defer></script><script src="js/i18n.js" defer></script><script src="js/script.js" defer></script><script src="js/gallery.js" defer></script>
   ${available?`<script type="application/ld+json">${json(structured)}</script>`:''}
   <script type="application/ld+json">${json(breadcrumb)}</script>
@@ -92,7 +93,7 @@ ${bodyBefore.replace('catalog-page','product-detail-page').replace('services-pag
   return html.replace(/(href|src|action|poster|data-src)="([^":]+)"/g,(match,key,value)=>(value.startsWith('/')||value.startsWith('#'))?match:`${key}="../${value}"`);
 }
 function detail(p){
-  const images=[p.src,...p.gallery];
+  const images=[...new Set([p.src,...p.gallery])];
   const quote=`Olá! Gostaria de um orçamento para ${p.name}${p.sku?` (código ${p.sku})`:''}. Página: ${canonical(p)}`;
   const quoteEs=`Hola, quisiera un presupuesto para ${p.nameEs||p.name}${p.sku?` (código ${p.sku})`:''}. Página: ${canonical(p)}`;
   const related=active.filter(item=>item.id!==p.id&&item.category===p.category);
@@ -100,27 +101,30 @@ function detail(p){
   return `
   <section class="product-detail section">
     <div class="wrap">
-      <nav class="breadcrumb" aria-label="Caminho da página"><a href="index.html">${tr('Início','Inicio')}</a><span aria-hidden="true">/</span><a href="produtos.html">${tr('Produtos','Productos')}</a><span aria-hidden="true">/</span><span aria-current="page">${tr(p.name,p.nameEs)}</span></nav>
+      <nav class="breadcrumb" aria-label="Caminho da página"><a href="index.html">${tr('Início','Inicio')}</a><span aria-hidden="true">/</span><a href="produtos.html">${tr('Serviços e produtos','Servicios y productos')}</a><span aria-hidden="true">/</span><span aria-current="page">${tr(p.name,p.nameEs)}</span></nav>
       <div class="product-detail-grid">
         <div class="product-gallery" data-gallery>
-          <a class="gallery-main" href="${p.src}" data-gallery-main aria-label="Ampliar imagem"><img src="${p.src}" alt="${escape(p.alt||p.name)}" width="900" height="900" fetchpriority="high" decoding="async"></a>
-          <p class="gallery-caption">${p.illustration?tr('Ilustração do sistema. Consulte fotos do equipamento.','Ilustración del sistema. Consulte fotos del equipo.'):tr('Fotos dos equipamentos apresentados pela Eletrotech.','Fotos de los equipos presentados por Eletrotech.')} ${tr('Clique para ampliar.','Haga clic para ampliar.')}</p>
+          <a class="gallery-main" href="${p.src}" data-gallery-main aria-label="Ampliar imagem"><img src="${p.src}" alt="${escape(p.alt||p.name)}" width="900" height="900" fetchpriority="high" decoding="async">
+          ${p.illustration?`<span class="detail-illustration">${tr('Ilustração','Ilustración')}</span>`:''}
+          <span class="gallery-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></span></a>
           ${images.length>1?`<div class="gallery-thumbs" aria-label="Fotos do produto">${images.map((src,i)=>`<a href="${src}" data-gallery-item aria-label="Foto ${i+1} de ${images.length}" ${i===0?'aria-current="true"':''}><img src="${src}" alt="${escape(p.name)} — foto ${i+1}" width="100" height="100" loading="lazy"></a>`).join('')}</div>`:''}
         </div>
         <div class="product-summary">
           <p class="eyebrow">${tr(...categories[p.category])}${p.featured?` · ${tr('Destaque','Destacado')}`:''}</p>
           <h1>${tr(p.name,p.nameEs)}</h1>
           <p class="product-lead">${tr(p.description,p.descriptionEs)}</p>
-          <dl class="product-identification">${p.brand?`<div><dt>${tr('Marca','Marca')}</dt><dd>${escape(p.brand)}</dd></div>`:''}${p.model?`<div><dt>${tr('Modelo','Modelo')}</dt><dd>${escape(p.model)}</dd></div>`:''}${p.sku?`<div><dt>${tr('Código / SKU','Código / SKU')}</dt><dd>${escape(p.sku)}</dd></div>`:''}</dl>
-          <div class="product-purchase"><p class="product-price">${price(p)}</p>
-          <p>${p.stock!=null?tr(p.stock>0?`${p.stock} unidade(s) em estoque`:'Sem estoque no momento',p.stock>0?`${p.stock} unidad(es) en stock`:'Sin stock en este momento'):tr('Consulte modelos e disponibilidade com a equipe.','Consulte modelos y disponibilidad con el equipo.')}</p>
+          ${p.brand||p.model||p.sku?`<dl class="product-identification">${p.brand?`<div><dt>${tr('Marca','Marca')}</dt><dd>${escape(p.brand)}</dd></div>`:''}${p.model?`<div><dt>${tr('Modelo','Modelo')}</dt><dd>${escape(p.model)}</dd></div>`:''}${p.sku?`<div><dt>${tr('Código / SKU','Código / SKU')}</dt><dd>${escape(p.sku)}</dd></div>`:''}</dl>`:''}
+          <div class="product-purchase"><p class="purchase-kicker">${p.price==null?tr('MODELOS E DISPONIBILIDADE','MODELOS Y DISPONIBILIDAD'):tr('PREÇO E DISPONIBILIDADE','PRECIO Y DISPONIBILIDAD')}</p><p class="product-price">${price(p)}</p>
+          <p class="purchase-help">${tr('Conte com a equipe para escolher a solução adequada ao seu projeto.','Cuente con el equipo para elegir la solución adecuada para su proyecto.')}</p>
+          ${p.stock!=null?`<p class="product-stock">${tr(p.stock>0?`${p.stock} unidade(s) em estoque`:'Sem estoque no momento',p.stock>0?`${p.stock} unidad(es) en stock`:'Sin stock en este momento')}</p>`:''}
           ${p.variations.length?`<label for="product-variation">${tr('Opções','Opciones')}</label><select id="product-variation"><option value="">${escape('Selecione uma opção')}</option>${p.variations.map(v=>`<option>${escape(v)}</option>`).join('')}</select>`:''}
-          <a class="btn btn-primary product-quote" data-product-quote="${escape(quote)}" data-product-quote-es="${escape(quoteEs)}" data-phone="${site.whatsapp}" href="https://wa.me/${site.whatsapp}?text=${encodeURIComponent(quote)}" target="_blank" rel="noopener noreferrer">${tr('Solicitar orçamento pelo WhatsApp','Solicitar presupuesto por WhatsApp')} <span aria-hidden="true">↗</span></a>
-          <small>${tr('Atendimento para encontrar a solução adequada à sua aplicação.','Atención para encontrar la solución adecuada para su aplicación.')}</small></div>
+          <a class="btn btn-primary product-quote" data-product-quote="${escape(quote)}" data-product-quote-es="${escape(quoteEs)}" data-phone="${site.whatsapp}" href="https://wa.me/${site.whatsapp}?text=${encodeURIComponent(quote)}" target="_blank" rel="noopener noreferrer"><img src="assets/icons/whatsapp.svg" width="23" height="23" alt="" aria-hidden="true">${tr('Solicitar orçamento','Solicitar presupuesto')} <svg class="quote-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+          <small>${tr('Converse com a equipe pelo WhatsApp','Converse con el equipo por WhatsApp')}</small></div>
+          <a class="product-back" href="produtos.html"><span aria-hidden="true">←</span>${tr('Voltar ao catálogo','Volver al catálogo')}</a>
         </div>
       </div>
-      <div class="product-info-grid"><section><p class="eyebrow">${tr('O EQUIPAMENTO','EL EQUIPO')}</p><h2>${tr('Informações do produto','Información del producto')}</h2><p>${tr(p.details,p.detailsEs||p.details)}</p><p>${tr('Consulte disponibilidade, valores, entrega e condições de garantia com a equipe.','Consulte disponibilidad, precios, entrega y condiciones de garantía con el equipo.')}</p></section>
-      <section><p class="eyebrow">${tr('DADOS DISPONÍVEIS','DATOS DISPONIBLES')}</p><h2>${tr('Especificações técnicas','Especificaciones técnicas')}</h2>${p.specifications.length?`<dl class="specifications">${p.specifications.map(s=>`<div><dt>${tr(s.label,s.labelEs||s.label)}</dt><dd>${tr(s.value,s.valueEs||s.value)}</dd></div>`).join('')}</dl>`:`<p>${tr('As especificações variam conforme o modelo e a aplicação. Consulte a equipe para confirmar os dados do equipamento.','Las especificaciones varían según el modelo y la aplicación. Consulte al equipo para confirmar los datos.')}</p>`}</section></div>
+      <div class="product-info-grid"><section><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/></svg>${tr('Informações do produto','Información del producto')}</h2><p>${tr(p.details,p.detailsEs||p.details)}</p><p>${tr('Consulte disponibilidade, valores, entrega e condições de garantia com a equipe.','Consulte disponibilidad, precios, entrega y condiciones de garantía con el equipo.')}</p></section>
+      <section><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 6h5m4 0h9M3 12h11m4 0h3M3 18h3m4 0h11"/><circle cx="10" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="8" cy="18" r="2"/></svg>${tr('Especificações técnicas','Especificaciones técnicas')}</h2>${p.specifications.length?`<dl class="specifications">${p.specifications.map(s=>`<div><dt>${tr(s.label,s.labelEs||s.label)}</dt><dd>${tr(s.value,s.valueEs||s.value)}</dd></div>`).join('')}</dl>`:`<p>${tr('As especificações variam conforme o modelo e a aplicação. Consulte a equipe para confirmar os dados do equipamento.','Las especificaciones varían según el modelo y la aplicación. Consulte al equipo para confirmar los datos.')}</p>`}</section></div>
     </div>
   </section>
   <section class="section muted product-recommendations"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">${tr('CONTINUE EXPLORANDO','SIGA EXPLORANDO')}</p><h2>${tr(related.length?'Da mesma categoria':'Conheça também',related.length?'De la misma categoría':'Conozca también')}</h2></div><a class="text-link" href="produtos.html">${tr('Ver catálogo completo','Ver catálogo completo')} →</a></div><div class="product-grid">${suggestions.map(card).join('')}</div></div></section>`;
