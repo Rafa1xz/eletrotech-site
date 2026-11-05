@@ -100,12 +100,12 @@ body :is(.home-services,.services-catalog) .service-card--showcase .service-desc
   .service-card--showcase .service-quote:hover { background: #ff963f; border-color: #ff963f; text-decoration: none; }
 }
 @media(max-width:1040px) {
-  body :is(.home-services,.services-catalog) .service-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body:is(.home-page,.combined-page) :is(.home-services,.services-catalog) .service-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .service-card-body { padding: 22px; }
   .service-heading { gap: 12px; }
 }
 @media(max-width:760px) {
-  body :is(.home-services,.services-catalog) .service-grid { grid-template-columns: 1fr; }
+  body:is(.home-page,.combined-page) :is(.home-services,.services-catalog) .service-grid { grid-template-columns: 1fr; }
 }
 @media(prefers-reduced-motion:reduce) {
   body :is(.home-services,.services-catalog) .service-card.service-card--showcase,
