@@ -38,17 +38,17 @@ const canonical=p=>new URL(link(p),base).href;
 const money=value=>Number(value).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
 const price=p=>p.price==null?tr('Sob consulta','Bajo consulta'):`${p.salePrice!=null?`<del>${money(p.price)}</del> `:''}<span>${money(p.salePrice??p.price)}</span>`;
 function card(p){return `
-            <article class="product-card" data-category="${p.category}" data-product-id="${p.id}">
+            <article class="product-card product-card--showcase" data-category="${p.category}" data-product-id="${p.id}">
               <a class="product-image" href="${link(p)}" aria-label="${escape(p.name)}">
                 <img src="${escape(p.src)}" alt="${escape(p.alt||p.name)}" width="800" height="700" loading="lazy" decoding="async">
+                <span class="product-category">${tr(...categories[p.category])}${p.featured?` · ${tr('Destaque','Destacado')}`:''}</span>
                 ${p.illustration?`<span class="illustration-label">${tr('Ilustração','Ilustración')}</span>`:''}
               </a>
               <div class="product-body">
-                <span class="product-category">${tr(...categories[p.category])}${p.featured?` · ${tr('Destaque','Destacado')}`:''}</span>
                 <h3><a href="${link(p)}">${tr(p.name,p.nameEs)}</a></h3>
                 <p>${tr(p.description,p.descriptionEs)}</p>
                 <div class="product-card-meta"><span>${escape(p.brand||site.name)}</span><strong>${price(p)}</strong></div>
-                <a class="btn btn-outline" href="${link(p)}">${tr('Ver detalhes','Ver detalles')} <span aria-hidden="true">↗</span></a>
+                <a class="product-details" href="${link(p)}">${tr('Ver detalhes','Ver detalles')} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
               </div>
             </article>`;}
 let catalog=await read('produtos.html');
@@ -82,6 +82,7 @@ function shell(p,main,available){
   ${available?'':'<meta name="robots" content="noindex,follow">'}
   <meta name="theme-color" content="#0B1425"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/styles.css"><link rel="stylesheet" href="css/industrial.css"><link rel="stylesheet" href="css/pages.css"><link rel="stylesheet" href="css/reference-layout.css?v=82b1c8c47a49">
+  <link rel="stylesheet" href="css/product-cards.css">
   <script src="js/site-config.js" defer></script><script src="js/i18n.js" defer></script><script src="js/script.js" defer></script><script src="js/gallery.js" defer></script>
   ${available?`<script type="application/ld+json">${json(structured)}</script>`:''}
   <script type="application/ld+json">${json(breadcrumb)}</script>
@@ -122,7 +123,7 @@ function detail(p){
       <section><p class="eyebrow">${tr('DADOS DISPONÍVEIS','DATOS DISPONIBLES')}</p><h2>${tr('Especificações técnicas','Especificaciones técnicas')}</h2>${p.specifications.length?`<dl class="specifications">${p.specifications.map(s=>`<div><dt>${tr(s.label,s.labelEs||s.label)}</dt><dd>${tr(s.value,s.valueEs||s.value)}</dd></div>`).join('')}</dl>`:`<p>${tr('As especificações variam conforme o modelo e a aplicação. Consulte a equipe para confirmar os dados do equipamento.','Las especificaciones varían según el modelo y la aplicación. Consulte al equipo para confirmar los datos.')}</p>`}</section></div>
     </div>
   </section>
-  <section class="section muted"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">${tr('CONTINUE EXPLORANDO','SIGA EXPLORANDO')}</p><h2>${tr(related.length?'Da mesma categoria':'Conheça também',related.length?'De la misma categoría':'Conozca también')}</h2></div><a class="text-link" href="produtos.html">${tr('Ver catálogo completo','Ver catálogo completo')} →</a></div><div class="product-grid">${suggestions.map(card).join('')}</div></div></section>`;
+  <section class="section muted product-recommendations"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">${tr('CONTINUE EXPLORANDO','SIGA EXPLORANDO')}</p><h2>${tr(related.length?'Da mesma categoria':'Conheça também',related.length?'De la misma categoría':'Conozca también')}</h2></div><a class="text-link" href="produtos.html">${tr('Ver catálogo completo','Ver catálogo completo')} →</a></div><div class="product-grid">${suggestions.map(card).join('')}</div></div></section>`;
 }
 await mkdir(resolve(root,'produtos'),{recursive:true});
 for(const [id,slug] of Object.entries(routes)){
