@@ -41,7 +41,6 @@ function card(p){return `
             <article class="product-card product-card--showcase" data-category="${p.category}" data-product-id="${p.id}">
               <a class="product-image" href="${link(p)}" aria-label="${escape(p.name)}">
                 <img src="${escape(p.src)}" alt="${escape(p.alt||p.name)}" width="800" height="700" loading="lazy" decoding="async">
-                <span class="product-category">${tr(...categories[p.category])}${p.featured?` · ${tr('Destaque','Destacado')}`:''}</span>
                 ${p.illustration?`<span class="illustration-label">${tr('Ilustração','Ilustración')}</span>`:''}
               </a>
               <div class="product-body">

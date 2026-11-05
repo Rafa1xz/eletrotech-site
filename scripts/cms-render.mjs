@@ -74,7 +74,6 @@ export function renderPage(template,page,site,{services=[],icons={},defaults={},
       if(service.active===false)card.attr('hidden','');
       const media=$('<div class="service-card-media">');
       media.append($('<img class="service-photo">').attr({src:localMedia(service.src),alt:service.alt||service.name,loading:'lazy',decoding:'async'}));
-      if(service.category)media.append($('<span class="service-category">').text(service.category));
       card.append(media);
       const body=$('<div class="service-card-body">'),heading=$('<div class="service-heading">');
       heading.append($('<span class="service-symbol" aria-hidden="true">').html(icons[service.icon]||Object.values(icons)[0]||''));

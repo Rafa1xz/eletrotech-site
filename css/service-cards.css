@@ -26,20 +26,6 @@ body :is(.home-services,.services-catalog) .service-card--showcase .service-phot
   border: 0;
   border-radius: 0;
 }
-.service-card--showcase .service-category {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  max-width: calc(100% - 32px);
-  padding: 7px 13px;
-  border: 1px solid #ffffffb3;
-  border-radius: 999px;
-  background: #fffffff2;
-  color: #103355;
-  font-size: 12px;
-  font-weight: 650;
-  line-height: 1.4;
-}
 .service-card-body { display: flex; flex-direction: column; flex: 1; min-width: 0; padding: 26px; }
 .service-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
 body :is(.home-services,.services-catalog) .service-card--showcase .service-symbol {
