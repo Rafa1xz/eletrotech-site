@@ -198,118 +198,25 @@
   function initAnimatedWhatsapp() {
     const button = document.querySelector('a.floating-contact[href*="wa.me"]');
     if (!button || button.dataset.contactEnhanced === 'true') return;
-
-    const characterDelay = 68;
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const timers = [];
-    const contactLabel = () => text('Entre em contato', 'Entre en contacto');
-    let typedText;
-
-    function clearTimers() {
-      timers.splice(0).forEach(timer => window.clearTimeout(timer));
-    }
-    function later(callback, delay) {
-      const timer = window.setTimeout(callback, delay);
-      timers.push(timer);
-      return timer;
-    }
-    function renderContent() {
-      const originalIcon = button.querySelector('svg, i');
-      const iconWrap = document.createElement('span');
-      const label = document.createElement('span');
-      const cursor = document.createElement('span');
-      const typingDots = document.createElement('span');
-
-      typedText = document.createElement('span');
-      iconWrap.className = 'ww-float-whatsapp__icon';
-      label.className = 'ww-float-whatsapp__label';
-      typedText.className = 'ww-float-whatsapp__typed';
-      cursor.className = 'ww-float-whatsapp__cursor';
-      typingDots.className = 'ww-float-whatsapp__dots';
-      typingDots.setAttribute('aria-hidden', 'true');
-      for (let index = 0; index < 3; index++) typingDots.append(document.createElement('span'));
-
-      if (originalIcon) iconWrap.append(originalIcon);
-      iconWrap.append(typingDots);
-      label.setAttribute('aria-hidden', 'true');
-      cursor.setAttribute('aria-hidden', 'true');
-      label.append(typedText, cursor);
-      button.replaceChildren(iconWrap, label);
-      button.classList.add('ww-whatsapp-contact');
-    }
-    function showFullLabel() {
-      clearTimers();
-      typedText.textContent = contactLabel();
-      button.classList.add('is-expanded');
-      button.classList.remove('is-typing');
-    }
-    function collapseAndRestart() {
-      if (button.matches(':hover, :focus-visible')) return;
-      button.classList.remove('is-expanded', 'is-typing');
-      later(() => { typedText.textContent = ''; }, 480);
-    }
-    function typeCharacter(index) {
-      const value = contactLabel();
-      if (index >= value.length) {
-        button.classList.remove('is-typing');
-        if (!button.matches(':hover, :focus-visible')) later(collapseAndRestart, 3300);
-        return;
-      }
-      typedText.textContent = value.slice(0, index + 1);
-      later(() => typeCharacter(index + 1), characterDelay);
-    }
-    function startTypingCycle() {
-      if (document.hidden) return;
-      clearTimers();
-      typedText.textContent = '';
-      button.classList.add('is-expanded');
-      button.classList.remove('is-typing');
-      later(() => {
-        button.classList.add('is-typing');
-        typeCharacter(0);
-      }, 520);
-    }
-    function scheduleInitialCycle() {
-      clearTimers();
-      button.classList.remove('is-expanded', 'is-typing');
-      typedText.textContent = contactLabel();
-      if (reducedMotion.matches) return;
-      // Indicate typing without covering page content with an automatic banner.
-      later(() => {
-        button.classList.add('is-typing');
-        later(() => button.classList.remove('is-typing'), 1800);
-      }, 1200);
-    }
-    function revealLabel() {
-      if (reducedMotion.matches) showFullLabel();
-      else if (!button.classList.contains('is-expanded')) startTypingCycle();
-    }
-
+    const icon = button.querySelector('svg');
+    if (!icon) return;
+    const iconWrap = document.createElement('span');
+    const label = document.createElement('span');
+    iconWrap.className = 'contact-float-icon';
+    label.className = 'contact-float-label';
+    icon.setAttribute('aria-hidden', 'true');
+    icon.setAttribute('focusable', 'false');
+    iconWrap.append(icon);
+    label.setAttribute('aria-hidden', 'true');
+    button.replaceChildren(iconWrap, label);
+    button.id = 'floating-whatsapp';
     button.dataset.contactEnhanced = 'true';
-    renderContent();
-    button.addEventListener('mouseenter', revealLabel);
-    button.addEventListener('focus', revealLabel);
-    button.addEventListener('mouseleave', () => {
-      if (!button.matches(':focus-visible')) {
-        clearTimers();
-        later(collapseAndRestart, 900);
-      }
-    });
-    button.addEventListener('blur', () => {
-      if (!button.matches(':hover')) {
-        clearTimers();
-        later(collapseAndRestart, 500);
-      }
-    });
-    document.addEventListener('visibilitychange', () => {
-      clearTimers();
-      if (!document.hidden) scheduleInitialCycle();
-    });
-    document.addEventListener('languagechange', scheduleInitialCycle);
-    if (typeof reducedMotion.addEventListener === 'function') {
-      reducedMotion.addEventListener('change', scheduleInitialCycle);
-    }
-    scheduleInitialCycle();
+    const updateLabel = () => {
+      label.textContent = text('Entre em contato', 'Entre en contacto');
+      button.setAttribute('aria-label', text('Entre em contato pelo WhatsApp', 'Contacte por WhatsApp'));
+    };
+    document.addEventListener('languagechange', updateLabel);
+    updateLabel();
   }
 
   function initCatalog() {

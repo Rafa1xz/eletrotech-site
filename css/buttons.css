@@ -1,3 +1,4 @@
+@import url('./floating-contact.css');
 /* Shared action palette: change these tokens to update every orange button. */
 :root {
   --button-orange: #ff821e;
