@@ -45,7 +45,7 @@ body.contact-page .contact-direct-links>a { display: flex; align-items: center; 
 body.contact-page .contact-direct-links>a>span { min-width: 0; overflow-wrap: anywhere; }
 body.contact-page .contact-direct-links svg { width: 26px; height: 26px; flex-shrink: 0; }
 body.contact-page .contact-direct-links>a.contact-whatsapp { background: #0b773a; border-color: #0b773a; color: #fff; font-size: 16px; }
-body.contact-page .contact-whatsapp>span:last-child { margin-left: auto; }
+body.contact-page .contact-whatsapp>span[aria-hidden="true"]:last-child { margin-left: auto; }
 body.contact-page .contact-preparation { padding: 28px; margin-top: 26px; border-radius: 16px; background: linear-gradient(105deg,#e4f1ff,#f4f9ff); }
 body.contact-page .contact-kicker { margin: 0 0 12px; color: #aa4708; font-size: 11px; letter-spacing: .1em; font-weight: 650; }
 body.contact-page .contact-preparation h3 { margin: 0 0 22px; color: #102c4d; font-size: 28px; }
@@ -57,7 +57,7 @@ body.contact-page .contact-instagram { display: inline-flex; align-items: center
 body.contact-page .contact-explore { display: grid; grid-template-columns: 1fr 1fr; padding: 24px 0 32px; margin-bottom: 16px; border-top: 1px solid #dfe7f0; }
 body.contact-page .contact-explore a { display: flex; align-items: center; justify-content: center; gap: 16px; min-height: 48px; color: #102c4d; font-size: 15px; font-weight: 600; }
 body.contact-page .contact-explore a+a { border-left: 1px solid #dfe7f0; }
-body.contact-page .contact-explore a>span:last-child { color: #aa4708; }
+body.contact-page .contact-explore a>span[aria-hidden="true"]:last-child { color: #aa4708; }
 @media(max-width:1000px) { body.contact-page .contact-grid { gap: 24px; grid-template-columns: minmax(0,1.25fr) minmax(0,1fr); } body.contact-page .contact-form-panel,body.contact-page .contact-preparation { padding: 24px; } body.contact-page .contact-direct-links>a { padding: 16px; font-size: 15px; gap: 12px; } }
 @media(max-width:760px) { body.contact-page .contact-grid { grid-template-columns: 1fr; gap: 32px; } body.contact-page .contact-hero-layout { grid-template-columns: 1fr; gap: 0; } body.contact-page .contact-hero-art { display: none; } body.contact-page .page-intro h1 { max-width: 24ch; } body.contact-page .contact-explore { grid-template-columns: 1fr; gap: 8px; } body.contact-page .contact-explore a+a { border-left: 0; } }
 @media(max-width:420px) { body.contact-page .wrap { width: calc(100% - 32px); } body.contact-page .contact-form-panel { padding: 22px 18px; } body.contact-page .form-row { grid-template-columns: 1fr; gap: 0; } body.contact-page #quote-form>button[type=submit] { font-size: 12px; padding-inline: 12px; gap: 8px; } body.contact-page .field-meta { flex-wrap: wrap; } body.contact-page .contact-direct-links>a.contact-whatsapp { font-size: 14px; } body.contact-page .contact-direct-links>a { font-size: 14px; } }

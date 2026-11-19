@@ -234,7 +234,7 @@ svg.fa-icon {
   font-size: .92rem;
   font-weight: 700;
 }
-.text-link>span:last-child {
+.text-link>span[aria-hidden="true"]:last-child {
   transition: transform .2s;
 }
 .skip-link {
@@ -1754,7 +1754,7 @@ form .form-note {
   .topbar a:hover, .site-footer a:hover, .floating-contact:hover {
     color: white;
   }
-  .header-cta:hover .cta-arrow, .text-link:hover>span:last-child {
+  .header-cta:hover .cta-arrow, .text-link:hover>span[aria-hidden="true"]:last-child {
     transform: translateX(4px);
   }
   .header-cta:hover {

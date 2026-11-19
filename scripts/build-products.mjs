@@ -2,10 +2,11 @@
 import { readFile, writeFile, mkdir, access } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {removeDecorativeArrows} from './decorative-arrows.mjs';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const read=path=>readFile(resolve(root,path),'utf8');
-const write=(path,value)=>writeFile(resolve(root,path),value.replace(/[\t ]+$/gm,''),'utf8');
+const write=(path,value)=>writeFile(resolve(root,path),(path.endsWith('.html')?removeDecorativeArrows(value):value).replace(/[\t ]+$/gm,''),'utf8');
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const tr=(pt,es=pt,tag='span')=>`<${tag} data-pt="${escape(pt)}" data-es="${escape(es)}">${escape(pt)}</${tag}>`;
 const site=JSON.parse(await read('data/site.json'));

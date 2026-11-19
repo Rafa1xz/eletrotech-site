@@ -59,7 +59,7 @@ body :is(.home-services,.services-catalog) .service-card--showcase .service-desc
 .service-card--showcase .service-quote {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 12px;
   min-height: 50px;
   width: 100%;

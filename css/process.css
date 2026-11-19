@@ -37,7 +37,7 @@ body.process-page .process-aside li { display: flex; align-items: flex-start; ga
 body.process-page .process-aside li::before { content: '\2713'; position: static; transform: none; flex: 0 0 24px; display: grid; place-items: center; width: 24px; height: 24px; border: 0; border-radius: 50%; background: #102c4d; color: #fff; font-size: 14px; }
 body.process-page .process-aside .btn { width: 100%; margin-top: 10px; }
 body.process-page .process-services-link { margin-top: 28px; color: #174686; font-size: 14px; }
-body.process-page .process-services-link>span:last-child { color: #aa4708; }
+body.process-page .process-services-link>span[aria-hidden="true"]:last-child { color: #aa4708; }
 body.process-page .process-supplement { margin-bottom: 30px; }
 body.process-page .process-supplement>details { border: 1px solid #dce6ef; border-radius: 12px; padding: 16px 20px; }
 body.process-page .process-supplement summary { cursor: pointer; min-height: 30px; color: #174686; font-size: 14px; font-weight: 600; }

@@ -1,4 +1,5 @@
 import {load} from 'cheerio';
+import {removeDecorativeArrows} from './decorative-arrows.mjs';
 
 export function localMedia(value,kind='image') {
   const pattern=kind==='video'?/^videos\/[a-zA-Z0-9_.-]+\.(mp4|webm)$/:/^images\/[a-zA-Z0-9_.-]+\.(png|jpe?g|webp|svg)$/;
@@ -113,5 +114,5 @@ export function renderPage(template,page,site,{services=[],icons={},defaults={},
       if(config.menuTitle){node.empty().append(tr($,config.menuTitle,config.menuTitleEs));}
     });
   }
-  return $.html().replace(/[\t ]+$/gm,'');
+  return removeDecorativeArrows($.html()).replace(/[\t ]+$/gm,'');
 }
