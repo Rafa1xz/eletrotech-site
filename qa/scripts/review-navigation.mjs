@@ -111,6 +111,16 @@ try {
     }
   }
 
+  let hoverChecks=0;
+  for(const file of ['index.html','produtos.html','como-trabalhamos.html','oxilife-fish.html','contato.html','portfolio.html','produtos/motores-hercules.html']){
+    await navigate(file,1440);
+    const selector='#main-nav>a:not(.mobile-menu-cta):not([aria-current])';
+    await pointAt(selector);
+    await sleep(400);
+    assert.equal(await evaluate(`getComputedStyle(document.querySelector(${JSON.stringify(selector)})).color`),'rgb(245, 185, 50)',`Menu hover must be yellow on ${file}`);
+    hoverChecks++;
+  }
+
   let mobileChecks=0;
   for (const file of ['index.html','produtos.html','contato.html']) {
   for (const width of [320, 390]) {
@@ -196,7 +206,7 @@ try {
   }
   assert.equal(await evaluate('window.__qaExternalOpen.length'), 0, 'QA must not open external messaging');
   assert.equal(errors.length, 0, JSON.stringify(errors));
-  console.log(`PASS: ${headerChecks} header alignment checks, ${mobileChecks} mobile-menu layout/selection checks, ${compactChecks} idle WhatsApp checks, reduced-motion hover/focus/leave/blur. No external messages opened.`);
+  console.log(`PASS: ${headerChecks} header alignment checks, ${hoverChecks} desktop hover checks, ${mobileChecks} mobile-menu layout/selection checks, ${compactChecks} idle WhatsApp checks, reduced-motion hover/focus/leave/blur. No external messages opened.`);
 } finally {
   socket?.close();
   browser.kill();

@@ -23,7 +23,9 @@ body.home-page:not(.menu-open) .site-header:not(.is-scrolled):not(:has(.search-t
 body.home-page .site-header #main-nav>a:not(.mobile-menu-cta),body.home-page .site-header .icon-button,body.home-page .site-header .language-toggle,body.home-page .site-header .language-toggle .fa-icon,body.home-page .menu-toggle { color: var(--nav-top-color,var(--reference-dark)); transition: color .35s ease, border-color .35s ease; }
 body.home-page .site-header .icon-button,body.home-page .site-header .language-toggle,body.home-page .menu-toggle { background: transparent; }
 body.home-page .site-header .language-toggle,body.home-page .menu-toggle { border-color: color-mix(in srgb,var(--nav-top-color,var(--reference-dark)) 25%,transparent); }
-body.home-page .site-header #main-nav>a:hover { color: var(--reference-accent); }
+@media(min-width:1041px) {
+  body .site-header #main-nav>a:not(.mobile-menu-cta):is(:hover,:focus-visible) { color: var(--reference-accent); }
+}
 body.home-page .home-hero { position: relative; isolation: isolate; background-image: url('../images/fundo-peixes-poster.jpg'); }
 body.home-page .home-hero::before { background: linear-gradient(180deg,#061c2b80 0%,#061c2b99 45%,#061c2bb3 100%); }
 body.home-page .hero-grid { min-height: max(780px,90svh); padding-block: 160px 110px; justify-items: center; align-content: center; }
