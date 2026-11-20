@@ -1,7 +1,7 @@
 // Browser regression checks for navigation and the floating WhatsApp control.
 // Run from the project root with Node.js 24; override BROWSER_PATH if needed.
 import {spawn} from 'node:child_process';
-import {mkdtemp, readFile} from 'node:fs/promises';
+import {mkdtemp, readFile, mkdir, writeFile} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join, resolve} from 'node:path';
 import {pathToFileURL} from 'node:url';
@@ -111,8 +111,10 @@ try {
     }
   }
 
+  let mobileChecks=0;
+  for (const file of ['index.html','produtos.html','contato.html']) {
   for (const width of [320, 390]) {
-    await navigate('produtos.html', width);
+    await navigate(file, width);
     await click('.menu-toggle');
     assert.equal(await evaluate("document.querySelector('.menu-toggle').getAttribute('aria-expanded')"), 'true');
     const currentPage = await evaluate(`(() => {
@@ -122,8 +124,29 @@ try {
     })()`);
     assert(currentPage.text.length && currentPage.width > 0 && currentPage.height > 0, `Current-page link must remain visible at ${width}px`);
     assert(['none', 'normal', '""'].includes(currentPage.content), 'Decorative navigation arrows were removed from the approved design');
+    const menuState=await evaluate(`(() => {
+      const menu=document.querySelector('#main-nav'),box=menu.getBoundingClientRect();
+      const links=[...menu.querySelectorAll(':scope > a:not(.mobile-menu-cta)')];
+      return {overflow:menu.scrollWidth>menu.clientWidth,links:links.map(link=>{
+        const bounds=link.getBoundingClientRect(),style=getComputedStyle(link);
+        return {current:link.hasAttribute('aria-current'),background:style.backgroundColor,color:style.color,height:bounds.height,inside:bounds.left>=box.left&&bounds.right<=box.right,after:getComputedStyle(link,'::after').content};
+      })};
+    })()`);
+    assert(!menuState.overflow,`Menu must not overflow at ${width}px`);
+    for(const link of menuState.links){
+      assert(link.height>=48&&link.inside,'Menu links must remain aligned with comfortable touch targets');
+      assert(['none','normal','""'].includes(link.after),'Every mobile link must be free of decorative arrows');
+      if(link.current){assert.equal(link.background,'rgb(23, 70, 134)');assert.equal(link.color,'rgb(255, 255, 255)');}
+    }
+    if(file==='produtos.html'&&width===390){
+      await mkdir(resolve('qa/temp'),{recursive:true});
+      const shot=await cdp('Page.captureScreenshot',{format:'png'});
+      await writeFile(resolve('qa/temp/mobile-menu-fixed.png'),Buffer.from(shot.data,'base64'));
+    }
+    mobileChecks++;
     await cdp('Input.dispatchKeyEvent', {type: 'keyDown', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27});
     assert.equal(await evaluate("document.querySelector('.menu-toggle').getAttribute('aria-expanded')"), 'false');
+  }
   }
 
   let compactChecks = 0;
@@ -154,7 +177,7 @@ try {
   assertCompact(await whatsappState(), 'Blur under reduced motion');
   assert.equal(await evaluate('window.__qaExternalOpen.length'), 0, 'QA must not open external messaging');
   assert.equal(errors.length, 0, JSON.stringify(errors));
-  console.log(`PASS: ${headerChecks} header alignment checks, two real mobile-menu checks, ${compactChecks} idle WhatsApp checks, reduced-motion hover/focus/leave/blur. No external messages opened.`);
+  console.log(`PASS: ${headerChecks} header alignment checks, ${mobileChecks} mobile-menu layout/selection checks, ${compactChecks} idle WhatsApp checks, reduced-motion hover/focus/leave/blur. No external messages opened.`);
 } finally {
   socket?.close();
   browser.kill();

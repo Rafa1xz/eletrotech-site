@@ -1916,19 +1916,8 @@ form .form-note {
     transform: none;
   }
   #main-nav>a:not(.mobile-menu-cta)::after {
-    display: block;
-    content: '→';
-    height: auto;
-    top: 12px;
-    bottom: auto;
-    left: auto;
-    right: 16px;
-    width: auto;
-    color: #6d8396;
-    background: none;
-    opacity: 1;
-    transform: none;
-    transition: color 180ms ease,transform 180ms ease;
+    display: none;
+    content: none;
   }
   #main-nav>a[aria-current] {
     border-color: var(--blue);
