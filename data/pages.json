@@ -672,7 +672,7 @@
           "altPt": "Motores Hércules",
           "key": "image-001",
           "label": "Motores Hércules",
-          "src": "images/sanity-ac523298ee913649c075b82d004c6796ccfd412d-480x480.png"
+          "src": "images/sanity-d59ff916c70cfa84beb8b5955e54edb7d1806172-1000x750.jpg"
         },
         {
           "_key": "image-002",
@@ -807,14 +807,14 @@
       ],
       "menuOrder": 0,
       "_createdAt": "2026-11-20T21:57:11Z",
-      "_rev": "via5jl3EKEe3lPZEwugTUR",
+      "_rev": "via5jl3EKEe3lPZEwugZo5",
       "_system": {
         "base": {
           "id": "page-home",
           "rev": "45M1RUCGpfl3j64xEZJsVJ"
         }
       },
-      "_updatedAt": "2026-11-20T21:57:11Z"
+      "_updatedAt": "2026-11-20T22:35:53Z"
     },
     {
       "_id": "page-catalog",
