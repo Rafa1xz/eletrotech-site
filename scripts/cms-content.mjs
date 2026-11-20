@@ -1,6 +1,7 @@
 export const contentQuery = `
   "pages": *[_type == "sitePage"]{..., images[]{...,"uploadedUrl":image.asset->url}, videos[]{...,"uploadedUrl":file.asset->url,"posterUrl":posterImage.asset->url}},
-  "services": *[_type == "service"]{...,"uploadedUrl":image.asset->url}`;
+  "services": *[_type == "service"]{...,"uploadedUrl":image.asset->url},
+  "texts": *[_type == "siteTexts"]`;
 export function cmsMediaFile(url,project,dataset,kind='image') {
   const u=new URL(url),folder=kind==='video'?'files':'images',prefix=`/${folder}/${project}/${dataset}/`;
   const file=u.pathname.slice(prefix.length),allowed=kind==='video'?/^[a-zA-Z0-9-]+\.(mp4|webm)$/:/^[a-zA-Z0-9-]+\.(png|jpe?g|webp|svg)$/;

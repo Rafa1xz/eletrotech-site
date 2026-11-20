@@ -12,7 +12,7 @@ for(const directory of ['assets','css','js','images','videos','produtos']){
 }
 await mkdir(resolve(output,'data'),{recursive:true});
 for(const file of ['products.json','site.json','product-routes.json'])await cp(resolve(root,'data',file),resolve(output,'data',file));
-for(const file of ['pages.json','services.json']){try{await cp(resolve(root,'data',file),resolve(output,'data',file));}catch(error){if(error.code!=='ENOENT')throw error;}}
+for(const file of ['pages.json','services.json','texts.json']){try{await cp(resolve(root,'data',file),resolve(output,'data',file));}catch(error){if(error.code!=='ENOENT')throw error;}}
 for(const file of await readdir(root))if(file.endsWith('.html')||file==='sitemap.xml')await cp(resolve(root,file),resolve(output,file));
 // GitHub Pages caches these URLs for ten minutes. A content revision makes new
 // HTML request the matching CSS/JS instead of mixing releases in the browser.

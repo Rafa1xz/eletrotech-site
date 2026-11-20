@@ -11,9 +11,15 @@ export default defineConfig({
   projectId,
   dataset: process.env.SANITY_STUDIO_DATASET || 'production',
   plugins: [structureTool({structure: S => S.list().title('Conteúdo').items([
-    S.documentTypeListItem('product').title('Produtos'),
-    S.documentTypeListItem('service').title('Servi\u00e7os'),
-    ...[['home','In\u00edcio'],['catalog','Servi\u00e7os e produtos'],['process','Como trabalhamos'],['oxilife','OxiLife Fish'],['contact','Contato'],['portfolio','Projetos e equipamentos']].map(([id,title]) => S.listItem().id(id).title(title).child(S.document().schemaType('sitePage').documentId('page-'+id))),
+    S.listItem().id('pages').title('Páginas do site').child(S.list().title('Páginas do site').items(
+      [['home','Início'],['catalog','Serviços e produtos'],['process','Como trabalhamos'],['oxilife','OxiLife Fish'],['contact','Contato'],['portfolio','Projetos e equipamentos']].map(([id,title]) => S.listItem().id(id).title(title).child(S.document().schemaType('sitePage').documentId('page-'+id)))
+    )),
+    S.listItem().id('catalog').title('Catálogo').child(S.list().title('Catálogo').items([
+      S.documentTypeListItem('product').title('Produtos'),S.documentTypeListItem('service').title('Serviços'),
+    ])),
+    S.listItem().id('texts').title('Textos do site').child(S.list().title('Textos compartilhados e mensagens').items(
+      [['navigation','Cabeçalho e navegação'],['footer','Rodapé e redes sociais'],['actions','Botões e chamadas'],['catalog','Busca e catálogo'],['forms','Formulários e WhatsApp'],['gallery','Galeria de imagens'],['products','Páginas de produtos'],['accessibility','Acessibilidade e idiomas']].map(([id,title])=>S.listItem().id('texts-'+id).title(title).child(S.document().schemaType('siteTexts').documentId('texts-'+id)))
+    )),
     S.listItem().title('Configurações do site').child(S.document().schemaType('siteSettings').documentId('site-settings')),
   ])})],
   schema: {types: schemaTypes},

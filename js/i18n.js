@@ -7,6 +7,7 @@
   const toggle = picker?.querySelector('.language-toggle');
   const options = picker?.querySelector('.language-options');
   const buttons = [...document.querySelectorAll('[data-lang]')];
+  const label=(pt,es)=>window.ELETROTECH_COPY?.pair(pt,es,lang)||(lang==='es'?es:pt);
 
   // Controle expansível simples: botões nativos mantêm Enter, Espaço e Tab disponíveis.
   const setOpen = (open, restoreFocus = false) => {
@@ -25,14 +26,18 @@
       if (el.dataset.translateAttr) el.setAttribute(el.dataset.translateAttr, value);
       else el.textContent = value;
     });
+    document.querySelectorAll('[data-copy-aria-label],[data-copy-title],[data-copy-placeholder]').forEach(el=>{
+      for(const attr of ['aria-label','title','placeholder']){
+        const entry=window.ELETROTECH_COPY?.entry(el.getAttribute('data-copy-'+attr));
+        if(entry)el.setAttribute(attr,entry[lang]||entry.pt);
+      }
+    });
     buttons.forEach(button => {
       button.setAttribute('aria-pressed', String(button.dataset.lang === lang));
     });
     if (toggle) {
       toggle.querySelector('[data-current-language]').textContent = lang.toUpperCase();
-      toggle.setAttribute('aria-label', lang === 'pt'
-        ? 'Alterar idioma. Idioma atual: Português'
-        : 'Cambiar idioma. Idioma actual: Español');
+      toggle.setAttribute('aria-label', label('Alterar idioma. Idioma atual: Português','Cambiar idioma. Idioma actual: Español'));
     }
     try { localStorage.setItem('eletrotech-language', lang); } catch {}
     document.dispatchEvent(new CustomEvent('languagechange', { detail: { lang } }));

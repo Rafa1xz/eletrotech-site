@@ -1,5 +1,7 @@
 import {load} from 'cheerio';
 import {removeDecorativeArrows} from './decorative-arrows.mjs';
+import {createTextCatalog} from './text-catalog.mjs';
+import {applyTextCatalog} from './render-texts.mjs';
 
 export function localMedia(value,kind='image') {
   const pattern=kind==='video'?/^videos\/[a-zA-Z0-9_.-]+\.(mp4|webm)$/:/^images\/[a-zA-Z0-9_.-]+\.(png|jpe?g|webp|svg)$/;
@@ -18,8 +20,8 @@ const hex=value=>/^#[a-f\d]{6}$/i.test(value||'')?value:null;
 const safeId=value=>/^[a-z0-9-]+$/.test(value||'');
 const tr=($,pt,es)=>$('<span>').attr('data-pt',pt||'').attr('data-es',es||pt||'').text(pt||'');
 
-export function renderPage(template,page,site,{services=[],icons={},defaults={},pages=[]}={}) {
-  const $=load(template);
+export function renderPage(template,page,site,{services=[],icons={},defaults={},pages=[],textCatalog=createTextCatalog()}={}) {
+  const $=load(template,{scriptingEnabled:false});
   for(const item of page.texts||[]){
     const n=$('[data-cms-text]').filter((_,el)=>$(el).attr('data-cms-text')===item.key);
     n.each((_,el)=>{
@@ -87,6 +89,7 @@ export function renderPage(template,page,site,{services=[],icons={},defaults={},
       card.append(body);grid.append(card);
     }
   }
+  applyTextCatalog($,textCatalog);
   // Shared contacts and branding are regenerated on every page, including links.
   if(!/^\d{10,15}$/.test(site.whatsapp||''))throw Error('WhatsApp inválido.');
   if(!/^\+?\d{10,15}$/.test(site.phone||`+${site.whatsapp}`))throw Error('Telefone inválido.');
@@ -111,7 +114,8 @@ export function renderPage(template,page,site,{services=[],icons={},defaults={},
   for(const config of pages){
     $(`#main-nav>a[href="${config.file}"]`).each((_,el)=>{
       const node=$(el);if(config.showInMenu===false){node.attr('hidden','');return;}
-      if(config.menuTitle){node.empty().append(tr($,config.menuTitle,config.menuTitleEs));}
+      const defaultTitle=pages.find(p=>p.pageId===config.pageId)?.title;
+      if(config.menuTitle&&config.menuTitle!==defaultTitle){node.empty().append(tr($,config.menuTitle,config.menuTitleEs));}
     });
   }
   return removeDecorativeArrows($.html()).replace(/[\t ]+$/gm,'');

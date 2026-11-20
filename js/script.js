@@ -3,7 +3,7 @@
   'use strict';
 
   const PHONE = window.ELETROTECH_SITE?.whatsapp || '554599241306';
-  const text = (pt, es) => document.documentElement.lang === 'es' ? es : pt;
+  const text = (pt, es, params = {}) => window.ELETROTECH_COPY?.pair(pt, es, undefined, params) ?? (document.documentElement.lang === 'es' ? es : pt);
   const whatsappUrl = message => `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`;
   const normalize = value => value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
@@ -33,7 +33,7 @@
       document.querySelectorAll('[data-whatsapp]').forEach(link => {
         const original = link.dataset.whatsapp;
         const topic = text(original, topics[original] || original);
-        link.href = whatsappUrl(text(`Olá! Gostaria de informações sobre: ${topic}.`, `Hola, quisiera información sobre: ${topic}.`));
+        link.href = whatsappUrl(text('Olá! Gostaria de informações sobre: {topic}.', 'Hola, quisiera información sobre: {topic}.', {topic}));
       });
     }
     updateLinks();
@@ -260,7 +260,7 @@
       });
       buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === category)));
       empty.hidden = count > 0;
-      status.textContent = text(count + (count === 1 ? ' produto encontrado' : ' produtos encontrados'), count + (count === 1 ? ' producto encontrado' : ' productos encontrados'));
+      status.textContent = count === 1 ? text('{count} produto encontrado', '{count} producto encontrado', {count}) : text('{count} produtos encontrados', '{count} productos encontrados', {count});
       resetButtons.forEach(button => { if (button.id !== 'clear-filters') button.hidden = !searchInput.value.trim() && category === 'todos'; });
     }
     buttons.forEach(button => button.addEventListener('click', () => { category = button.dataset.filter; syncUrl(); updateResults(); }));
@@ -313,9 +313,9 @@
       const city = fields[1].value.trim();
       const message = fields[2].value.trim();
       const interest = form.elements.namedItem('interest').selectedOptions[0].textContent;
-      return whatsappUrl(text(`Olá! Sou ${name}, de ${city}.\nTenho interesse em: ${interest}.\n\n${message}`, `Hola, soy ${name}, de ${city}.\nMe interesa: ${interest}.\n\n${message}`));
+      return whatsappUrl(text('Olá! Sou {name}, de {city}.\nTenho interesse em: {interest}.\n\n{message}', 'Hola, soy {name}, de {city}.\nMe interesa: {interest}.\n\n{message}', {name,city,interest,message}));
     }
-    function updateCount() { if (count) count.textContent = `${fields[2].value.length} / 1500`; }
+    function updateCount() { if (count) count.textContent = text('{count} / {limit}', '{count} / {limit}', {count:fields[2].value.length,limit:fields[2].maxLength}); }
     function invalidatePreparedMessage() {
       if (prepared) {
         prepared = false;

@@ -2,7 +2,7 @@
 (() => {
   'use strict';
   const language = () => document.documentElement.lang === 'es' ? 'es' : 'pt';
-  const label = (pt, es) => language() === 'es' ? es : pt;
+  const label = (pt, es, params = {}) => window.ELETROTECH_COPY?.pair(pt, es, language(), params) ?? (language() === 'es' ? es : pt);
   let viewer, viewerImage, counter, caption, previous, next, origin;
   let images = [], current = 0, request = 0;
 
@@ -21,11 +21,11 @@
     header.append(caption, close);
     viewerImage = document.createElement('img');
     const navigation = document.createElement('nav');
-    navigation.setAttribute('aria-label', 'Fotos');
+    navigation.setAttribute('aria-label', label('Fotos', 'Fotos'));
     previous = document.createElement('button');
     next = document.createElement('button');
     previous.type = next.type = 'button';
-    previous.textContent = '←'; next.textContent = '→';
+    previous.textContent = label('Anterior', 'Anterior'); next.textContent = label('Próxima', 'Siguiente');
     previous.setAttribute('aria-label', label('Foto anterior', 'Foto anterior'));
     next.setAttribute('aria-label', label('Próxima foto', 'Siguiente foto'));
     counter = document.createElement('p'); counter.setAttribute('role', 'status');
@@ -55,7 +55,7 @@
     counter.textContent = label('Carregando imagem…', 'Cargando imagen…');
     try {
       await viewerImage.decode();
-      if (ticket === request) counter.textContent = `${current + 1} / ${images.length}`;
+      if (ticket === request) counter.textContent = label('{current} / {total}', '{current} / {total}', {current:current + 1,total:images.length});
     } catch {
       if (ticket === request) counter.textContent = label('Não foi possível carregar esta imagem.', 'No se pudo cargar esta imagen.');
     } finally {
@@ -88,7 +88,7 @@
     document.querySelectorAll('[data-product-quote]').forEach(link => {
       let message = language() === 'es' ? link.dataset.productQuoteEs : link.dataset.productQuote;
       const variant = document.getElementById('product-variation')?.value;
-      if (variant) message += ` ${label('Opção', 'Opción')}: ${variant}.`;
+      if (variant) message += ' ' + label('Opção: {variant}.', 'Opción: {variant}.', {variant});
       link.href = `https://wa.me/${link.dataset.phone}?text=${encodeURIComponent(message)}`;
     });
   }

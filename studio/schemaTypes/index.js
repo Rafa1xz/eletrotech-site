@@ -1,4 +1,5 @@
 import {cmsSchemaTypes,cmsSettingsFields} from './content.js';
+import {siteTextEntry,siteTexts} from './texts.js';
 import {defineField, defineType} from 'sanity';
 
 const text = (name, title, required = false, type = 'string') => defineField({
@@ -11,6 +12,7 @@ const pathValidation = rule => rule.regex(/^images\/[a-zA-Z0-9_.-]+\.(png|jpe?g|
 
 const product = defineType({
   name: 'product', title: 'Produto', type: 'document',
+  groups:[{name:'general',title:'Cadastro',default:true},{name:'content',title:'Textos PT / ES'},{name:'media',title:'Fotos e galeria'},{name:'commercial',title:'Preço e estoque'},{name:'technical',title:'Especificações'},{name:'seo',title:'Busca e compartilhamento'}],
   validation: rule => rule.custom(document => document?.src || document?.image?.asset ? true : 'Informe uma imagem existente ou envie a imagem principal.'),
   initialValue: {active: true, featured: false, illustration: false, order: 0, gallery: [], specifications: [], variations: []},
   fields: [
@@ -43,6 +45,7 @@ const product = defineType({
 
 const siteSettings = defineType({
   name: 'siteSettings', title: 'Configurações do site', type: 'document',
+  groups:[{name:'general',title:'Empresa e endereço',default:true},{name:'contact',title:'Contatos e atendimento'},{name:'brand',title:'Logo e cores'},{name:'footer',title:'Texto do rodapé'}],
   fields: [text('name', 'Nome da empresa', true), ...cmsSettingsFields,
     defineField({name: 'url', title: 'URL pública com barra final', type: 'url', validation: rule => rule.required().uri({scheme: ['https']})}),
     defineField({name: 'whatsapp', title: 'WhatsApp com DDI e DDD', type: 'string', validation: rule => rule.required().regex(/^\d{10,15}$/)}),
@@ -50,4 +53,7 @@ const siteSettings = defineType({
   ],
 });
 
-export const schemaTypes = [product, siteSettings, ...cmsSchemaTypes];
+const productGroup=name=>['description','descriptionEs','details','detailsEs','name','nameEs'].includes(name)?'content':['src','image','alt','illustration','gallery','galleryImages'].includes(name)?'media':['price','salePrice','stock','lowStock'].includes(name)?'commercial':['variations','specifications'].includes(name)?'technical':name.startsWith('seo')?'seo':'general';
+product.fields=product.fields.map(field=>({...field,group:productGroup(field.name)}));
+siteSettings.fields=siteSettings.fields.map(field=>({...field,group:['name','url'].includes(field.name)?'general':['logo','logoSrc','footerStart','footerEnd'].includes(field.name)?'brand':['footerPt','footerEs'].includes(field.name)?'footer':'contact'}));
+export const schemaTypes = [product, siteSettings, ...cmsSchemaTypes, siteTextEntry, siteTexts];

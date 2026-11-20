@@ -23,6 +23,7 @@ await writeFile('data/product-routes.json', JSON.stringify(merged, null, 2) + '\
 const optional = async path => {try{return await read(path);}catch(error){if(error.code==='ENOENT')return null;throw error;}};
 const [pages,services,oldPages,oldServices]=await Promise.all([optional('data/pages.json'),optional('data/services.json'),published('data/pages.json'),published('data/services.json')]);
 const contentChanged=canonicalJson(pages)!==canonicalJson(oldPages)||canonicalJson(services)!==canonicalJson(oldServices);
-const changed = contentChanged || process.env.FORCE_PUBLISH === 'true' || canonicalJson(products) !== canonicalJson(oldProducts) || canonicalJson(site) !== canonicalJson(oldSite);
+const [texts,oldTexts]=await Promise.all([optional('data/texts.json'),published('data/texts.json')]);
+const changed = contentChanged || canonicalJson(texts)!==canonicalJson(oldTexts) || process.env.FORCE_PUBLISH === 'true' || canonicalJson(products) !== canonicalJson(oldProducts) || canonicalJson(site) !== canonicalJson(oldSite);
 if (process.env.GITHUB_OUTPUT) await appendFile(process.env.GITHUB_OUTPUT, `changed=${changed}\n`);
 console.log(changed ? 'Há conteúdo para publicar.' : 'Conteúdo sem alterações. Publicação dispensada.');

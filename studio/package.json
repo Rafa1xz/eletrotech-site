@@ -6,7 +6,8 @@
     "dev": "sanity dev",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "cms:bootstrap": "sanity exec scripts/bootstrap.mjs --with-user-token"
+    "cms:bootstrap": "sanity exec scripts/bootstrap.mjs --with-user-token",
+    "cms:texts:bootstrap": "sanity exec scripts/bootstrap-texts.mjs --with-user-token"
   },
   "dependencies": {
     "sanity": "^6.20.0",

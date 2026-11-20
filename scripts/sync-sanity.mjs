@@ -1,4 +1,5 @@
 import {contentQuery,cmsMediaFile,mapPage,mapService} from './cms-content.mjs';
+import {mergeTextDocuments} from './text-catalog.mjs';
 import {readFile, writeFile, access} from 'node:fs/promises';
 import {resolve, dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -38,6 +39,9 @@ if (!projectId) {
     return local;
   };
   const defaults = JSON.parse(await readFile(resolve(root,'data/cms-defaults.json'),'utf8'));
+  const textDefaults=JSON.parse(await readFile(resolve(root,'data/text-defaults.json'),'utf8'));
+  const textDocuments=mergeTextDocuments(textDefaults.documents,result.texts||[]);
+  const manifest=JSON.parse(await readFile(resolve(root,'data/page-text-manifest.json'),'utf8'));
   const siteDefaults = JSON.parse(await readFile(resolve(root,'data/site-defaults.json'),'utf8'));
   const downloadMedia = async (url,kind='image') => {
     const local=cmsMediaFile(url,projectId,dataset,kind),target=resolve(root,local);
@@ -54,6 +58,8 @@ if (!projectId) {
   for(const base of defaults.pages){
     const remote=(result.pages||[]).find(item=>item._id===base._id);
     const page=remote?await mapPage({...base,...remote,pageId:base.pageId,file:base.file},downloadMedia):base;
+    const fields=manifest.pages.find(item=>item._id===base._id)?.texts||page.texts;
+    page.texts=fields.map(field=>({...field,...(page.texts||[]).find(item=>item.key===field.key),label:field.label,section:field.section}));
     pages.push(page);
   }
   const remoteServices=result.services||[];
@@ -67,5 +73,6 @@ if (!projectId) {
   await writeFile(resolve(root, 'data/site.json'), JSON.stringify(settings, null, 2) + '\n');
   await writeFile(resolve(root,'data/pages.json'),JSON.stringify({pages},null,2)+'\n');
   await writeFile(resolve(root,'data/services.json'),JSON.stringify({services},null,2)+'\n');
+  await writeFile(resolve(root,'data/texts.json'),JSON.stringify({documents:textDocuments},null,2)+'\n');
   console.log(`Sincronizados ${products.length} produtos publicados do Sanity.`);
 }
