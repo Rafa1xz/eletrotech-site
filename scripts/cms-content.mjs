@@ -8,6 +8,20 @@ export function cmsMediaFile(url,project,dataset,kind='image') {
   if(u.origin!=='https://cdn.sanity.io'||!u.pathname.startsWith(prefix)||!allowed.test(file)||u.search||u.hash)throw Error('Mídia fora do armazenamento Sanity autorizado.');
   return `${kind==='video'?'videos':'images'}/sanity-${file}`;
 }
+// Fixed template fields gain defaults without discarding merchant edits or uploads.
+export function mergePage(base, remote = {}) {
+  const page={...base,...remote,pageId:base.pageId,file:base.file};
+  for(const field of ['texts','images','videos','links','sections']){
+    const changes=remote[field]||[];
+    page[field]=changes.map(item=>{
+      const merged={...item};
+      for(const [key,value] of Object.entries(base[field]?.find(entry=>entry.key===item.key)||{}))if(!(key in merged))merged[key]=value;
+      return merged;
+    });
+    for(const item of base[field]||[])if(!changes.some(entry=>entry.key===item.key))page[field].push({...item});
+  }
+  return page;
+}
 export async function mapPage(document,download) {
   const page=structuredClone(document);
   for(const image of page.images||[]){if(image.uploadedUrl)image.src=await download(image.uploadedUrl,'image');delete image.image;delete image.uploadedUrl;}

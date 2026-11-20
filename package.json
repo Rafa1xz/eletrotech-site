@@ -17,7 +17,8 @@
     "cms:seed": "node scripts/export-cms.mjs",
     "cms:bootstrap": "node scripts/export-cms.mjs && npm --prefix studio run cms:bootstrap",
     "cms:texts:inventory": "node scripts/inventory-texts.mjs",
-    "cms:texts:bootstrap": "npm --prefix studio run cms:texts:bootstrap"
+    "cms:texts:bootstrap": "npm --prefix studio run cms:texts:bootstrap",
+    "cms:layout:bootstrap": "npm --prefix studio run cms:layout:bootstrap"
   },
   "devDependencies": {
     "acorn": "^8.19.0",

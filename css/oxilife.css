@@ -74,7 +74,7 @@ body.ox-page #equipamentos .product-body p { color: #526174; font-size: 14px; }
 body.ox-page #equipamentos .btn-outline { color: #174686; border: 1px solid #a9bed5; border-radius: 7px; background: #fff; min-height: 42px; font-size: 13px; }
 body.ox-page #equipamentos .product-card-meta { color: #526174; font-size: 12px; }
 body.ox-page .cta-section { background: #fff; padding: 0 0 36px; }
-body.ox-page .cta-inner { position: relative; isolation: isolate; overflow: hidden; display: grid; grid-template-columns: 1.6fr 1fr; gap: 36px; align-items: center; padding: 36px; border-radius: 16px; background: linear-gradient(90deg,#06263cf5,#06263ca8),url('../images/oxilife-painel-aberto-ilustrativo.png') center/cover; border: 0; box-shadow: none; }
+body.ox-page .cta-inner { position: relative; isolation: isolate; overflow: hidden; display: grid; grid-template-columns: 1.6fr 1fr; gap: 36px; align-items: center; padding: 36px; border-radius: 16px; background: linear-gradient(90deg,#06263cf5,#06263ca8),var(--cms-background,url('../images/oxilife-painel-aberto-ilustrativo.png')) center/cover; border: 0; box-shadow: none; }
 body.ox-page .cta-inner::before,body.ox-page .cta-inner::after { content: none; }
 body.ox-page .cta-inner .eyebrow { display: none; }
 body.ox-page .cta-inner h2 { color: #fff; font-size: clamp(26px,2.8vw,36px); line-height: 1.2; margin: 0; }

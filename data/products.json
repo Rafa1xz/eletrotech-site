@@ -6,7 +6,7 @@
       "alt": "Motores Hércules apresentados pela Eletrotech",
       "brand": "Hércules",
       "category": "motores",
-      "description": "Motores elétricos novos para diversas aplicações.",
+      "description": "Motores elétricos novos para diferentes aplicações.",
       "descriptionEs": "Motores eléctricos nuevos para distintas aplicaciones.",
       "details": "Modelos, potência, tensão e RPM sob consulta.",
       "detailsEs": "Modelos, potencia, tensión y RPM bajo consulta.",
@@ -35,7 +35,7 @@
           "valueEs": "Bajo consulta"
         }
       ],
-      "src": "images/motores-hercules-1.jpeg",
+      "src": "images/sanity-d59ff916c70cfa84beb8b5955e54edb7d1806172-1000x750.jpg",
       "stock": null,
       "variations": []
     },
@@ -64,7 +64,7 @@
       "sku": "",
       "slug": "materiais-para-paineis",
       "specifications": [],
-      "src": "images/materiais-paineis-1.jpeg",
+      "src": "images/sanity-7060d14e390f6c138574a5a9f8d34f697520e096-1000x750.jpg",
       "stock": null,
       "variations": []
     },
@@ -93,7 +93,7 @@
       "sku": "",
       "slug": "linha-zagonel",
       "specifications": [],
-      "src": "images/produtos-zagonel.jpeg",
+      "src": "images/sanity-22cbbb8404670af49bead779b5e81870abc10e73-1000x750.jpg",
       "stock": null,
       "variations": []
     },
@@ -135,7 +135,7 @@
           "valueEs": "Portátil, para controles en estanques"
         }
       ],
-      "src": "images/oximetro-portatil.jpeg",
+      "src": "images/sanity-71e080bf5ed5ce12c8e7b090c7e53b8f4590b47e-750x1000.jpg",
       "stock": null,
       "variations": []
     },
@@ -180,7 +180,7 @@
           "valueEs": "Hasta 4, según la configuración"
         }
       ],
-      "src": "images/painel-sonda-3.jpeg",
+      "src": "images/sanity-87763ad1bec6462e5742b991c7ba1a6277fb1ae7-750x1000.jpg",
       "stock": null,
       "variations": []
     },
@@ -216,7 +216,7 @@
           "valueEs": "Inalámbrica y Wi-Fi; requisitos bajo consulta"
         }
       ],
-      "src": "images/alarme-esquema.svg",
+      "src": "images/sanity-7f540b843918137471aa01dfe6cf6282202e0794-640x420.svg",
       "stock": null,
       "variations": []
     }

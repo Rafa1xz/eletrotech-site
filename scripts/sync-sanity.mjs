@@ -1,4 +1,4 @@
-import {contentQuery,cmsMediaFile,mapPage,mapService} from './cms-content.mjs';
+import {contentQuery,cmsMediaFile,mapPage,mapService,mergePage} from './cms-content.mjs';
 import {mergeTextDocuments} from './text-catalog.mjs';
 import {readFile, writeFile, access} from 'node:fs/promises';
 import {resolve, dirname} from 'node:path';
@@ -57,7 +57,7 @@ if (!projectId) {
   const pages=[];
   for(const base of defaults.pages){
     const remote=(result.pages||[]).find(item=>item._id===base._id);
-    const page=remote?await mapPage({...base,...remote,pageId:base.pageId,file:base.file},downloadMedia):base;
+    const page=await mapPage(mergePage(base,remote),downloadMedia);
     const fields=manifest.pages.find(item=>item._id===base._id)?.texts||page.texts;
     page.texts=fields.map(field=>({...field,...(page.texts||[]).find(item=>item.key===field.key),label:field.label,section:field.section}));
     pages.push(page);

@@ -35,6 +35,10 @@ export function renderPage(template,page,site,{services=[],icons={},defaults={},
     const src=localMedia(item.src),node=$('[data-cms-image]').filter((_,el)=>$(el).attr('data-cms-image')===item.key);
     node.attr('src',src).attr('alt',item.altPt||'').attr('data-pt',item.altPt||'').attr('data-es',item.altEs||item.altPt||'').attr('data-translate-attr','alt');
     node.removeAttr('width height'); // A replacement may have a different aspect ratio.
+    $('[data-cms-background]').filter((_,el)=>$(el).attr('data-cms-background')===item.key).each((_,el)=>{
+      const target=$(el);
+      target.attr('style',`${target.attr('style')||''};--cms-background:url('${src}')`);
+    });
   }
   for(const item of page.videos||[]){
     const node=$('[data-cms-video]').filter((_,el)=>$(el).attr('data-cms-video')===item.key);
@@ -111,12 +115,24 @@ export function renderPage(template,page,site,{services=[],icons={},defaults={},
   if(site.footerPt)$('.footer-grid>div:first-child>p').empty().append(tr($,site.footerPt,site.footerEs));
   if(site.businessHours)$('.contact-hours').empty().append(tr($,site.businessHours,site.businessHoursEs));
   if(hex(site.footerStart)&&hex(site.footerEnd))$('.site-footer').attr('style',`background:linear-gradient(105deg,${site.footerStart},${site.footerEnd})`);
-  for(const config of pages){
-    $(`#main-nav>a[href="${config.file}"]`).each((_,el)=>{
-      const node=$(el);if(config.showInMenu===false){node.attr('hidden','');return;}
-      const defaultTitle=pages.find(p=>p.pageId===config.pageId)?.title;
-      if(config.menuTitle&&config.menuTitle!==defaultTitle){node.empty().append(tr($,config.menuTitle,config.menuTitleEs));}
-    });
+  const nav=$('#main-nav'),slot=$('<template>');
+  if(nav.length&&pages.length){
+    nav.children('a').first().before(slot);
+    const ordered=pages.map((config,index)=>({config,index})).sort((a,b)=>(a.config.menuOrder??a.index)-(b.config.menuOrder??b.index)||a.index-b.index);
+    for(const {config} of ordered){
+      if(!/^[a-z0-9-]+\.html$/.test(config.file||''))throw Error('Endereço de página inválido no menu.');
+      let node=nav.children('a').filter((_,el)=>$(el).attr('href')===config.file);
+      if(config.showInMenu===false){node.remove();continue;}
+      if(!node.length)node=$('<a>').attr('href',config.file).append(tr($,config.menuTitle||config.title,config.menuTitleEs));
+      // Keep shared labels when unchanged; an ES-only override must also work.
+      const label=node.find('[data-pt]').first();
+      const pt=config.menuTitle&&config.menuTitle!==config.title?config.menuTitle:(label.attr('data-pt')||config.menuTitle||config.title);
+      const es=config.menuTitleEs||(config.menuTitle&&config.menuTitle!==config.title?pt:label.attr('data-es')||pt);
+      node.empty().append(tr($,pt,es)).removeAttr('hidden aria-current');
+      if(config.file===page.file)node.attr('aria-current','page');
+      slot.before(node.remove());
+    }
+    slot.remove();
   }
   return removeDecorativeArrows($.html()).replace(/[\t ]+$/gm,'');
 }

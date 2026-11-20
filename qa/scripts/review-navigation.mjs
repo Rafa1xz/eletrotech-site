@@ -79,7 +79,7 @@ try {
   }
   const whatsappState = () => evaluate(`(() => {
     const button = document.querySelector('.floating-contact');
-    return {width: button.getBoundingClientRect().width, expanded: button.classList.contains('is-expanded'), labelOpacity: getComputedStyle(button.querySelector('.ww-float-whatsapp__label')).opacity};
+    return {width: button.getBoundingClientRect().width, expanded: button.classList.contains('is-expanded'), labelOpacity: getComputedStyle(button.querySelector('.contact-float-label')).opacity};
   })()`);
   function assertCompact(state, context) {
     assert(state.width <= 60.1 && !state.expanded, `${context}: ${JSON.stringify(state)}`);
@@ -115,12 +115,13 @@ try {
     await navigate('produtos.html', width);
     await click('.menu-toggle');
     assert.equal(await evaluate("document.querySelector('.menu-toggle').getAttribute('aria-expanded')"), 'true');
-    const arrow = await evaluate(`(() => {
+    const currentPage = await evaluate(`(() => {
       const link = document.querySelector('#main-nav > a[aria-current]');
-      return {text: getComputedStyle(link).color, arrow: getComputedStyle(link, '::after').color, content: getComputedStyle(link, '::after').content};
+      const box = link.getBoundingClientRect();
+      return {text: link.textContent.trim(), width: box.width, height: box.height, content: getComputedStyle(link, '::after').content};
     })()`);
-    assert.equal(arrow.arrow, arrow.text, `Current-page arrow must inherit readable link color at ${width}px: ${JSON.stringify(arrow)}`);
-    assert(!['none', 'normal', '""'].includes(arrow.content), 'The navigation arrow should remain present');
+    assert(currentPage.text.length && currentPage.width > 0 && currentPage.height > 0, `Current-page link must remain visible at ${width}px`);
+    assert(['none', 'normal', '""'].includes(currentPage.content), 'Decorative navigation arrows were removed from the approved design');
     await cdp('Input.dispatchKeyEvent', {type: 'keyDown', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27});
     assert.equal(await evaluate("document.querySelector('.menu-toggle').getAttribute('aria-expanded')"), 'false');
   }

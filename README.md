@@ -10,11 +10,11 @@ npm ci --prefix studio
 npm run dev
 ```
 
-Site: http://127.0.0.1:5500. Studio online: https://eletrotech-marechal-loja.sanity.studio/. Para desenvolver o Studio localmente, use `npm run studio` (porta 3333).
+Site: http://127.0.0.1:5500. Studio online: https://eletrotech-marechal-painel.sanity.studio/. Para desenvolver o Studio localmente, use `npm run studio` (porta 3333).
 
 ## Sanity
 
-O Studio em `studio/` gerencia produtos, traduções, imagens, preços, estoque, especificações, SEO e as configurações usadas pelo gerador. Está conectado ao projeto `mdb824ut`, dataset público `production`, com os seis produtos e as configurações importados.
+O Studio em `studio/` gerencia produtos, traduções, imagens, preços, estoque, especificações, SEO e as configurações usadas pelo gerador. Está conectado ao projeto `zr5fcto8`, dataset público `production`, com os seis produtos e as configurações importados.
 
 Consulte [docs/SANITY.md](docs/SANITY.md) para reconectar em outra máquina e configurar a publicação. Os arquivos locais `.env` e `studio/.env.local` já estão configurados e são ignorados pelo Git.
 

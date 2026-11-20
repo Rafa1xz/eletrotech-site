@@ -620,7 +620,8 @@
           "href": "https://wa.me/554599241306",
           "whatsappTopic": "Orçamento"
         }
-      ]
+      ],
+      "menuOrder": 0
     },
     {
       "_id": "page-catalog",
@@ -955,7 +956,8 @@
           "href": "https://wa.me/554599241306",
           "whatsappTopic": "Orçamento"
         }
-      ]
+      ],
+      "menuOrder": 1
     },
     {
       "_id": "page-process",
@@ -1306,7 +1308,8 @@
           "href": "https://wa.me/554599241306",
           "whatsappTopic": "Orçamento"
         }
-      ]
+      ],
+      "menuOrder": 2
     },
     {
       "_id": "page-oxilife",
@@ -1678,6 +1681,14 @@
           "src": "images/painel-sonda-campo.jpeg",
           "altPt": "Painel de monitoramento instalado em campo",
           "altEs": "Tablero de monitoreo instalado en campo"
+        },
+        {
+          "_key": "background-001",
+          "key": "background-001",
+          "label": "Fundo do convite para conversar sobre os tanques",
+          "src": "images/oxilife-painel-aberto-ilustrativo.png",
+          "altPt": "",
+          "altEs": ""
         }
       ],
       "videos": [],
@@ -1717,7 +1728,8 @@
           "href": "https://wa.me/554599241306",
           "whatsappTopic": "OxiLife Fish"
         }
-      ]
+      ],
+      "menuOrder": 3
     },
     {
       "_id": "page-contact",
@@ -2099,7 +2111,8 @@
           "href": "como-trabalhamos.html",
           "whatsappTopic": ""
         }
-      ]
+      ],
+      "menuOrder": 4
     },
     {
       "_id": "page-portfolio",
@@ -2432,7 +2445,8 @@
           "href": "produtos/motores-hercules.html",
           "whatsappTopic": ""
         }
-      ]
+      ],
+      "menuOrder": 5
     }
   ],
   "services": [

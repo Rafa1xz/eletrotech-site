@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {load} from 'cheerio';
 import {renderPage,validLink,localMedia} from '../../scripts/cms-render.mjs';
-import {cmsMediaFile,mapPage,mapService} from '../../scripts/cms-content.mjs';
+import {cmsMediaFile,mapPage,mapService,mergePage} from '../../scripts/cms-content.mjs';
+import {missingPageFields} from '../../scripts/cms-migration.mjs';
 const read=async p=>JSON.parse(await readFile(p,'utf8'));
 const defaults=await read('data/cms-defaults.json');
 const site=await read('data/site-defaults.json');
@@ -72,4 +73,63 @@ test('CMS upload mapping supports images, video and posters and rejects unsafe p
   const page=await mapPage({images:[{src:'images/old.png',uploadedUrl:'new'}],videos:[{src:'videos/old.mp4',uploadedUrl:'movie',posterUrl:'poster'}]},async(url,kind)=>`${kind==='video'?'videos':'images'}/${url}.${kind==='video'?'mp4':'png'}`);
   assert.equal(page.images[0].src,'images/new.png');assert.equal(page.videos[0].src,'videos/movie.mp4');assert.equal(page.videos[0].poster,'images/poster.png');
   const service=await mapService({src:'images/old.png',uploadedUrl:'new'},async()=> 'images/new.png');assert.equal(service.src,'images/new.png');
+});
+
+test('Merchant menu settings control order, ES-only labels and optional pages across the site',async()=>{
+  const pages=structuredClone(defaults.pages);
+  const home=pages.find(p=>p.pageId==='home');
+  home.menuTitleEs='Página inicial';home.menuOrder=20;
+  const portfolio=pages.find(p=>p.pageId==='portfolio');
+  portfolio.showInMenu=true;portfolio.menuOrder=0;portfolio.menuTitle='Projetos <reais>';portfolio.menuTitleEs='Proyectos';
+  pages.find(p=>p.pageId==='catalog').showInMenu=false;
+  for(const page of pages){
+    const source=await readFile(`templates/pages/${page.pageId}.html`,'utf8');
+    const $=load(renderPage(source,page,site,{...options,pages}));
+    const links=$('#main-nav>a:not(.mobile-menu-cta)');
+    assert.equal(links.first().attr('href'),'portfolio.html');
+    assert.equal(links.first().text(),'Projetos <reais>');
+    assert.equal(links.last().attr('href'),'index.html');
+    assert.equal(links.last().find('span').attr('data-es'),'Página inicial');
+    assert.equal($('#main-nav>a[href="produtos.html"]').length,0);
+    assert.equal($('#main-nav .mobile-menu-cta').length,1);
+    assert.equal($('#main-nav a[aria-current="page"]').length,page.pageId==='catalog'?0:1);
+    assert(!$('#main-nav script').length);
+  }
+});
+
+test('Uploaded background images are editable without removing the approved overlay',async()=>{
+  const page=structuredClone(defaults.pages.find(p=>p.pageId==='oxilife'));
+  page.images.find(item=>item.key==='background-001').src='images/new-background.png';
+  const source=await readFile('templates/pages/oxilife.html','utf8');
+  const $=load(renderPage(source,page,site,options));
+  assert($('[data-cms-background]').attr('style').includes("--cms-background:url('images/new-background.png')"));
+  const css=await readFile('css/oxilife.css','utf8');
+  assert(css.includes('var(--cms-background,url('));
+  page.images.find(item=>item.key==='background-001').src="images/x.png');color:red";
+  assert.throws(()=>renderPage(source,page,site,options),/inválida/);
+});
+
+test('Layout migration adds new fields once and preserves published edits and drafts',()=>{
+  const base=defaults.pages.find(p=>p.pageId==='oxilife');
+  const remote=structuredClone(base);
+  delete remote.menuOrder;
+  remote.images=remote.images.filter(item=>item.key!=='background-001').reverse();
+  remote.images[0].src='images/merchant-photo.png';
+  remote.images[0].image={asset:{_ref:'merchant-upload'}};
+  remote.texts[0].pt='Título editado';
+  remote.sections.reverse();
+  remote.file='outside.html';
+  const merged=mergePage(base,remote);
+  assert.equal(merged.file,base.file);
+  assert.equal(merged.texts[0].pt,'Título editado');
+  assert.deepEqual(merged.sections,remote.sections);
+  assert.equal(merged.images[0].src,'images/merchant-photo.png');
+  assert.equal(merged.images[0].image.asset._ref,'merchant-upload');
+  assert.equal(merged.images.at(-1).key,'background-001');
+  const patch=missingPageFields(base,remote);
+  assert.deepEqual(Object.keys(patch).sort(),['images','menuOrder']);
+  assert.deepEqual(missingPageFields(base,{...remote,...patch}),{});
+  const draft={...remote,_id:'drafts.'+base._id,menuOrder:42};
+  assert.equal(missingPageFields(base,draft).menuOrder,undefined);
+  assert.equal(remote.images.length,base.images.length-1);
 });

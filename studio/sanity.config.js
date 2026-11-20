@@ -4,6 +4,7 @@ import {schemaTypes} from './schemaTypes/index.js';
 
 const projectId = process.env.SANITY_STUDIO_PROJECT_ID;
 if (!projectId) throw new Error('Configure SANITY_STUDIO_PROJECT_ID em studio/.env.local para conectar o Studio.');
+const singletons=new Set(['sitePage','siteSettings','siteTexts']);
 
 export default defineConfig({
   name: 'eletrotech',
@@ -22,5 +23,11 @@ export default defineConfig({
     )),
     S.listItem().title('Configurações do site').child(S.document().schemaType('siteSettings').documentId('site-settings')),
   ])})],
-  schema: {types: schemaTypes},
+  document: {
+    newDocumentOptions: options=>options.filter(option=>!singletons.has(option.schemaType)),
+    actions: (actions,context)=>singletons.has(context.schemaType)
+      ? actions.filter(action=>!['delete','duplicate','unpublish'].includes(action.action))
+      : actions,
+  },
+  schema: {types: schemaTypes,templates:templates=>templates.filter(template=>!singletons.has(template.schemaType))},
 });

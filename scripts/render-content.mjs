@@ -12,6 +12,7 @@ for(const page of pages){
   if(!/^[a-z0-9-]+$/.test(page.pageId)||!['index.html','produtos.html','como-trabalhamos.html','oxilife-fish.html','contato.html','portfolio.html'].includes(page.file))throw Error('Página inválida.');
   const template=await readFile(resolve(root,`templates/pages/${page.pageId}.html`),'utf8');
   const html=renderPage(template,page,site,{services,icons,defaults,pages,textCatalog});
+  for(const image of page.images||[])await access(resolve(root,image.src));
   // Fail before writing when a local image/video is missing.
   for(const match of html.matchAll(/(?:src|poster|data-src)="((?:images|videos)\/[^"?#]+)"/g))await access(resolve(root,match[1]));
   await writeFile(resolve(root,page.file),html);
