@@ -273,104 +273,6 @@
     updateResults();
   }
 
-  function initQuoteForm() {
-    const form = document.getElementById('quote-form');
-    if (!form) return;
-    const status = document.getElementById('form-status');
-    const preparedLink = document.getElementById('prepared-message');
-    const count = document.getElementById('message-count');
-    const fields = [form.elements.namedItem('name'), form.elements.namedItem('city'), form.elements.namedItem('message')];
-    const errors = { name: document.getElementById('name-error'), city: document.getElementById('city-error'), message: document.getElementById('message-error') };
-    let prepared = false;
-    let statusKind = '';
-
-    function updateStatus() {
-      const messages = {
-        error: text('Revise os campos indicados para preparar sua mensagem.', 'Revise los campos indicados para preparar su mensaje.'),
-        edited: text('Você alterou os dados. Prepare a mensagem novamente para incluir as mudanças.', 'Ha cambiado los datos. Prepare el mensaje otra vez para incluir los cambios.'),
-        prepared: text('Mensagem preparada. Se o WhatsApp não abriu, use o link abaixo. Revise os dados antes de enviar.', 'Mensaje preparado. Si WhatsApp no se abrió, use el enlace de abajo. Revise los datos antes de enviarlo.')
-      };
-      status.textContent = messages[statusKind] || '';
-    }
-
-    function errorFor(field) {
-      const value = field.value.trim();
-      if (field.name === 'name' && !value) return text('Informe seu nome.', 'Escriba su nombre.');
-      if (field.name === 'city' && !value) return text('Informe sua cidade.', 'Escriba su ciudad.');
-      if (field.name === 'message' && value.length < 10) return text('Descreva sua necessidade com pelo menos 10 caracteres.', 'Describa su necesidad con al menos 10 caracteres.');
-      if (field.value.length > field.maxLength) return text('Reduza o texto para o limite deste campo.', 'Reduzca el texto al límite de este campo.');
-      return '';
-    }
-    function showError(field, message) {
-      const error = errors[field.name];
-      error.textContent = message;
-      error.hidden = !message;
-      if (message) field.setAttribute('aria-invalid', 'true');
-      else field.removeAttribute('aria-invalid');
-    }
-    function buildUrl() {
-      const name = fields[0].value.trim();
-      const city = fields[1].value.trim();
-      const message = fields[2].value.trim();
-      const interest = form.elements.namedItem('interest').selectedOptions[0].textContent;
-      return whatsappUrl(text('Olá! Sou {name}, de {city}.\nTenho interesse em: {interest}.\n\n{message}', 'Hola, soy {name}, de {city}.\nMe interesa: {interest}.\n\n{message}', {name,city,interest,message}));
-    }
-    function updateCount() { if (count) count.textContent = text('{count} / {limit}', '{count} / {limit}', {count:fields[2].value.length,limit:fields[2].maxLength}); }
-    function invalidatePreparedMessage() {
-      if (prepared) {
-        prepared = false;
-        preparedLink.hidden = true;
-        preparedLink.removeAttribute('href');
-        statusKind = 'edited';
-        updateStatus();
-      }
-    }
-
-    // A validação usa os limites do HTML e acrescenta erros associados a cada campo.
-    form.noValidate = true;
-    form.querySelector('button[type="submit"]').disabled = false;
-    fields.forEach(field => field.addEventListener('input', () => {
-      if (field.hasAttribute('aria-invalid')) showError(field, errorFor(field));
-      if (statusKind === 'error' && fields.every(input => !input.hasAttribute('aria-invalid'))) { statusKind = ''; updateStatus(); }
-      updateCount();
-      invalidatePreparedMessage();
-    }));
-    form.elements.namedItem('interest').addEventListener('change', invalidatePreparedMessage);
-    form.addEventListener('submit', event => {
-      event.preventDefault();
-      let firstInvalid = null;
-      fields.forEach(field => {
-        const message = errorFor(field);
-        showError(field, message);
-        if (message && !firstInvalid) firstInvalid = field;
-      });
-      if (firstInvalid) {
-        preparedLink.hidden = true;
-        preparedLink.removeAttribute('href');
-        prepared = false;
-        statusKind = 'error';
-        updateStatus();
-        firstInvalid.focus();
-        return;
-      }
-      const url = buildUrl();
-      prepared = true;
-      preparedLink.href = url;
-      preparedLink.hidden = false;
-      window.open(url, '_blank', 'noopener,noreferrer');
-      statusKind = 'prepared';
-      updateStatus();
-    });
-    document.addEventListener('languagechange', () => {
-      fields.forEach(field => { if (field.hasAttribute('aria-invalid')) showError(field, errorFor(field)); });
-      if (prepared) {
-        preparedLink.href = buildUrl();
-      }
-      updateStatus();
-    });
-    updateCount();
-  }
-
   if (redirectLegacyLinks()) return;
   initContactLinks();
   initFishBackground();
@@ -378,5 +280,4 @@
   initMobileDock();
   initAnimatedWhatsapp();
   initCatalog();
-  initQuoteForm();
 })();

@@ -1205,14 +1205,6 @@
           "attribute": ""
         },
         {
-          "_key": "text-028",
-          "key": "text-028",
-          "label": "Preparar minha mensagem",
-          "pt": "Preparar minha mensagem",
-          "es": "Preparar mi mensaje",
-          "attribute": ""
-        },
-        {
           "_key": "text-029",
           "key": "text-029",
           "label": "Conhecer serviços e produtos",
@@ -1259,6 +1251,22 @@
           "pt": "Converse pelo WhatsApp",
           "es": "Converse por WhatsApp",
           "attribute": ""
+        },
+        {
+          "_key": "extra-1000",
+          "key": "extra-1000",
+          "label": "Caminho da página",
+          "pt": "Caminho da página",
+          "es": "Ruta de la página",
+          "attribute": "aria-label"
+        },
+        {
+          "_key": "contact-action",
+          "key": "contact-action",
+          "label": "Falar com a equipe",
+          "pt": "Falar com a equipe",
+          "es": "Hablar con el equipo",
+          "attribute": ""
         }
       ],
       "images": [
@@ -1291,7 +1299,7 @@
           "_key": "link-003",
           "key": "link-003",
           "label": "Preparar minha mensagem →",
-          "href": "contato.html#quote-form",
+          "href": "contato.html#contato-direto",
           "whatsappTopic": ""
         },
         {
@@ -1827,166 +1835,6 @@
           "attribute": ""
         },
         {
-          "_key": "text-010",
-          "key": "text-010",
-          "label": "SOLICITE UMA CONVERSA",
-          "pt": "SOLICITE UMA CONVERSA",
-          "es": "SOLICITE UNA CONVERSACIÓN",
-          "attribute": ""
-        },
-        {
-          "_key": "text-011",
-          "key": "text-011",
-          "label": "O que você precisa?",
-          "pt": "O que você precisa?",
-          "es": "¿Qué necesita?",
-          "attribute": ""
-        },
-        {
-          "_key": "text-012",
-          "key": "text-012",
-          "label": "Prepare sua mensagem para revisar e enviar pelo WhatsApp.",
-          "pt": "Prepare sua mensagem para revisar e enviar pelo WhatsApp.",
-          "es": "Prepare su mensaje para revisarlo y enviarlo por WhatsApp.",
-          "attribute": ""
-        },
-        {
-          "_key": "text-013",
-          "key": "text-013",
-          "label": "* Campos obrigatórios",
-          "pt": "* Campos obrigatórios",
-          "es": "* Campos obligatorios",
-          "attribute": ""
-        },
-        {
-          "_key": "text-014",
-          "key": "text-014",
-          "label": "Seu nome",
-          "pt": "Seu nome",
-          "es": "Su nombre",
-          "attribute": ""
-        },
-        {
-          "_key": "text-015",
-          "key": "text-015",
-          "label": "Como podemos chamar você?",
-          "pt": "Como podemos chamar você?",
-          "es": "¿Cómo podemos llamarle?",
-          "attribute": "placeholder"
-        },
-        {
-          "_key": "text-016",
-          "key": "text-016",
-          "label": "Cidade",
-          "pt": "Cidade",
-          "es": "Ciudad",
-          "attribute": ""
-        },
-        {
-          "_key": "text-017",
-          "key": "text-017",
-          "label": "Sua cidade",
-          "pt": "Sua cidade",
-          "es": "Su ciudad",
-          "attribute": "placeholder"
-        },
-        {
-          "_key": "text-018",
-          "key": "text-018",
-          "label": "Tenho interesse em",
-          "pt": "Tenho interesse em",
-          "es": "Me interesa",
-          "attribute": ""
-        },
-        {
-          "_key": "text-019",
-          "key": "text-019",
-          "label": "Serviços elétricos",
-          "pt": "Serviços elétricos",
-          "es": "Servicios eléctricos",
-          "attribute": ""
-        },
-        {
-          "_key": "text-020",
-          "key": "text-020",
-          "label": "Produtos",
-          "pt": "Produtos",
-          "es": "Productos",
-          "attribute": ""
-        },
-        {
-          "_key": "text-021",
-          "key": "text-021",
-          "label": "OxiLife Fish",
-          "pt": "OxiLife Fish",
-          "es": "OxiLife Fish",
-          "attribute": ""
-        },
-        {
-          "_key": "text-022",
-          "key": "text-022",
-          "label": "Manutenção",
-          "pt": "Manutenção",
-          "es": "Mantenimiento",
-          "attribute": ""
-        },
-        {
-          "_key": "text-023",
-          "key": "text-023",
-          "label": "Como podemos ajudar?",
-          "pt": "Como podemos ajudar?",
-          "es": "¿Cómo podemos ayudar?",
-          "attribute": ""
-        },
-        {
-          "_key": "text-024",
-          "key": "text-024",
-          "label": "Conte qual serviço ou equipamento você procura.",
-          "pt": "Conte qual serviço ou equipamento você procura.",
-          "es": "Cuéntenos qué servicio o equipo necesita.",
-          "attribute": "placeholder"
-        },
-        {
-          "_key": "text-025",
-          "key": "text-025",
-          "label": "Descreva sua necessidade com pelo menos 10 caracteres.",
-          "pt": "Descreva sua necessidade com pelo menos 10 caracteres.",
-          "es": "Describa su necesidad con al menos 10 caracteres.",
-          "attribute": ""
-        },
-        {
-          "_key": "text-026",
-          "key": "text-026",
-          "label": "Preparar mensagem no WhatsApp",
-          "pt": "Preparar mensagem no WhatsApp",
-          "es": "Preparar mensaje en WhatsApp",
-          "attribute": ""
-        },
-        {
-          "_key": "text-027",
-          "key": "text-027",
-          "label": "Os dados não são armazenados neste site. Você revisa e confirma o envio no WhatsApp.",
-          "pt": "Os dados não são armazenados neste site. Você revisa e confirma o envio no WhatsApp.",
-          "es": "Los datos no se almacenan en este sitio. Usted revisa y confirma el envío en WhatsApp.",
-          "attribute": ""
-        },
-        {
-          "_key": "text-028",
-          "key": "text-028",
-          "label": "Abrir mensagem preparada",
-          "pt": "Abrir mensagem preparada",
-          "es": "Abrir mensaje preparado",
-          "attribute": ""
-        },
-        {
-          "_key": "text-029",
-          "key": "text-029",
-          "label": "Prefere falar diretamente?",
-          "pt": "Prefere falar diretamente?",
-          "es": "¿Prefiere hablar directamente?",
-          "attribute": ""
-        },
-        {
           "_key": "text-030",
           "key": "text-030",
           "label": "Conversar pelo WhatsApp",
@@ -2056,6 +1904,38 @@
           "label": "Entender como trabalhamos",
           "pt": "Entender como trabalhamos",
           "es": "Entender cómo trabajamos",
+          "attribute": ""
+        },
+        {
+          "_key": "extra-1000",
+          "key": "extra-1000",
+          "label": "Caminho da página",
+          "pt": "Caminho da página",
+          "es": "Ruta de la página",
+          "attribute": "aria-label"
+        },
+        {
+          "_key": "extra-1002",
+          "key": "extra-1002",
+          "label": "eletrotekc@outlook.com",
+          "pt": "eletrotekc@outlook.com",
+          "es": "eletrotekc@outlook.com",
+          "attribute": ""
+        },
+        {
+          "_key": "extra-1003",
+          "key": "extra-1003",
+          "label": "Instagram @eletrotechmarechal",
+          "pt": "Instagram @eletrotechmarechal",
+          "es": "Instagram @eletrotechmarechal",
+          "attribute": ""
+        },
+        {
+          "_key": "contact-heading",
+          "key": "contact-heading",
+          "label": "Fale com a equipe",
+          "pt": "Fale com a equipe",
+          "es": "Hable con el equipo",
           "attribute": ""
         }
       ],

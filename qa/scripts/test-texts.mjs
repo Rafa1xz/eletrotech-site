@@ -47,7 +47,7 @@ test('Inventory covers dynamic messages and contains only text, with unique stab
   assert.equal(documents.length,8);
   const entries=documents.flatMap(d=>d.entries),keys=entries.map(e=>e.key);
   assert.equal(new Set(keys).size,keys.length);
-  for(const source of ['Informe seu nome.','{count} produtos encontrados','Olá! Sou {name}, de {city}.\nTenho interesse em: {interest}.\n\n{message}','Olá! Gostaria de um orçamento para {product}{code}. Página: {url}'])assert(entries.some(e=>e.sourcePt===source),source);
+  for(const source of ['{count} produtos encontrados','Olá! Gostaria de um orçamento para {product}{code}. Página: {url}'])assert(entries.some(e=>e.sourcePt===source),source);
   const {pages}=JSON.parse(await readFile('data/page-text-manifest.json','utf8'));
   for(const page of pages)for(const item of page.texts)assert(!/<(?:p|span)\b/i.test(item.pt),'Markup was inventoried as text');
 });

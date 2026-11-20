@@ -807,7 +807,7 @@
       ],
       "menuOrder": 0,
       "_createdAt": "2026-11-20T21:57:11Z",
-      "_rev": "ehgitTyVwN7DzeQ1YVh2w5",
+      "_rev": "via5jl3EKEe3lPZEwugTUR",
       "_system": {
         "base": {
           "id": "page-home",
@@ -1246,7 +1246,7 @@
       ],
       "menuOrder": 1,
       "_createdAt": "2026-11-20T21:57:14Z",
-      "_rev": "hPBzhXiaBjzwszZjqVzJLk",
+      "_rev": "via5jl3EKEe3lPZEwugTci",
       "_updatedAt": "2026-11-20T21:57:14Z"
     },
     {
@@ -1552,16 +1552,6 @@
           "section": "Quatro etapas. Um projeto acompanhado."
         },
         {
-          "_key": "text-028",
-          "_type": "pageText",
-          "attribute": "",
-          "es": "Preparar mi mensaje",
-          "key": "text-028",
-          "label": "Preparar minha mensagem",
-          "pt": "Preparar minha mensagem",
-          "section": "Quatro etapas. Um projeto acompanhado."
-        },
-        {
           "_key": "text-029",
           "_type": "pageText",
           "attribute": "",
@@ -1630,6 +1620,16 @@
           "attribute": "aria-label",
           "section": "Do primeiro contato à entrega.",
           "_type": "pageText"
+        },
+        {
+          "_key": "contact-action",
+          "key": "contact-action",
+          "label": "Falar com a equipe",
+          "pt": "Falar com a equipe",
+          "es": "Hablar con el equipo",
+          "attribute": "",
+          "section": "Quatro etapas. Um projeto acompanhado.",
+          "_type": "pageText"
         }
       ],
       "images": [
@@ -1664,9 +1664,9 @@
         {
           "_key": "link-003",
           "_type": "pageLink",
-          "href": "contato.html#quote-form",
+          "href": "contato.html#contato-direto",
           "key": "link-003",
-          "label": "Preparar minha mensagem →",
+          "label": "Falar com a equipe",
           "whatsappTopic": ""
         },
         {
@@ -1688,8 +1688,8 @@
       ],
       "menuOrder": 2,
       "_createdAt": "2026-11-20T21:57:17Z",
-      "_rev": "via5jl3EKEe3lPZEwueewX",
-      "_updatedAt": "2026-11-20T21:57:17Z"
+      "_rev": "ehgitTyVwN7DzeQ1YVkASj",
+      "_updatedAt": "2026-11-20T22:31:50Z"
     },
     {
       "_id": "page-oxilife",
@@ -2202,7 +2202,7 @@
       ],
       "menuOrder": 3,
       "_createdAt": "2026-11-20T21:57:18Z",
-      "_rev": "via5jl3EKEe3lPZEwuef4o",
+      "_rev": "ehgitTyVwN7DzeQ1YVkAgN",
       "_updatedAt": "2026-11-20T21:57:18Z"
     },
     {
@@ -2226,7 +2226,7 @@
           "_type": "pageSection",
           "enabled": true,
           "key": "section-002",
-          "title": "O que você precisa?"
+          "title": "Contato direto"
         }
       ],
       "texts": [
@@ -2321,206 +2321,6 @@
           "section": "Vamos conversar sobre seu projeto."
         },
         {
-          "_key": "text-010",
-          "_type": "pageText",
-          "attribute": "",
-          "es": "SOLICITE UNA CONVERSACIÓN",
-          "key": "text-010",
-          "label": "SOLICITE UMA CONVERSA",
-          "pt": "SOLICITE UMA CONVERSA",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-011",
-          "_type": "pageText",
-          "attribute": "",
-          "es": "¿Qué necesita?",
-          "key": "text-011",
-          "label": "O que você precisa?",
-          "pt": "O que você precisa?",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-012",
-          "_type": "pageText",
-          "attribute": "",
-          "es": "Prepare su mensaje para revisarlo y enviarlo por WhatsApp.",
-          "key": "text-012",
-          "label": "Prepare sua mensagem para revisar e enviar pelo WhatsApp.",
-          "pt": "Prepare sua mensagem para revisar e enviar pelo WhatsApp.",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-013",
-          "_type": "pageText",
-          "attribute": "",
-          "es": "* Campos obligatorios",
-          "key": "text-013",
-          "label": "* Campos obrigatórios",
-          "pt": "* Campos obrigatórios",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-014",
-          "_type": "pageText",
-          "attribute": "",
-          "es": "Su nombre",
-          "key": "text-014",
-          "label": "Seu nome",
-          "pt": "Seu nome",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-015",
-          "_type": "pageText",
-          "attribute": "placeholder",
-          "es": "¿Cómo podemos llamarle?",
-          "key": "text-015",
-          "label": "Como podemos chamar você?",
-          "pt": "Como podemos chamar você?",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-016",
-          "_type": "pageText",
-          "attribute": "",
-          "es": "Ciudad",
-          "key": "text-016",
-          "label": "Cidade",
-          "pt": "Cidade",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-017",
-          "_type": "pageText",
-          "attribute": "placeholder",
-          "es": "Su ciudad",
-          "key": "text-017",
-          "label": "Sua cidade",
-          "pt": "Sua cidade",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-018",
-          "_type": "pageText",
-          "attribute": "",
-          "es": "Me interesa",
-          "key": "text-018",
-          "label": "Tenho interesse em",
-          "pt": "Tenho interesse em",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-019",
-          "_type": "pageText",
-          "attribute": "",
-          "es": "Servicios eléctricos",
-          "key": "text-019",
-          "label": "Serviços elétricos",
-          "pt": "Serviços elétricos",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-020",
-          "_type": "pageText",
-          "attribute": "",
-          "es": "Productos",
-          "key": "text-020",
-          "label": "Produtos",
-          "pt": "Produtos",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-021",
-          "_type": "pageText",
-          "attribute": "",
-          "es": "OxiLife Fish",
-          "key": "text-021",
-          "label": "OxiLife Fish",
-          "pt": "OxiLife Fish",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-022",
-          "_type": "pageText",
-          "attribute": "",
-          "es": "Mantenimiento",
-          "key": "text-022",
-          "label": "Manutenção",
-          "pt": "Manutenção",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-023",
-          "_type": "pageText",
-          "attribute": "",
-          "es": "¿Cómo podemos ayudar?",
-          "key": "text-023",
-          "label": "Como podemos ajudar?",
-          "pt": "Como podemos ajudar?",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-024",
-          "_type": "pageText",
-          "attribute": "placeholder",
-          "es": "Cuéntenos qué servicio o equipo necesita.",
-          "key": "text-024",
-          "label": "Conte qual serviço ou equipamento você procura.",
-          "pt": "Conte qual serviço ou equipamento você procura.",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-025",
-          "_type": "pageText",
-          "attribute": "",
-          "es": "Describa su necesidad con al menos 10 caracteres.",
-          "key": "text-025",
-          "label": "Descreva sua necessidade com pelo menos 10 caracteres.",
-          "pt": "Descreva sua necessidade com pelo menos 10 caracteres.",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-026",
-          "_type": "pageText",
-          "attribute": "",
-          "es": "Preparar mensaje en WhatsApp",
-          "key": "text-026",
-          "label": "Preparar mensagem no WhatsApp",
-          "pt": "Preparar mensagem no WhatsApp",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-027",
-          "_type": "pageText",
-          "attribute": "",
-          "es": "Los datos no se almacenan en este sitio. Usted revisa y confirma el envío en WhatsApp.",
-          "key": "text-027",
-          "label": "Os dados não são armazenados neste site. Você revisa e confirma o envio no WhatsApp.",
-          "pt": "Os dados não são armazenados neste site. Você revisa e confirma o envio no WhatsApp.",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-028",
-          "_type": "pageText",
-          "attribute": "",
-          "es": "Abrir mensaje preparado",
-          "key": "text-028",
-          "label": "Abrir mensagem preparada",
-          "pt": "Abrir mensagem preparada",
-          "section": "O que você precisa?"
-        },
-        {
-          "_key": "text-029",
-          "_type": "pageText",
-          "attribute": "",
-          "es": "¿Prefiere hablar directamente?",
-          "key": "text-029",
-          "label": "Prefere falar diretamente?",
-          "pt": "Prefere falar diretamente?",
-          "section": "O que você precisa?"
-        },
-        {
           "_key": "text-030",
           "_type": "pageText",
           "attribute": "",
@@ -2528,7 +2328,7 @@
           "key": "text-030",
           "label": "Conversar pelo WhatsApp",
           "pt": "Conversar pelo WhatsApp",
-          "section": "O que você precisa?"
+          "section": "Fale com a equipe"
         },
         {
           "_key": "text-031",
@@ -2538,7 +2338,7 @@
           "key": "text-031",
           "label": "PARA AGILIZAR",
           "pt": "PARA AGILIZAR",
-          "section": "O que você precisa?"
+          "section": "Fale com a equipe"
         },
         {
           "_key": "text-032",
@@ -2548,7 +2348,7 @@
           "key": "text-032",
           "label": "Tenha em mãos",
           "pt": "Tenha em mãos",
-          "section": "O que você precisa?"
+          "section": "Fale com a equipe"
         },
         {
           "_key": "text-033",
@@ -2558,7 +2358,7 @@
           "key": "text-033",
           "label": "Fotos do equipamento ou local",
           "pt": "Fotos do equipamento ou local",
-          "section": "O que você precisa?"
+          "section": "Fale com a equipe"
         },
         {
           "_key": "text-034",
@@ -2568,7 +2368,7 @@
           "key": "text-034",
           "label": "Cidade e descrição da necessidade",
           "pt": "Cidade e descrição da necessidade",
-          "section": "O que você precisa?"
+          "section": "Fale com a equipe"
         },
         {
           "_key": "text-035",
@@ -2578,7 +2378,7 @@
           "key": "text-035",
           "label": "Modelo, tensão e potência, se disponíveis",
           "pt": "Modelo, tensão e potência, se disponíveis",
-          "section": "O que você precisa?"
+          "section": "Fale com a equipe"
         },
         {
           "_key": "text-036",
@@ -2588,7 +2388,7 @@
           "key": "text-036",
           "label": "Atendimento fora de horário: consulte a disponibilidade.",
           "pt": "Atendimento fora de horário: consulte a disponibilidade.",
-          "section": "O que você precisa?"
+          "section": "Fale com a equipe"
         },
         {
           "_key": "text-037",
@@ -2627,7 +2427,7 @@
           "pt": "eletrotekc@outlook.com",
           "es": "eletrotekc@outlook.com",
           "attribute": "",
-          "section": "O que você precisa?",
+          "section": "Fale com a equipe",
           "_type": "pageText"
         },
         {
@@ -2637,17 +2437,17 @@
           "pt": "Instagram @eletrotechmarechal",
           "es": "Instagram @eletrotechmarechal",
           "attribute": "",
-          "section": "O que você precisa?",
+          "section": "Fale com a equipe",
           "_type": "pageText"
         },
         {
-          "_key": "extra-1006",
-          "key": "extra-1006",
-          "label": "Para solicitar um orçamento, use o link direto do WhatsApp nesta página.",
-          "pt": "Para solicitar um orçamento, use o link direto do WhatsApp nesta página.",
-          "es": "Para solicitar un presupuesto, use el enlace directo de WhatsApp de esta página.",
+          "_key": "contact-heading",
+          "key": "contact-heading",
+          "label": "Fale com a equipe",
+          "pt": "Fale com a equipe",
+          "es": "Hable con el equipo",
           "attribute": "",
-          "section": "O que você precisa?",
+          "section": "Fale com a equipe",
           "_type": "pageText"
         }
       ],
@@ -2713,8 +2513,8 @@
       ],
       "menuOrder": 4,
       "_createdAt": "2026-11-20T21:57:20Z",
-      "_rev": "hPBzhXiaBjzwszZjqVzJg4",
-      "_updatedAt": "2026-11-20T21:57:20Z"
+      "_rev": "via5jl3EKEe3lPZEwugTtG",
+      "_updatedAt": "2026-11-20T22:31:53Z"
     },
     {
       "_id": "page-portfolio",

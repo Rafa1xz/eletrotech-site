@@ -43,7 +43,7 @@ test('Services can be created, reordered and hidden without changing stable link
   assert.throws(()=>renderPage(template,page,site,{...options,services:[added,added]}),/duplicado/);
 });
 
-test('Shared branding/contact settings update every generated page without touching form behavior',async()=>{
+test('Shared branding/contact settings update every generated page and direct contact channels',async()=>{
   const config={...site,name:'Loja Teste',whatsapp:'5545999999999',phone:'+5545888888888',phoneLabel:'+55 45 88888-8888',email:'contato@example.com',instagram:'https://instagram.com/lojateste',instagramLabel:'@lojateste',footerPt:'Uma nova descrição',footerStart:'#abcdef',footerEnd:'#eeeeee',businessHours:'Segunda a sexta'};
   for(const page of defaults.pages){
     const source=await readFile(`templates/pages/${page.pageId}.html`,'utf8');
@@ -55,7 +55,8 @@ test('Shared branding/contact settings update every generated page without touch
     $('a[href^="tel:"]').each((_,el)=>assert.equal($(el).attr('href'),'tel:+5545888888888'));
     $('a[href^="https://wa.me/"]').each((_,el)=>assert.equal(new URL($(el).attr('href')).pathname,'/5545999999999'));
     if(page.pageId==='contact'){
-      assert.equal($('#quote-form').length,1);assert.equal($('#contact-message').attr('minlength'),'10');
+      assert.equal($('form#quote-form').length,0);assert.equal($('#contato-direto').length,1);
+      assert.equal($('.contact-direct-links a').length,3);
       assert.equal($('.contact-hours').text(),'Segunda a sexta');
     }
   }

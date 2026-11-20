@@ -175,6 +175,25 @@ try {
   await evaluate("document.querySelector('.search-toggle').focus()");
   await sleep(750);
   assertCompact(await whatsappState(), 'Blur under reduced motion');
+  for(const width of [1440,390]){
+    await navigate('contato.html',width);
+    assert.equal(await evaluate('document.querySelectorAll("main form").length'),0);
+    assert.equal(await evaluate('document.querySelectorAll(".contact-direct-links>a").length'),3);
+    assert(await evaluate('document.querySelector("#quote-form") && document.querySelector("#contato-direto")'),'Existing and current contact anchors must work');
+    assert(await evaluate('document.documentElement.scrollWidth<=innerWidth'),'Direct contact layout must fit the viewport');
+    assert(await evaluate(`(() => { const a=document.querySelector('.contact-channels').getBoundingClientRect(),b=document.querySelector('.contact-preparation').getBoundingClientRect();return innerWidth>760?a.left<b.left:a.top<b.top; })()`),'Contact channels must precede preparation guidance');
+    const contact=await evaluate(`(() => {
+      const link=document.querySelector('.contact-whatsapp'),url=new URL(link.href);
+      return {url:url.origin+url.pathname,message:url.searchParams.get('text'),target:link.target,telephone:document.querySelector('.contact-direct-links a[href^="tel:"]').href,email:document.querySelector('.contact-direct-links a[href^="mailto:"]').href};
+    })()`);
+    assert.equal(contact.url,'https://wa.me/554599241306');assert(contact.message);assert.equal(contact.target,'_blank');
+    assert(contact.telephone.startsWith('tel:'));assert(contact.email.startsWith('mailto:'));
+    await evaluate(`document.querySelector('.contact-grid').scrollIntoView({block:'start',behavior:'instant'})`);
+    const shot=await cdp('Page.captureScreenshot',{format:'png'});
+    await writeFile(resolve('qa/temp',`contact-direct-${width}.png`),Buffer.from(shot.data,'base64'));
+    await evaluate(`document.querySelector('[data-lang="es"]').click()`);
+    assert.equal(await evaluate(`document.querySelector('#direct-contact-title').textContent.trim()`),'Hable con el equipo');
+  }
   assert.equal(await evaluate('window.__qaExternalOpen.length'), 0, 'QA must not open external messaging');
   assert.equal(errors.length, 0, JSON.stringify(errors));
   console.log(`PASS: ${headerChecks} header alignment checks, ${mobileChecks} mobile-menu layout/selection checks, ${compactChecks} idle WhatsApp checks, reduced-motion hover/focus/leave/blur. No external messages opened.`);

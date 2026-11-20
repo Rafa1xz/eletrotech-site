@@ -475,10 +475,54 @@
       "entries": [
         {
           "_type": "siteTextEntry",
+          "_key": "copy-0fffe4c29d9bc7",
+          "key": "copy-0fffe4c29d9bc7",
+          "label": "Solicitar orçamento",
+          "context": "Botões compartilhados em serviços, produtos e contato",
+          "sourcePt": "Solicitar orçamento",
+          "sourceEs": "Solicitar presupuesto",
+          "pt": "Solicitar orçamento",
+          "es": "Solicitar presupuesto"
+        },
+        {
+          "_type": "siteTextEntry",
+          "_key": "copy-3267288e3ab410",
+          "key": "copy-3267288e3ab410",
+          "label": "Ver detalhes",
+          "context": "Botões compartilhados em serviços, produtos e contato",
+          "sourcePt": "Ver detalhes",
+          "sourceEs": "Ver detalles",
+          "pt": "Ver detalhes",
+          "es": "Ver detalles"
+        },
+        {
+          "_type": "siteTextEntry",
+          "_key": "copy-c49645ddc4de5e",
+          "key": "copy-c49645ddc4de5e",
+          "label": "Voltar ao catálogo",
+          "context": "Botões compartilhados em serviços, produtos e contato",
+          "sourcePt": "Voltar ao catálogo",
+          "sourceEs": "Volver al catálogo",
+          "pt": "Voltar ao catálogo",
+          "es": "Volver al catálogo"
+        },
+        {
+          "_type": "siteTextEntry",
+          "_key": "copy-9a9dfc86ec9a8e",
+          "key": "copy-9a9dfc86ec9a8e",
+          "label": "Ver catálogo completo",
+          "context": "Botões compartilhados em serviços, produtos e contato",
+          "sourcePt": "Ver catálogo completo",
+          "sourceEs": "Ver catálogo completo",
+          "pt": "Ver catálogo completo",
+          "es": "Ver catálogo completo"
+        },
+        {
+          "_type": "siteTextEntry",
           "_key": "copy-c1f8997c2eba6b",
           "key": "copy-c1f8997c2eba6b",
           "label": "Entre em contato",
-          "context": "js/script.js",
+          "context": "Botões compartilhados em serviços, produtos e contato",
           "sourcePt": "Entre em contato",
           "sourceEs": "Entre en contacto",
           "pt": "Entre em contato",
@@ -774,105 +818,6 @@
           "sourceEs": "Hola, quisiera información sobre: {topic}.",
           "pt": "Olá! Gostaria de informações sobre: {topic}.",
           "es": "Hola, quisiera información sobre: {topic}."
-        },
-        {
-          "_type": "siteTextEntry",
-          "_key": "copy-474c3d8b0730f9",
-          "key": "copy-474c3d8b0730f9",
-          "label": "Revise os campos indicados para preparar sua mensagem.",
-          "context": "js/script.js",
-          "sourcePt": "Revise os campos indicados para preparar sua mensagem.",
-          "sourceEs": "Revise los campos indicados para preparar su mensaje.",
-          "pt": "Revise os campos indicados para preparar sua mensagem.",
-          "es": "Revise los campos indicados para preparar su mensaje."
-        },
-        {
-          "_type": "siteTextEntry",
-          "_key": "copy-1f625a2a4eef52",
-          "key": "copy-1f625a2a4eef52",
-          "label": "Você alterou os dados. Prepare a mensagem novamente para incluir as mudanças.",
-          "context": "js/script.js",
-          "sourcePt": "Você alterou os dados. Prepare a mensagem novamente para incluir as mudanças.",
-          "sourceEs": "Ha cambiado los datos. Prepare el mensaje otra vez para incluir los cambios.",
-          "pt": "Você alterou os dados. Prepare a mensagem novamente para incluir as mudanças.",
-          "es": "Ha cambiado los datos. Prepare el mensaje otra vez para incluir los cambios."
-        },
-        {
-          "_type": "siteTextEntry",
-          "_key": "copy-553e875195c575",
-          "key": "copy-553e875195c575",
-          "label": "Mensagem preparada. Se o WhatsApp não abriu, use o link abaixo. Revise os dados antes de enviar.",
-          "context": "js/script.js",
-          "sourcePt": "Mensagem preparada. Se o WhatsApp não abriu, use o link abaixo. Revise os dados antes de enviar.",
-          "sourceEs": "Mensaje preparado. Si WhatsApp no se abrió, use el enlace de abajo. Revise los datos antes de enviarlo.",
-          "pt": "Mensagem preparada. Se o WhatsApp não abriu, use o link abaixo. Revise os dados antes de enviar.",
-          "es": "Mensaje preparado. Si WhatsApp no se abrió, use el enlace de abajo. Revise los datos antes de enviarlo."
-        },
-        {
-          "_type": "siteTextEntry",
-          "_key": "copy-68396a7e137b4e",
-          "key": "copy-68396a7e137b4e",
-          "label": "Informe seu nome.",
-          "context": "js/script.js",
-          "sourcePt": "Informe seu nome.",
-          "sourceEs": "Escriba su nombre.",
-          "pt": "Informe seu nome.",
-          "es": "Escriba su nombre."
-        },
-        {
-          "_type": "siteTextEntry",
-          "_key": "copy-3373bed48483f8",
-          "key": "copy-3373bed48483f8",
-          "label": "Informe sua cidade.",
-          "context": "js/script.js",
-          "sourcePt": "Informe sua cidade.",
-          "sourceEs": "Escriba su ciudad.",
-          "pt": "Informe sua cidade.",
-          "es": "Escriba su ciudad."
-        },
-        {
-          "_type": "siteTextEntry",
-          "_key": "copy-b0d2c7edd1eb3c",
-          "key": "copy-b0d2c7edd1eb3c",
-          "label": "Descreva sua necessidade com pelo menos 10 caracteres.",
-          "context": "js/script.js",
-          "sourcePt": "Descreva sua necessidade com pelo menos 10 caracteres.",
-          "sourceEs": "Describa su necesidad con al menos 10 caracteres.",
-          "pt": "Descreva sua necessidade com pelo menos 10 caracteres.",
-          "es": "Describa su necesidad con al menos 10 caracteres."
-        },
-        {
-          "_type": "siteTextEntry",
-          "_key": "copy-c6f4c1b1e92918",
-          "key": "copy-c6f4c1b1e92918",
-          "label": "Reduza o texto para o limite deste campo.",
-          "context": "js/script.js",
-          "sourcePt": "Reduza o texto para o limite deste campo.",
-          "sourceEs": "Reduzca el texto al límite de este campo.",
-          "pt": "Reduza o texto para o limite deste campo.",
-          "es": "Reduzca el texto al límite de este campo."
-        },
-        {
-          "_type": "siteTextEntry",
-          "_key": "copy-2887bcf4031f78",
-          "key": "copy-2887bcf4031f78",
-          "label": "Olá! Sou {name}, de {city}. Tenho interesse em: {interest}. {message}",
-          "context": "js/script.js",
-          "sourcePt": "Olá! Sou {name}, de {city}.\nTenho interesse em: {interest}.\n\n{message}",
-          "sourceEs": "Hola, soy {name}, de {city}.\nMe interesa: {interest}.\n\n{message}",
-          "pt": "Olá! Sou {name}, de {city}.\nTenho interesse em: {interest}.\n\n{message}",
-          "es": "Hola, soy {name}, de {city}.\nMe interesa: {interest}.\n\n{message}"
-        },
-        {
-          "_type": "siteTextEntry",
-          "_key": "copy-d2bc2e9e3cba1c",
-          "key": "copy-d2bc2e9e3cba1c",
-          "label": "{count} / {limit}",
-          "context": "js/script.js",
-          "sourcePt": "{count} / {limit}",
-          "sourceEs": "{count} / {limit}",
-          "pt": "{count} / {limit}",
-          "es": "{count} / {limit}"
         }
       ]
     },
@@ -1021,17 +966,6 @@
           "sourceEs": "Ilustración",
           "pt": "Ilustração",
           "es": "Ilustración"
-        },
-        {
-          "_type": "siteTextEntry",
-          "_key": "copy-3267288e3ab410",
-          "key": "copy-3267288e3ab410",
-          "label": "Ver detalhes",
-          "context": "scripts/build-products.mjs",
-          "sourcePt": "Ver detalhes",
-          "sourceEs": "Ver detalles",
-          "pt": "Ver detalhes",
-          "es": "Ver detalles"
         },
         {
           "_type": "siteTextEntry",
@@ -1288,17 +1222,6 @@
         },
         {
           "_type": "siteTextEntry",
-          "_key": "copy-0fffe4c29d9bc7",
-          "key": "copy-0fffe4c29d9bc7",
-          "label": "Solicitar orçamento",
-          "context": "scripts/build-products.mjs",
-          "sourcePt": "Solicitar orçamento",
-          "sourceEs": "Solicitar presupuesto",
-          "pt": "Solicitar orçamento",
-          "es": "Solicitar presupuesto"
-        },
-        {
-          "_type": "siteTextEntry",
           "_key": "copy-2e43a8c7cc225e",
           "key": "copy-2e43a8c7cc225e",
           "label": "Converse com a equipe pelo WhatsApp",
@@ -1307,17 +1230,6 @@
           "sourceEs": "Converse con el equipo por WhatsApp",
           "pt": "Converse com a equipe pelo WhatsApp",
           "es": "Converse con el equipo por WhatsApp"
-        },
-        {
-          "_type": "siteTextEntry",
-          "_key": "copy-c49645ddc4de5e",
-          "key": "copy-c49645ddc4de5e",
-          "label": "Voltar ao catálogo",
-          "context": "scripts/build-products.mjs",
-          "sourcePt": "Voltar ao catálogo",
-          "sourceEs": "Volver al catálogo",
-          "pt": "Voltar ao catálogo",
-          "es": "Volver al catálogo"
         },
         {
           "_type": "siteTextEntry",
@@ -1417,17 +1329,6 @@
           "sourceEs": "Conozca también",
           "pt": "Conheça também",
           "es": "Conozca también"
-        },
-        {
-          "_type": "siteTextEntry",
-          "_key": "copy-9a9dfc86ec9a8e",
-          "key": "copy-9a9dfc86ec9a8e",
-          "label": "Ver catálogo completo",
-          "context": "scripts/build-products.mjs",
-          "sourcePt": "Ver catálogo completo",
-          "sourceEs": "Ver catálogo completo",
-          "pt": "Ver catálogo completo",
-          "es": "Ver catálogo completo"
         },
         {
           "_type": "siteTextEntry",
