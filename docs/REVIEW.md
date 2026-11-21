@@ -11,7 +11,7 @@ histórico Git ou caches locais:
 
 | Medida                                |   Antes |  Depois |
 | ------------------------------------- | ------: | ------: |
-| Arquivos de projeto versionáveis      |     263 |     126 |
+| Arquivos de projeto versionáveis      |     263 |     125 |
 | Tamanho desses arquivos               | 78,6 MB | 18,7 MB |
 | Arquivos do site distribuído          |     135 |      61 |
 | Tamanho do site distribuído           | 48,9 MB | 18,5 MB |
