@@ -13,6 +13,11 @@ export async function fixture(t, { project = false } = {}) {
   if (project) {
     for (const path of ['data', 'public', 'scripts', 'src', 'dist'])
       await cp(resolve(path), join(root, path), { recursive: true });
+    try {
+      await cp(resolve('.cache/media'), join(root, '.cache/media'), { recursive: true });
+    } catch (error) {
+      if (error.code !== 'ENOENT') throw error;
+    }
     await symlink(resolve('node_modules'), join(root, 'node_modules'), 'junction');
   }
   return root;

@@ -269,5 +269,14 @@ export function renderPage(
     }
     slot.remove();
   }
+  const canonical = new URL(page.file, site.url).href;
+  $('link[rel="canonical"]').remove();
+  $('head').append($('<link rel="canonical">').attr('href', canonical));
+  let shareUrl = $('meta[property="og:url"]');
+  if (!shareUrl.length) {
+    shareUrl = $('<meta property="og:url">');
+    $('head').append(shareUrl);
+  }
+  shareUrl.attr('content', canonical);
   return removeDecorativeArrows($.html()).replace(/[\t ]+$/gm, '');
 }

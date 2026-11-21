@@ -43,6 +43,11 @@ jobs:
       - name: Conferir padronização do código-fonte
         if: steps.content.outputs.changed == 'true'
         run: npm run format:check
+      - name: Atualizar conteúdo publicado na Vercel
+        if: steps.content.outputs.changed == 'true' && github.event_name != 'push'
+        env:
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: node scripts/trigger-vercel.mjs
       - uses: actions/upload-pages-artifact@v3
         if: steps.content.outputs.changed == 'true'
         with:

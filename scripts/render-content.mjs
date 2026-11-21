@@ -4,6 +4,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { renderPage } from './cms-render.mjs';
 import { loadSiteTexts } from './site-texts.mjs';
+import { load } from 'cheerio';
 const root = ROOT;
 const { catalog: textCatalog, documents: textDocuments } = await loadSiteTexts(
   new URL('../', import.meta.url),
@@ -45,7 +46,6 @@ for (const page of pages) {
 }
 console.log(`Renderizadas ${pages.length} páginas e os serviços do CMS.`);
 
-await writeFile(
-  resolve(OUTPUT, 'servicos.html'),
-  await readFile(resolve(root, 'src/redirects/servicos.html'), 'utf8'),
-);
+const redirect = load(await readFile(resolve(root, 'src/redirects/servicos.html'), 'utf8'));
+redirect('link[rel="canonical"]').attr('href', new URL('produtos.html', site.url).href);
+await writeFile(resolve(OUTPUT, 'servicos.html'), redirect.html());

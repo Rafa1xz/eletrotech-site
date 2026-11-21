@@ -1,4 +1,5 @@
 .cache/
+.vercel/
 dist/
 _site/
 node_modules/
