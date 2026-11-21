@@ -1320,7 +1320,8 @@
           "pt": "Falar com a equipe",
           "es": "Hablar con el equipo",
           "attribute": "",
-          "section": "Quatro etapas. Um projeto acompanhado."
+          "section": "Quatro etapas. Um projeto acompanhado.",
+          "_type": "pageText"
         }
       ]
     },
@@ -1939,7 +1940,8 @@
           "pt": "Fale com a equipe",
           "es": "Hable con el equipo",
           "attribute": "",
-          "section": "Fale com a equipe"
+          "section": "Fale com a equipe",
+          "_type": "pageText"
         }
       ]
     },

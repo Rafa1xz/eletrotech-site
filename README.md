@@ -1,52 +1,86 @@
-﻿# Eletrotech Marechal
+# Eletrotech Marechal
 
-Site institucional em HTML, CSS e JavaScript, com Sanity Studio separado. O painel antigo em `admin/` foi removido.
+Site institucional e catálogo em português e espanhol, com conteúdo gerenciado pelo Sanity.
+O frontend usa HTML, CSS e JavaScript nativos. O build gera um site estático em `dist/`;
+o Sanity Studio fica separado em `studio/`.
 
-O site público continua abrindo por `index.html`. Para desenvolvimento, use Node.js 24 ou superior:
+- [Site publicado](https://rafa1xz.github.io/eletrotech-site/)
+- [Painel do lojista](https://eletrotech-marechal-painel.sanity.studio/)
+- [Como editar o conteúdo](docs/SANITY.md)
 
-```powershell
+## Começar
+
+Requisito: Node.js 24 ou superior.
+
+```sh
 npm ci
-npm ci --prefix studio
 npm run dev
 ```
 
-Site: http://127.0.0.1:5500. Studio online: https://eletrotech-marechal-painel.sanity.studio/. Para desenvolver o Studio localmente, use `npm run studio` (porta 3333).
+Abra http://127.0.0.1:5500. O desenvolvimento usa o conteúdo local preservado e reconstrói
+o site quando arquivos de `src/`, `public/` ou `data/` mudam. Recarregue a página para ver o resultado.
+No PowerShell, use `npm.cmd` se a política local bloquear `npm.ps1`.
 
-## Sanity
+Para buscar o conteúdo atual do Sanity, copie `.env.example` para `.env` e execute:
 
-O Studio em `studio/` gerencia produtos, traduções, imagens, preços, estoque, especificações, SEO e as configurações usadas pelo gerador. Está conectado ao projeto `zr5fcto8`, dataset público `production`, com os seis produtos e as configurações importados.
+```sh
+npm run build
+npm run preview
+```
 
-Consulte [docs/SANITY.md](docs/SANITY.md) para reconectar em outra máquina e configurar a publicação. Os arquivos locais `.env` e `studio/.env.local` já estão configurados e são ignorados pelo Git.
+Para desenvolver o painel:
 
-```powershell
-npm run sanity:seed
-npm run sanity:sync
+```sh
+npm ci --prefix studio
+# Copie studio/.env.example para studio/.env.local.
 npm run studio
 ```
 
-## Publicação e testes
-
-```powershell
-npm run build
-npm test
-powershell -NoProfile -ExecutionPolicy Bypass -File qa/scripts/static-review.ps1
-```
-
-O build busca conteúdo publicado do Sanity, gera catálogo, páginas e sitemap e prepara `_site/`. Sem Project ID configurado, usa os JSON locais preservados. Com projeto configurado, falhas de leitura interrompem a publicação.
-
-O GitHub Pages usa `.github/workflows/publish.yml`. Depois de publicar no Sanity, o workflow verifica mudanças a cada cinco minutos e atualiza os HTML automaticamente. O GitHub pode atrasar o agendamento. Para antecipar, execute `Publicar site` em Actions. Veja limitações e manutenção do agendamento em [docs/SANITY.md](docs/SANITY.md).
-
-Os IDs e slugs existentes são preservados por `data/product-routes.json`. Prefira desativar produtos com `active: false`. Preço e estoque desconhecidos são `null`, não zero. Fotos enviadas ao Sanity são copiadas para `images/` no build.
+O Studio local usa http://localhost:3333. Arquivos `.env` existentes devem ser preservados.
 
 ## Estrutura
 
-- `*.html`, `css/`, `js/`: site público.
-- `produtos/`: páginas geradas com URLs estáveis.
-- `data/`: catálogo, configurações e registro de rotas.
-- `studio/`: Sanity Studio e schemas.
-- `scripts/`: sincronização, exportação, geração e servidor local.
-- `images/`, `assets/`, `videos/`: mídias.
-- `qa/`: verificações e capturas.
-- `docs/`: documentação.
+```text
+src/
+  pages/       páginas com os campos editáveis do Sanity
+  partials/    cabeçalho, rodapé e contato flutuante compartilhados
+  styles/      estilos gerais, componentes e páginas
+  scripts/     comportamento público do site
+  redirects/   compatibilidade com endereços antigos
+  templates/   recursos usados pelos geradores
+public/        imagens, vídeo, ícones e licenças utilizados
+data/          conteúdo local, padrões do CMS e registro de URLs
+scripts/       build, sincronização, validação e desenvolvimento
+studio/        configuração, schemas e manutenção do Sanity
+tests/         testes unitários, de integração e de navegador
+docs/          documentação de arquitetura, edição e manutenção
+dist/          site gerado; não editar nem versionar
+.cache/        downloads e artefatos temporários; não versionar
+```
 
-O pacote público não inclui Studio, dependências, credenciais ou o painel removido.
+## Comandos principais
+
+| Comando                 | Finalidade                                         |
+| ----------------------- | -------------------------------------------------- |
+| `npm run dev`           | Desenvolvimento local, com reconstrução automática |
+| `npm run build`         | Sincronizar o Sanity e gerar `dist/`               |
+| `npm run build:offline` | Gerar o site com o conteúdo local                  |
+| `npm run preview`       | Servir a versão já gerada                          |
+| `npm test`              | Gerar o site e executar os testes automatizados    |
+| `npm run check`         | Validar sintaxe, HTML, estilos, arquivos e âncoras |
+| `npm run test:browser`  | Verificar layout e interações em Chromium/Edge     |
+| `npm run format`        | Padronizar o código-fonte com Prettier             |
+| `npm run format:check`  | Conferir a padronização sem alterar arquivos       |
+
+Os testes de navegador usam Edge no Windows ou `chromium` nos demais sistemas.
+Defina `BROWSER_PATH` para escolher outro executável compatível.
+
+## Publicação
+
+O GitHub Actions publica somente `dist/`. Alterações no código são publicadas após os
+testes. O workflow também consulta o Sanity aproximadamente a cada cinco minutos;
+o GitHub pode atrasar o agendamento. Para antecipar uma atualização, execute
+**Publicar site** em Actions.
+
+Detalhes em [Arquitetura](docs/ARCHITECTURE.md), [Sanity](docs/SANITY.md) e
+[Revisão e manutenção](docs/REVIEW.md).

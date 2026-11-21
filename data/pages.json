@@ -672,7 +672,7 @@
           "altPt": "Motores Hércules",
           "key": "image-001",
           "label": "Motores Hércules",
-          "src": "images/sanity-d59ff916c70cfa84beb8b5955e54edb7d1806172-1000x750.jpg"
+          "src": "images/motores-hercules-1.jpeg"
         },
         {
           "_key": "image-002",
@@ -681,7 +681,7 @@
           "altPt": "Linha Zagonel",
           "key": "image-002",
           "label": "Linha Zagonel",
-          "src": "images/sanity-22cbbb8404670af49bead779b5e81870abc10e73-1000x750.jpg"
+          "src": "images/produtos-zagonel.jpeg"
         },
         {
           "_key": "image-003",
@@ -690,7 +690,7 @@
           "altPt": "Materiais para painéis",
           "key": "image-003",
           "label": "Materiais para painéis",
-          "src": "images/sanity-7060d14e390f6c138574a5a9f8d34f697520e096-1000x750.jpg"
+          "src": "images/materiais-paineis-1.jpeg"
         },
         {
           "_key": "image-004",
@@ -699,7 +699,7 @@
           "altPt": "Cena ilustrativa de viveiro com aerador e painel de controle",
           "key": "image-004",
           "label": "Cena ilustrativa de viveiro com aerador e painel de controle",
-          "src": "images/sanity-f1797798fdf7e79053b314177941e32de732092d-1536x1024.png"
+          "src": "images/oxilife-painel-aberto-ilustrativo.png"
         }
       ],
       "videos": [
@@ -711,8 +711,8 @@
           "label": "Vídeo do banner principal",
           "loop": true,
           "playbackRate": 0.75,
-          "poster": "images/sanity-bb2c16fb6221931dc9fe8f3cd577b331ced2437b-1280x720.jpg",
-          "src": "videos/sanity-69672b2985421cb831562e0987adddb959bcf68e.mp4"
+          "poster": "images/fundo-peixes-poster.jpg",
+          "src": "videos/Fundo_Peixes.mp4"
         }
       ],
       "links": [
@@ -805,16 +805,7 @@
           "whatsappTopic": "Orçamento"
         }
       ],
-      "menuOrder": 0,
-      "_createdAt": "2026-11-20T21:57:11Z",
-      "_rev": "via5jl3EKEe3lPZEwugZo5",
-      "_system": {
-        "base": {
-          "id": "page-home",
-          "rev": "45M1RUCGpfl3j64xEZJsVJ"
-        }
-      },
-      "_updatedAt": "2026-11-20T22:35:53Z"
+      "menuOrder": 0
     },
     {
       "_id": "page-catalog",
@@ -1214,7 +1205,7 @@
           "altPt": "Imagem ilustrativa de oficina com painel elétrico e motores",
           "key": "image-001",
           "label": "Imagem ilustrativa de oficina com painel elétrico e motores",
-          "src": "images/sanity-5b1eab4b4183cebb2b74d042f39abcb1030bf918-1536x1024.png"
+          "src": "images/servicos-produtos-oficina-ilustrativa.png"
         }
       ],
       "videos": [],
@@ -1244,10 +1235,7 @@
           "whatsappTopic": "Orçamento"
         }
       ],
-      "menuOrder": 1,
-      "_createdAt": "2026-11-20T21:57:14Z",
-      "_rev": "via5jl3EKEe3lPZEwugTci",
-      "_updatedAt": "2026-11-20T21:57:14Z"
+      "menuOrder": 1
     },
     {
       "_id": "page-process",
@@ -1640,7 +1628,7 @@
           "altPt": "Imagem ilustrativa de planejamento de projeto elétrico em oficina",
           "key": "image-001",
           "label": "Imagem ilustrativa de planejamento de projeto elétrico em oficina",
-          "src": "images/sanity-4ce8c2bcad9e23293f6bf7fc768856c2d124e7f3-1536x1024.png"
+          "src": "images/processo-planejamento-ilustrativo.png"
         }
       ],
       "videos": [],
@@ -1686,10 +1674,7 @@
           "whatsappTopic": "Orçamento"
         }
       ],
-      "menuOrder": 2,
-      "_createdAt": "2026-11-20T21:57:17Z",
-      "_rev": "ehgitTyVwN7DzeQ1YVkASj",
-      "_updatedAt": "2026-11-20T22:31:50Z"
+      "menuOrder": 2
     },
     {
       "_id": "page-oxilife",
@@ -2136,7 +2121,7 @@
           "altPt": "",
           "key": "image-001",
           "label": "Imagem de fundo",
-          "src": "images/sanity-f1797798fdf7e79053b314177941e32de732092d-1536x1024.png"
+          "src": "images/oxilife-painel-aberto-ilustrativo.png"
         },
         {
           "_key": "image-002",
@@ -2145,7 +2130,7 @@
           "altPt": "Painel de monitoramento instalado em campo",
           "key": "image-002",
           "label": "Painel de monitoramento instalado em campo",
-          "src": "images/sanity-9084465a584533442c7599eadf7edda6f84ed3ec-750x1000.jpg"
+          "src": "images/painel-sonda-campo.jpeg"
         },
         {
           "_key": "background-001",
@@ -2154,7 +2139,7 @@
           "altPt": "",
           "key": "background-001",
           "label": "Fundo do convite para conversar sobre os tanques",
-          "src": "images/sanity-f1797798fdf7e79053b314177941e32de732092d-1536x1024.png"
+          "src": "images/oxilife-painel-aberto-ilustrativo.png"
         }
       ],
       "videos": [],
@@ -2200,10 +2185,7 @@
           "whatsappTopic": "OxiLife Fish"
         }
       ],
-      "menuOrder": 3,
-      "_createdAt": "2026-11-20T21:57:18Z",
-      "_rev": "ehgitTyVwN7DzeQ1YVkAgN",
-      "_updatedAt": "2026-11-20T21:57:18Z"
+      "menuOrder": 3
     },
     {
       "_id": "page-contact",
@@ -2511,10 +2493,7 @@
           "whatsappTopic": ""
         }
       ],
-      "menuOrder": 4,
-      "_createdAt": "2026-11-20T21:57:20Z",
-      "_rev": "via5jl3EKEe3lPZEwugTtG",
-      "_updatedAt": "2026-11-20T22:31:53Z"
+      "menuOrder": 4
     },
     {
       "_id": "page-portfolio",
@@ -2810,7 +2789,7 @@
           "altPt": "Detalhe da montagem de painel elétrico Eletrotech",
           "key": "image-001",
           "label": "Detalhe da montagem de painel elétrico Eletrotech",
-          "src": "images/sanity-a96c4101c09249465c21d356f09da128ba739cc9-750x1000.jpg"
+          "src": "images/painel-eletrico-2.jpeg"
         },
         {
           "_key": "image-002",
@@ -2819,7 +2798,7 @@
           "altPt": "Painel de monitoramento instalado em campo",
           "key": "image-002",
           "label": "Painel de monitoramento instalado em campo",
-          "src": "images/sanity-9084465a584533442c7599eadf7edda6f84ed3ec-750x1000.jpg"
+          "src": "images/painel-sonda-campo.jpeg"
         },
         {
           "_key": "image-003",
@@ -2828,7 +2807,7 @@
           "altPt": "Visão da montagem de um painel elétrico",
           "key": "image-003",
           "label": "Visão da montagem de um painel elétrico",
-          "src": "images/sanity-9b36d85a947c7ce16d5c351b03ac8db6feb7fe69-750x1000.jpg"
+          "src": "images/painel-eletrico-1.jpeg"
         },
         {
           "_key": "image-004",
@@ -2837,7 +2816,7 @@
           "altPt": "Motor Hércules apresentado pela Eletrotech",
           "key": "image-004",
           "label": "Motor Hércules apresentado pela Eletrotech",
-          "src": "images/sanity-8043e9faa108b6cc69aa1763985169c55fd4b4b0-1000x750.jpg"
+          "src": "images/motores-hercules-2.jpeg"
         }
       ],
       "videos": [],
@@ -2915,10 +2894,7 @@
           "whatsappTopic": ""
         }
       ],
-      "menuOrder": 5,
-      "_createdAt": "2026-11-20T21:57:24Z",
-      "_rev": "ehgitTyVwN7DzeQ1YVh4Tb",
-      "_updatedAt": "2026-11-20T21:57:24Z"
+      "menuOrder": 5
     }
   ]
 }

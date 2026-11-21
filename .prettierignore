@@ -1,0 +1,10 @@
+dist/
+.cache/
+node_modules/
+studio/node_modules/
+studio/dist/
+studio/.sanity/
+public/
+data/
+package-lock.json
+studio/package-lock.json

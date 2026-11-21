@@ -1,106 +1,99 @@
-# Edição da loja no Sanity
+# Conteúdo e Sanity
 
-Painel atual: https://eletrotech-marechal-painel.sanity.studio/.
-Projeto do código: `zr5fcto8`, dataset `production`.
+Painel: https://eletrotech-marechal-painel.sanity.studio/.
+Projeto ativo: `zr5fcto8`. Dataset: `production`.
 
 ## Acesso do lojista
 
-Crie uma conta no Sanity com o e-mail do lojista. Um administrador do projeto
-`zr5fcto8` precisa convidar esse e-mail em Members, nas configurações do projeto:
-https://www.sanity.io/manage/project/zr5fcto8.
-Use uma função com permissão de editar e publicar conteúdo. Depois de aceitar
-o convite, entre no Studio com a mesma conta. Não compartilhe senhas nem tokens.
-Criar uma conta ou outro projeto não concede acesso ao conteúdo existente.
+Entre com uma conta que tenha acesso ao projeto. Um administrador pode convidar
+outros usuários em [Members](https://www.sanity.io/manage/project/zr5fcto8), com
+permissão de editar e publicar conteúdo. Após aceitar o convite, use a mesma conta no painel.
 
 ## Onde editar
 
-| Conteúdo | Local no painel |
-| --- | --- |
-| Títulos, parágrafos e SEO de cada página em PT/ES | Páginas do site → página → Textos e SEO |
-| Fotos, fundos e vídeos | Páginas do site → página → Imagens e vídeos |
-| Exibir, ocultar e ordenar seções existentes | Páginas do site → página → Geral |
-| Nome em PT/ES, posição e visibilidade no menu | Páginas do site → página → Geral |
-| Destinos de botões e assuntos de WhatsApp | Páginas do site → página → Links e botões |
-| Produtos, fotos, galeria, preços, estoque e especificações | Catálogo → Produtos |
-| Serviços, fotos, ordem e presença na home | Catálogo → Serviços |
-| Menu, rodapé, botões, busca, formulário e mensagens | Textos do site → grupo correspondente |
-| Empresa, contatos, logo, atendimento e cores do rodapé | Configurações do site |
+| Conteúdo                                               | Local no painel                             |
+| ------------------------------------------------------ | ------------------------------------------- |
+| Títulos, parágrafos e SEO em português e espanhol      | Páginas do site → página → Textos e SEO     |
+| Fotos, imagens de fundo e vídeos                       | Páginas do site → página → Imagens e vídeos |
+| Exibir, ocultar e ordenar seções                       | Páginas do site → página → Geral            |
+| Nome, tradução, ordem e visibilidade no menu           | Páginas do site → página → Geral            |
+| Destinos de links e assuntos do WhatsApp               | Páginas do site → página → Links e botões   |
+| Produtos, galerias, preços, estoque e especificações   | Catálogo → Produtos                         |
+| Serviços, imagens e presença na home                   | Catálogo → Serviços                         |
+| Textos compartilhados, busca e mensagens               | Textos do site → grupo correspondente       |
+| Empresa, contatos, logo, atendimento e cores do rodapé | Configurações do site                       |
 
-Os textos específicos das páginas têm prioridade sobre os compartilhados.
-No menu, um nome personalizado na página tem prioridade sobre o texto compartilhado.
-O espanhol pode ser alterado independentemente do nome em português.
-Esconder uma página no menu mantém seu endereço funcionando. As seções podem ser
-reordenadas e ocultadas; criar novos modelos de seção ainda exige código.
-Os desenhos dos ícones e a estrutura visual continuam no código.
+Os textos específicos de uma página têm prioridade sobre os compartilhados.
+Um nome de menu personalizado na página também tem prioridade sobre o texto compartilhado.
+O nome em espanhol pode ser alterado independentemente do português.
 
-Para trocar uma foto ou vídeo, use o campo de upload, que tem prioridade sobre
-o caminho do arquivo atual. Imagens: PNG, JPEG, WebP ou SVG, até 20 MB.
-Vídeos de banner: MP4 ou WebM, até 80 MB; ajuste também a imagem alternativa.
-O fundo do convite da página OxiLife fica na lista de imagens da própria página.
+Ocultar uma página no menu mantém seu endereço acessível. As seções existentes podem
+ser reordenadas ou ocultadas. Novas estruturas de seção e alterações gerais no desenho
+do site continuam sendo feitas no código.
 
-Não altere identificadores ou endereços de produtos já publicados.
-Para retirar um produto, desative “Disponível no catálogo”: o endereço permanece
-com uma mensagem de indisponibilidade. Preço e estoque vazios significam
-“não informado”; estoque zero é um valor real. Preserve marcadores como `{name}`
-e `{count}` nos textos de mensagens.
+## Fotos, vídeos e produtos
 
-## Publicação
+Use os campos de upload para substituir imagens e vídeos. Um upload tem prioridade
+sobre o caminho do arquivo existente. O limite é de 20 MB por imagem e 80 MB por vídeo.
+São aceitos PNG, JPEG, WebP e SVG; vídeos de banner usam MP4 ou WebM.
+Ao trocar o vídeo, ajuste também a imagem alternativa e as descrições acessíveis das fotos.
 
-Clique em **Publish** em cada documento alterado. Rascunhos não entram no site.
-O site é estático: o GitHub Actions consulta o conteúdo publicado aproximadamente
-a cada cinco minutos. O agendamento do GitHub pode atrasar ou ficar desativado
-após um período de inatividade do repositório público. Nesse caso, reative o workflow.
-Para antecipar a atualização, execute **Publicar site** em Actions:
-https://github.com/Rafa1xz/eletrotech-site/actions/workflows/publish.yml.
+Mantenha os identificadores e endereços dos produtos já publicados. Para retirar um produto,
+desative **Disponível no catálogo**: o endereço continua funcionando com uma mensagem
+de indisponibilidade. Preço e estoque vazios significam “não informado”; zero é um valor real.
 
-O workflow precisa das variáveis `SANITY_PROJECT_ID=zr5fcto8` e
-`SANITY_DATASET=production`. Dataset público permite leitura sem token.
-Em dataset privado, configure o segredo `SANITY_API_READ_TOKEN` com acesso de
-leitura. Nunca coloque tokens no código ou em variáveis `SANITY_STUDIO_*`.
-Uma falha na sincronização ou validação interrompe a nova publicação.
+Mensagens podem conter marcadores como `{product}` ou `{count}`. Preserve esses marcadores
+ao editar suas traduções.
 
-## Desenvolvimento e manutenção
+## Publicar alterações
 
-Use Node.js 24 ou superior. No Windows, use `npm.cmd` se o PowerShell bloquear `npm.ps1`.
+Clique em **Publish** em cada documento alterado. Rascunhos não aparecem no site.
+O GitHub Actions consulta o conteúdo publicado aproximadamente a cada cinco minutos.
+O agendamento pode atrasar ou ser desativado pelo GitHub após inatividade prolongada.
+Para antecipar ou reativar a atualização, abra o workflow
+[Publicar site](https://github.com/Rafa1xz/eletrotech-site/actions/workflows/publish.yml).
 
-```powershell
-npm.cmd ci
-npm.cmd ci --prefix studio
-Copy-Item .env.example .env
-Copy-Item studio/.env.example studio/.env.local
+## Configuração técnica
+
+O build lê `.env` na raiz:
+
+```dotenv
+SANITY_PROJECT_ID=zr5fcto8
+SANITY_DATASET=production
 ```
 
-Defina `SANITY_PROJECT_ID=zr5fcto8` em `.env` e
-`SANITY_STUDIO_PROJECT_ID=zr5fcto8` em `studio/.env.local`.
-Os dois arquivos são ignorados pelo Git. Não substitua arquivos já configurados.
+O Studio lê `studio/.env.local`:
 
-```powershell
-npm.cmd run build
-npm.cmd test
-npm.cmd run dev
-npm.cmd run studio
+```dotenv
+SANITY_STUDIO_PROJECT_ID=zr5fcto8
+SANITY_STUDIO_DATASET=production
 ```
 
-Site local: http://127.0.0.1:5500. Studio local: http://localhost:3333.
-`npm.cmd run build` busca o conteúdo remoto; mantenha alterações permanentes nos
-templates e schemas, pois os HTML e JSON sincronizados são gerados novamente.
+O dataset público permite leitura sem token. Para um dataset privado, configure
+`SANITY_API_READ_TOKEN` no ambiente do build. Credenciais não devem usar o prefixo
+`SANITY_STUDIO_`, pois essas variáveis são incorporadas ao painel público.
 
-Após uma atualização do código, um administrador autenticado no projeto correto
-pode adicionar os novos campos sem substituir edições existentes:
+O workflow usa as variáveis de repositório `SANITY_PROJECT_ID` e `SANITY_DATASET`.
+Em datasets privados, o token de leitura deve ser um segredo do GitHub Actions.
 
-```powershell
-npm.cmd run cms:layout:bootstrap
-npm.cmd run cms:texts:bootstrap
-npm.cmd run studio:build
-npm.cmd --prefix studio run deploy
+## Manutenção dos campos
+
+Após modificar os bindings dos templates:
+
+```sh
+npm run cms:texts:inventory
+npm run format
+npm run cms:texts:bootstrap
+npm run cms:layout:bootstrap
+npm run studio:build
+npm run studio:deploy
 ```
 
-A migração de layout preserva edições publicadas, rascunhos, uploads e ordem dos
-itens; uma segunda execução não altera os mesmos dados novamente. Ela não
-cria páginas em um projeto vazio. Para um projeto novo, inicialize primeiro
-com `npm.cmd run cms:bootstrap`, depois inicialize os textos.
+Os comandos de bootstrap exigem uma sessão Sanity autenticada. Eles preservam os valores
+existentes e os rascunhos, usando controle de revisão para detectar alterações concorrentes.
+O inventário de textos retira do painel os campos cujos blocos foram removidos dos templates.
 
-O projeto `zr5fcto8` também contém produtos Eletrotech, mas não é o projeto
-configurado neste código e, na verificação de 20/11/2026, não tinha as seis páginas.
-Confirme o Project ID antes de migrar ou publicar o Studio. Não importe por
-substituição sobre conteúdo já editado pelo lojista.
+`npm run cms:export` prepara `.cache/cms-import.ndjson` com os documentos locais.
+Para inicializar um projeto vazio, configure o Project ID e execute `npm run cms:bootstrap`.
+Documentos existentes não são substituídos. Arquivos de mídia exclusivos de outro projeto
+precisam ser enviados ao projeto de destino; exportar os documentos não transfere esses arquivos.

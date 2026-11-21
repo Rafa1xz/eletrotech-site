@@ -1,138 +1,273 @@
-import {load} from 'cheerio';
-import {removeDecorativeArrows} from './decorative-arrows.mjs';
-import {createTextCatalog} from './text-catalog.mjs';
-import {applyTextCatalog} from './render-texts.mjs';
+import { load } from 'cheerio';
+import { removeDecorativeArrows } from './decorative-arrows.mjs';
+import { createTextCatalog } from './text-catalog.mjs';
+import { applyTextCatalog } from './render-texts.mjs';
 
-export function localMedia(value,kind='image') {
-  const pattern=kind==='video'?/^videos\/[a-zA-Z0-9_.-]+\.(mp4|webm)$/:/^images\/[a-zA-Z0-9_.-]+\.(png|jpe?g|webp|svg)$/;
-  if(!pattern.test(value||''))throw Error(`Mídia ${kind} inválida: ${value}`);
+export function localMedia(value, kind = 'image') {
+  const pattern =
+    kind === 'video'
+      ? /^videos\/[a-zA-Z0-9_.-]+\.(mp4|webm)$/
+      : /^images\/[a-zA-Z0-9_.-]+\.(png|jpe?g|webp|svg)$/;
+  if (!pattern.test(value || '')) throw Error(`Mídia ${kind} inválida: ${value}`);
   return value;
 }
 export function validLink(value) {
-  if(typeof value!=='string'||/[\u0000-\u0020<>"\\]/.test(value))throw Error('Link inválido.');
-  if(value.startsWith('images/'))return localMedia(value);
-  if(/^https:\/\//i.test(value)) {new URL(value);return value;}
-  if(/^mailto:[^@\s]+@[^@\s]+$/i.test(value)||/^tel:\+?[\d()-]+$/i.test(value))return value;
-  if(/^#[\w-]+$/.test(value)||/^[a-z0-9/-]+\.html(?:[?#][^<>"\\\s]*)?$/i.test(value)&&!value.includes('..'))return value;
+  if (typeof value !== 'string' || /[\u0000-\u0020<>"\\]/.test(value))
+    throw Error('Link inválido.');
+  if (value.startsWith('images/')) return localMedia(value);
+  if (/^https:\/\//i.test(value)) {
+    new URL(value);
+    return value;
+  }
+  if (/^mailto:[^@\s]+@[^@\s]+$/i.test(value) || /^tel:\+?[\d()-]+$/i.test(value)) return value;
+  if (
+    /^#[\w-]+$/.test(value) ||
+    (/^[a-z0-9/-]+\.html(?:[?#][^<>"\\\s]*)?$/i.test(value) && !value.includes('..'))
+  )
+    return value;
   throw Error(`Link não permitido: ${value}`);
 }
-const hex=value=>/^#[a-f\d]{6}$/i.test(value||'')?value:null;
-const safeId=value=>/^[a-z0-9-]+$/.test(value||'');
-const tr=($,pt,es)=>$('<span>').attr('data-pt',pt||'').attr('data-es',es||pt||'').text(pt||'');
+const hex = (value) => (/^#[a-f\d]{6}$/i.test(value || '') ? value : null);
+const safeId = (value) => /^[a-z0-9-]+$/.test(value || '');
+const tr = ($, pt, es) =>
+  $('<span>')
+    .attr('data-pt', pt || '')
+    .attr('data-es', es || pt || '')
+    .text(pt || '');
 
-export function renderPage(template,page,site,{services=[],icons={},defaults={},pages=[],textCatalog=createTextCatalog()}={}) {
-  const $=load(template,{scriptingEnabled:false});
-  for(const item of page.texts||[]){
-    const n=$('[data-cms-text]').filter((_,el)=>$(el).attr('data-cms-text')===item.key);
-    n.each((_,el)=>{
-      const node=$(el),attribute=node.attr('data-translate-attr')||'';
+export function renderPage(
+  template,
+  page,
+  site,
+  { services = [], icons = {}, defaults = {}, pages = [], textCatalog = createTextCatalog() } = {},
+) {
+  const $ = load(template, { scriptingEnabled: false });
+  for (const item of page.texts || []) {
+    const n = $('[data-cms-text]').filter((_, el) => $(el).attr('data-cms-text') === item.key);
+    n.each((_, el) => {
+      const node = $(el),
+        attribute = node.attr('data-translate-attr') || '';
       // Attribute names come exclusively from the trusted template.
-      node.attr('data-pt',item.pt??'').attr('data-es',item.es||item.pt||'');
-      if(attribute)node.attr(attribute,item.pt??'');else node.text(item.pt??'');
+      node.attr('data-pt', item.pt ?? '').attr('data-es', item.es || item.pt || '');
+      if (attribute) node.attr(attribute, item.pt ?? '');
+      else node.text(item.pt ?? '');
     });
   }
-  for(const item of page.images||[]){
-    const src=localMedia(item.src),node=$('[data-cms-image]').filter((_,el)=>$(el).attr('data-cms-image')===item.key);
-    node.attr('src',src).attr('alt',item.altPt||'').attr('data-pt',item.altPt||'').attr('data-es',item.altEs||item.altPt||'').attr('data-translate-attr','alt');
+  for (const item of page.images || []) {
+    const src = localMedia(item.src),
+      node = $('[data-cms-image]').filter((_, el) => $(el).attr('data-cms-image') === item.key);
+    node
+      .attr('src', src)
+      .attr('alt', item.altPt || '')
+      .attr('data-pt', item.altPt || '')
+      .attr('data-es', item.altEs || item.altPt || '')
+      .attr('data-translate-attr', 'alt');
     node.removeAttr('width height'); // A replacement may have a different aspect ratio.
-    $('[data-cms-background]').filter((_,el)=>$(el).attr('data-cms-background')===item.key).each((_,el)=>{
-      const target=$(el);
-      target.attr('style',`${target.attr('style')||''};--cms-background:url('${src}')`);
-    });
+    $('[data-cms-background]')
+      .filter((_, el) => $(el).attr('data-cms-background') === item.key)
+      .each((_, el) => {
+        const target = $(el);
+        target.attr('style', `${target.attr('style') || ''};--cms-background:url('${src}')`);
+      });
   }
-  for(const item of page.videos||[]){
-    const node=$('[data-cms-video]').filter((_,el)=>$(el).attr('data-cms-video')===item.key);
-    if(!node.length)continue;
-    const src=localMedia(item.src,'video'),poster=localMedia(item.poster);
-    const rate=item.playbackRate??.75;
-    if(!Number.isFinite(rate)||rate<.25||rate>2)throw Error('Velocidade do vídeo inválida.');
-    node.attr('data-src',src).attr('poster',poster).attr('data-video-enabled',String(item.enabled!==false)).attr('data-playback-rate',String(rate)).attr('data-video-loop',String(item.loop!==false));
-    if(item.loop===false)node.removeAttr('loop');else node.attr('loop','');
-    node.closest('.home-hero').attr('style',`background-image:url('${poster}')`);
+  for (const item of page.videos || []) {
+    const node = $('[data-cms-video]').filter((_, el) => $(el).attr('data-cms-video') === item.key);
+    if (!node.length) continue;
+    const src = localMedia(item.src, 'video'),
+      poster = localMedia(item.poster);
+    const rate = item.playbackRate ?? 0.75;
+    if (!Number.isFinite(rate) || rate < 0.25 || rate > 2)
+      throw Error('Velocidade do vídeo inválida.');
+    node
+      .attr('data-src', src)
+      .attr('poster', poster)
+      .attr('data-video-enabled', String(item.enabled !== false))
+      .attr('data-playback-rate', String(rate))
+      .attr('data-video-loop', String(item.loop !== false));
+    if (item.loop === false) node.removeAttr('loop');
+    else node.attr('loop', '');
+    node.closest('.home-hero').attr('style', `background-image:url('${poster}')`);
   }
-  for(const item of page.links||[]){
-    const node=$('[data-cms-link]').filter((_,el)=>$(el).attr('data-cms-link')===item.key);
-    node.attr('href',validLink(item.href));
-    if(item.whatsappTopic)node.attr('data-whatsapp',item.whatsappTopic);else node.removeAttr('data-whatsapp');
+  for (const item of page.links || []) {
+    const node = $('[data-cms-link]').filter((_, el) => $(el).attr('data-cms-link') === item.key);
+    node.attr('href', validLink(item.href));
+    if (item.whatsappTopic) node.attr('data-whatsapp', item.whatsappTopic);
+    else node.removeAttr('data-whatsapp');
   }
-  if(page.sections?.length){
-    const nodes=$('main>[data-cms-section]'),slot=$('<template>');
+  if (page.sections?.length) {
+    const nodes = $('main>[data-cms-section]'),
+      slot = $('<template>');
     nodes.first().before(slot);
-    const used=new Set();
-    for(const section of page.sections){
-      if(used.has(section.key))throw Error(`Seção duplicada: ${section.key}`);used.add(section.key);
-      const node=nodes.filter((_,el)=>$(el).attr('data-cms-section')===section.key);
-      if(!node.length)throw Error(`Seção desconhecida em ${page.title}: ${section.key}`);
-      if(section.enabled===false)node.attr('hidden','');
-      node.remove();slot.before(node);
+    const used = new Set();
+    for (const section of page.sections) {
+      if (used.has(section.key)) throw Error(`Seção duplicada: ${section.key}`);
+      used.add(section.key);
+      const node = nodes.filter((_, el) => $(el).attr('data-cms-section') === section.key);
+      if (!node.length) throw Error(`Seção desconhecida em ${page.title}: ${section.key}`);
+      if (section.enabled === false) node.attr('hidden', '');
+      node.remove();
+      slot.before(node);
     }
     // Missing items retain their approved position after explicitly ordered items.
-    nodes.filter((_,el)=>!used.has($(el).attr('data-cms-section'))).each((_,el)=>slot.before($(el).remove()));
+    nodes
+      .filter((_, el) => !used.has($(el).attr('data-cms-section')))
+      .each((_, el) => slot.before($(el).remove()));
     slot.remove();
   }
-  if($('.service-grid').length){
-    const home=page.pageId==='home',ids=new Set();
-    const grid=$('.service-grid').empty();
-    const list=[...services].sort((a,b)=>(a.order??0)-(b.order??0)||String(a.serviceId).localeCompare(String(b.serviceId)));
-    for(const service of list){
-      if(!safeId(service.serviceId)||ids.has(service.serviceId))throw Error('Identificador de serviço inválido/duplicado.');ids.add(service.serviceId);
-      if(home&&!service.showOnHome)continue;
-      const card=$('<article class="service-card service-card--showcase">').attr('id',service.serviceId);
-      if(service.active===false)card.attr('hidden','');
-      const media=$('<div class="service-card-media">');
-      media.append($('<img class="service-photo">').attr({src:localMedia(service.src),alt:service.alt||service.name,loading:'lazy',decoding:'async'}));
+  if ($('.service-grid').length) {
+    const home = page.pageId === 'home',
+      ids = new Set();
+    const grid = $('.service-grid').empty();
+    const list = [...services].sort(
+      (a, b) =>
+        (a.order ?? 0) - (b.order ?? 0) || String(a.serviceId).localeCompare(String(b.serviceId)),
+    );
+    for (const service of list) {
+      if (!safeId(service.serviceId) || ids.has(service.serviceId))
+        throw Error('Identificador de serviço inválido/duplicado.');
+      ids.add(service.serviceId);
+      if (home && !service.showOnHome) continue;
+      const card = $('<article class="service-card service-card--showcase">').attr(
+        'id',
+        service.serviceId,
+      );
+      if (service.active === false) card.attr('hidden', '');
+      const media = $('<div class="service-card-media">');
+      media.append(
+        $('<img class="service-photo">').attr({
+          src: localMedia(service.src),
+          alt: service.alt || service.name,
+          loading: 'lazy',
+          decoding: 'async',
+        }),
+      );
       card.append(media);
-      const body=$('<div class="service-card-body">'),heading=$('<div class="service-heading">');
-      heading.append($('<span class="service-symbol" aria-hidden="true">').html(icons[service.icon]||Object.values(icons)[0]||''));
-      heading.append($('<h3>').append(tr($,service.name,service.nameEs)));body.append(heading);
-      body.append($('<p class="service-description">').append(tr($,service.description,service.descriptionEs)));
-      const action=$('<div class="service-card-action">');
-      const link=$('<a class="service-quote" target="_blank" rel="noopener noreferrer">').attr('data-whatsapp',service.whatsappTopic||service.name).attr('href',`https://wa.me/${site.whatsapp}`);
-      link.append(tr($,'Solicitar orçamento','Solicitar presupuesto'),$('<svg class="service-quote-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg>'));
-      action.append(link);body.append(action);
-      card.append(body);grid.append(card);
+      const body = $('<div class="service-card-body">'),
+        heading = $('<div class="service-heading">');
+      heading.append(
+        $('<span class="service-symbol" aria-hidden="true">').html(
+          icons[service.icon] || Object.values(icons)[0] || '',
+        ),
+      );
+      heading.append($('<h3>').append(tr($, service.name, service.nameEs)));
+      body.append(heading);
+      body.append(
+        $('<p class="service-description">').append(
+          tr($, service.description, service.descriptionEs),
+        ),
+      );
+      const action = $('<div class="service-card-action">');
+      const link = $('<a class="service-quote" target="_blank" rel="noopener noreferrer">')
+        .attr('data-whatsapp', service.whatsappTopic || service.name)
+        .attr('href', `https://wa.me/${site.whatsapp}`);
+      link.append(
+        tr($, 'Solicitar orçamento', 'Solicitar presupuesto'),
+        $(
+          '<svg class="service-quote-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg>',
+        ),
+      );
+      action.append(link);
+      body.append(action);
+      card.append(body);
+      grid.append(card);
     }
   }
-  applyTextCatalog($,textCatalog);
+  applyTextCatalog($, textCatalog);
   // Shared contacts and branding are regenerated on every page, including links.
-  if(!/^\d{10,15}$/.test(site.whatsapp||''))throw Error('WhatsApp inválido.');
-  if(!/^\+?\d{10,15}$/.test(site.phone||`+${site.whatsapp}`))throw Error('Telefone inválido.');
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(site.email||''))throw Error('E-mail inválido.');
-  const base=defaults;
-  const substitutions=[[base.name,site.name],[base.email,site.email],[base.phoneLabel,site.phoneLabel],[base.instagramLabel,site.instagramLabel]].filter(([a,b])=>a&&b&&a!==b);
-  $('body *,head title,head meta').each((_,el)=>{
-    const n=$(el);if(n.is('script,style,svg')||n.closest('script,style,svg').length)return;
-    for(const [old,value] of substitutions){
-      n.contents().each((_,child)=>{if(child.type==='text')child.data=child.data.replaceAll(old,value);});
-      for(const attr of ['data-pt','data-es','content','alt','aria-label'])if(n.attr(attr)?.includes(old))n.attr(attr,n.attr(attr).replaceAll(old,value));
+  if (!/^\d{10,15}$/.test(site.whatsapp || '')) throw Error('WhatsApp inválido.');
+  if (!/^\+?\d{10,15}$/.test(site.phone || `+${site.whatsapp}`)) throw Error('Telefone inválido.');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(site.email || '')) throw Error('E-mail inválido.');
+  const base = defaults;
+  const substitutions = [
+    [base.name, site.name],
+    [base.email, site.email],
+    [base.phoneLabel, site.phoneLabel],
+    [base.instagramLabel, site.instagramLabel],
+  ].filter(([a, b]) => a && b && a !== b);
+  $('body *,head title,head meta').each((_, el) => {
+    const n = $(el);
+    if (n.is('script,style,svg') || n.closest('script,style,svg').length) return;
+    for (const [old, value] of substitutions) {
+      n.contents().each((_, child) => {
+        if (child.type === 'text') child.data = child.data.replaceAll(old, value);
+      });
+      for (const attr of ['data-pt', 'data-es', 'content', 'alt', 'aria-label'])
+        if (n.attr(attr)?.includes(old)) n.attr(attr, n.attr(attr).replaceAll(old, value));
     }
   });
-  $('a[href^="https://wa.me/"]').each((_,el)=>{const n=$(el),url=new URL(n.attr('href'));url.pathname=`/${site.whatsapp}`;n.attr('href',url.href);});
-  $('a[href^="tel:"]').attr('href',`tel:${site.phone||`+${site.whatsapp}`}`);
-  $('a[href^="mailto:"]').attr('href',`mailto:${site.email}`);
-  if(site.instagram){validLink(site.instagram);$('a[href*="instagram.com/eletrotechmarechal"]').attr('href',site.instagram);}
-  if(site.logoSrc){const logo=localMedia(site.logoSrc);$('.brand img,.footer-brand img').attr('src',logo).attr('alt',site.name).attr('data-pt',site.name).attr('data-es',site.name).removeAttr('width height');}
-  if(site.footerPt)$('.footer-grid>div:first-child>p').empty().append(tr($,site.footerPt,site.footerEs));
-  if(site.businessHours)$('.contact-hours').empty().append(tr($,site.businessHours,site.businessHoursEs));
-  if(hex(site.footerStart)&&hex(site.footerEnd))$('.site-footer').attr('style',`background:linear-gradient(105deg,${site.footerStart},${site.footerEnd})`);
-  const nav=$('#main-nav'),slot=$('<template>');
-  if(nav.length&&pages.length){
+  $('a[href^="https://wa.me/"]').each((_, el) => {
+    const n = $(el),
+      url = new URL(n.attr('href'));
+    url.pathname = `/${site.whatsapp}`;
+    n.attr('href', url.href);
+  });
+  $('a[href^="tel:"]').attr('href', `tel:${site.phone || `+${site.whatsapp}`}`);
+  $('a[href^="mailto:"]').attr('href', `mailto:${site.email}`);
+  if (site.instagram) {
+    validLink(site.instagram);
+    $('a[href*="instagram.com/eletrotechmarechal"]').attr('href', site.instagram);
+  }
+  if (site.logoSrc) {
+    const logo = localMedia(site.logoSrc);
+    $('.brand img,.footer-brand img')
+      .attr('src', logo)
+      .attr('alt', site.name)
+      .attr('data-pt', site.name)
+      .attr('data-es', site.name)
+      .removeAttr('width height');
+  }
+  if (site.footerPt)
+    $('.footer-grid>div:first-child>p')
+      .empty()
+      .append(tr($, site.footerPt, site.footerEs));
+  if (site.businessHours)
+    $('.contact-hours')
+      .empty()
+      .append(tr($, site.businessHours, site.businessHoursEs));
+  if (hex(site.footerStart) && hex(site.footerEnd))
+    $('.site-footer').attr(
+      'style',
+      `background:linear-gradient(105deg,${site.footerStart},${site.footerEnd})`,
+    );
+  const nav = $('#main-nav'),
+    slot = $('<template>');
+  if (nav.length && pages.length) {
     nav.children('a').first().before(slot);
-    const ordered=pages.map((config,index)=>({config,index})).sort((a,b)=>(a.config.menuOrder??a.index)-(b.config.menuOrder??b.index)||a.index-b.index);
-    for(const {config} of ordered){
-      if(!/^[a-z0-9-]+\.html$/.test(config.file||''))throw Error('Endereço de página inválido no menu.');
-      let node=nav.children('a').filter((_,el)=>$(el).attr('href')===config.file);
-      if(config.showInMenu===false){node.remove();continue;}
-      if(!node.length)node=$('<a>').attr('href',config.file).append(tr($,config.menuTitle||config.title,config.menuTitleEs));
+    const ordered = pages
+      .map((config, index) => ({ config, index }))
+      .sort(
+        (a, b) =>
+          (a.config.menuOrder ?? a.index) - (b.config.menuOrder ?? b.index) || a.index - b.index,
+      );
+    for (const { config } of ordered) {
+      if (!/^[a-z0-9-]+\.html$/.test(config.file || ''))
+        throw Error('Endereço de página inválido no menu.');
+      let node = nav.children('a').filter((_, el) => $(el).attr('href') === config.file);
+      if (config.showInMenu === false) {
+        node.remove();
+        continue;
+      }
+      if (!node.length)
+        node = $('<a>')
+          .attr('href', config.file)
+          .append(tr($, config.menuTitle || config.title, config.menuTitleEs));
       // Keep shared labels when unchanged; an ES-only override must also work.
-      const label=node.find('[data-pt]').first();
-      const pt=config.menuTitle&&config.menuTitle!==config.title?config.menuTitle:(label.attr('data-pt')||config.menuTitle||config.title);
-      const es=config.menuTitleEs||(config.menuTitle&&config.menuTitle!==config.title?pt:label.attr('data-es')||pt);
-      node.empty().append(tr($,pt,es)).removeAttr('hidden aria-current');
-      if(config.file===page.file)node.attr('aria-current','page');
+      const label = node.find('[data-pt]').first();
+      const pt =
+        config.menuTitle && config.menuTitle !== config.title
+          ? config.menuTitle
+          : label.attr('data-pt') || config.menuTitle || config.title;
+      const es =
+        config.menuTitleEs ||
+        (config.menuTitle && config.menuTitle !== config.title ? pt : label.attr('data-es') || pt);
+      node
+        .empty()
+        .append(tr($, pt, es))
+        .removeAttr('hidden aria-current');
+      if (config.file === page.file) node.attr('aria-current', 'page');
       slot.before(node.remove());
     }
     slot.remove();
   }
-  return removeDecorativeArrows($.html()).replace(/[\t ]+$/gm,'');
+  return removeDecorativeArrows($.html()).replace(/[\t ]+$/gm, '');
 }

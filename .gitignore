@@ -1,5 +1,5 @@
-qa/temp/
-dist/*.zip
+.cache/
+dist/
 _site/
 node_modules/
 studio/dist/

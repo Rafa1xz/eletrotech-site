@@ -1,11 +1,8 @@
 {
   "services": [
     {
-      "_createdAt": "2026-11-20T21:57:25Z",
       "_id": "service-automacao",
-      "_rev": "ehgitTyVwN7DzeQ1YVh4hF",
       "_type": "service",
-      "_updatedAt": "2026-11-20T21:57:25Z",
       "active": true,
       "alt": "Equipamentos e materiais relacionados ao serviço",
       "category": "Industrial · Rural",
@@ -19,15 +16,12 @@
       "order": 1,
       "serviceId": "automacao",
       "showOnHome": true,
-      "src": "images/sanity-a96c4101c09249465c21d356f09da128ba739cc9-750x1000.jpg",
+      "src": "images/painel-eletrico-2.jpeg",
       "whatsappTopic": "Automação industrial"
     },
     {
-      "_createdAt": "2026-11-20T21:57:27Z",
       "_id": "service-bombas",
-      "_rev": "hPBzhXiaBjzwszZjqVzJwK",
       "_type": "service",
-      "_updatedAt": "2026-11-20T21:57:27Z",
       "active": true,
       "alt": "Equipamentos e materiais relacionados ao serviço",
       "category": "Manutenção",
@@ -41,15 +35,12 @@
       "order": 4,
       "serviceId": "bombas",
       "showOnHome": false,
-      "src": "images/sanity-d59ff916c70cfa84beb8b5955e54edb7d1806172-1000x750.jpg",
+      "src": "images/motores-hercules-1.jpeg",
       "whatsappTopic": "Manutenção de bombas d'água"
     },
     {
-      "_createdAt": "2026-11-20T21:57:29Z",
       "_id": "service-instalacoes",
-      "_rev": "hPBzhXiaBjzwszZjqVzK8W",
       "_type": "service",
-      "_updatedAt": "2026-11-20T21:57:29Z",
       "active": true,
       "alt": "Equipamentos e materiais relacionados ao serviço",
       "category": "Residencial",
@@ -63,15 +54,12 @@
       "order": 2,
       "serviceId": "instalacoes",
       "showOnHome": true,
-      "src": "images/sanity-233286aafacfacfcca0bfe83a4163accf6cb047d-1536x1024.png",
+      "src": "images/servico-residencial-ilustrativo.png",
       "whatsappTopic": "Instalações residenciais"
     },
     {
-      "_createdAt": "2026-11-20T21:57:31Z",
       "_id": "service-motores",
-      "_rev": "hPBzhXiaBjzwszZjqVzKKi",
       "_type": "service",
-      "_updatedAt": "2026-11-20T21:57:31Z",
       "active": true,
       "alt": "Equipamentos e materiais relacionados ao serviço",
       "category": "Manutenção",
@@ -85,15 +73,12 @@
       "order": 3,
       "serviceId": "motores",
       "showOnHome": false,
-      "src": "images/sanity-8043e9faa108b6cc69aa1763985169c55fd4b4b0-1000x750.jpg",
+      "src": "images/motores-hercules-2.jpeg",
       "whatsappTopic": "Rebobinagem de motores"
     },
     {
-      "_createdAt": "2026-11-20T21:57:32Z",
       "_id": "service-paineis",
-      "_rev": "ehgitTyVwN7DzeQ1YVh4ut",
       "_type": "service",
-      "_updatedAt": "2026-11-20T21:57:32Z",
       "active": true,
       "alt": "Equipamentos e materiais relacionados ao serviço",
       "category": "Industrial · Rural",
@@ -107,15 +92,12 @@
       "order": 0,
       "serviceId": "paineis",
       "showOnHome": true,
-      "src": "images/sanity-9b36d85a947c7ce16d5c351b03ac8db6feb7fe69-750x1000.jpg",
+      "src": "images/painel-eletrico-1.jpeg",
       "whatsappTopic": "Painéis elétricos"
     },
     {
-      "_createdAt": "2026-11-20T21:57:33Z",
       "_id": "service-zagonel",
-      "_rev": "hPBzhXiaBjzwszZjqVzKWu",
       "_type": "service",
-      "_updatedAt": "2026-11-20T21:57:33Z",
       "active": true,
       "alt": "Equipamentos e materiais relacionados ao serviço",
       "category": "Residencial",
@@ -129,7 +111,7 @@
       "order": 5,
       "serviceId": "zagonel",
       "showOnHome": false,
-      "src": "images/sanity-22cbbb8404670af49bead779b5e81870abc10e73-1000x750.jpg",
+      "src": "images/produtos-zagonel.jpeg",
       "whatsappTopic": "Instalação de produtos Zagonel"
     }
   ]

@@ -34,26 +34,19 @@ jobs:
           PUBLISHED_SITE_URL: https://rafa1xz.github.io/eletrotech-site/
           FORCE_PUBLISH: ${{ github.event_name != 'schedule' }}
         run: node scripts/check-publication.mjs
-      - name: Renderizar paginas e servicos do Sanity
-        if: steps.content.outputs.changed == 'true'
-        run: node scripts/render-content.mjs
-      - name: Gerar catálogo, páginas individuais e sitemap
-        if: steps.content.outputs.changed == 'true'
-        run: node scripts/build-products.mjs
-      - name: Validar publicação e URLs estáveis
+      - name: Gerar o site e testar conteúdo, publicação e URLs estáveis
         if: steps.content.outputs.changed == 'true'
         run: npm test
-      - name: Validar HTML e links locais
+      - name: Validar código, HTML e arquivos locais
         if: steps.content.outputs.changed == 'true'
-        shell: pwsh
-        run: ./qa/scripts/static-review.ps1
-      - name: Preparar arquivos públicos
+        run: npm run check
+      - name: Conferir padronização do código-fonte
         if: steps.content.outputs.changed == 'true'
-        run: node scripts/prepare-site.mjs
+        run: npm run format:check
       - uses: actions/upload-pages-artifact@v3
         if: steps.content.outputs.changed == 'true'
         with:
-          path: _site
+          path: dist
   deploy:
     needs: build
     if: needs.build.outputs.changed == 'true'

@@ -18,18 +18,27 @@ export function assetFile(url, projectId, dataset) {
   const parsed = new URL(url);
   const prefix = `/images/${projectId}/${dataset}/`;
   const file = parsed.pathname.slice(prefix.length);
-  if (parsed.origin !== 'https://cdn.sanity.io' || !parsed.pathname.startsWith(prefix) ||
-      !/^[a-zA-Z0-9-]+\.(png|jpe?g|webp|svg)$/.test(file) || parsed.search || parsed.hash) {
+  if (
+    parsed.origin !== 'https://cdn.sanity.io' ||
+    !parsed.pathname.startsWith(prefix) ||
+    !/^[a-zA-Z0-9-]+\.(png|jpe?g|webp|svg)$/.test(file) ||
+    parsed.search ||
+    parsed.hash
+  ) {
     throw Error('Imagem fora do armazenamento Sanity configurado: ' + url);
   }
   return `images/sanity-${file}`;
 }
 
 export async function mapProduct(document, download) {
-  if (!document.id || !document.slug || typeof document.active !== 'boolean') throw Error('Produto incompleto no Sanity: ' + document.name);
-  const {imageUrl, galleryUrls, ...product} = document;
+  if (!document.id || !document.slug || typeof document.active !== 'boolean')
+    throw Error('Produto incompleto no Sanity: ' + document.name);
+  const { imageUrl, galleryUrls, ...product } = document;
   product.src = imageUrl ? await download(imageUrl) : product.src;
-  product.gallery = [...(product.gallery || []), ...await Promise.all((galleryUrls || []).filter(Boolean).map(download))];
+  product.gallery = [
+    ...(product.gallery || []),
+    ...(await Promise.all((galleryUrls || []).filter(Boolean).map((url) => download(url)))),
+  ];
   product.specifications ||= [];
   product.variations ||= [];
   product.order ??= 0;
