@@ -31,7 +31,7 @@ jobs:
       - name: Verificar mudanças e preservar URLs já publicadas
         id: content
         env:
-          PUBLISHED_SITE_URL: https://rafa1xz.github.io/eletrotech-site/
+          PUBLISHED_SITE_URL: https://eletrotech-site-teal.vercel.app/
           FORCE_PUBLISH: ${{ github.event_name != 'schedule' }}
         run: node scripts/check-publication.mjs
       - name: Gerar o site e testar conteúdo, publicação e URLs estáveis
